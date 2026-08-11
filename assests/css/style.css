@@ -2179,8 +2179,35 @@ html {
     animation-play-state: paused;
 }
 
+.animate-text {
+    font-weight: 700;
+    animation: newNotification 2s linear infinite;
+}
 
-/* Animation */
+@keyframes newNotification {
+
+    0% {
+        color: #ff0000;
+    }
+
+    25% {
+        color: #ff9800;
+    }
+
+    50% {
+        color: #ffd700;
+    }
+
+    75% {
+        color: #003b78;
+    }
+
+    100% {
+        color: #ff0000;
+    }
+
+}
+
 
 @keyframes noticeScroll {
 

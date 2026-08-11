@@ -1366,3 +1366,37 @@ window.addEventListener("load", function () {
   createDots();
   updateTestimonials();
 });
+
+
+
+// Eligibility Filter check 
+
+ function showDocuments(type, button) {
+
+        // Hide all panels
+        document.querySelectorAll('.document-panel')
+            .forEach(function(panel) {
+
+                panel.classList.remove('active');
+
+            });
+
+
+        // Remove active from buttons
+        document.querySelectorAll('.document-tab')
+            .forEach(function(tab) {
+
+                tab.classList.remove('active');
+
+            });
+
+
+        // Show selected panel
+        document.getElementById(type)
+            .classList.add('active');
+
+
+        // Active selected button
+        button.classList.add('active');
+
+    }
