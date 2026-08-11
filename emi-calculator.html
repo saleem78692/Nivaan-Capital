@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMI Calculator - Novaan Capital</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assests/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP HEADER ================= -->
+    <header class="top-header">
+
+        <div class="container">
+
+            <div class="header-wrapper">
+
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-lg p-0">
+
+                    <!-- Mobile Toggle -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNavbar">
+
+                        <ul class="navbar-nav align-items-lg-center ms-auto gap-lg-1">
+
+                            <!-- About -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    About Us
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            About Company
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Leadership
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Awards
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <!-- Customer Service -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    Customer Service
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Contact Us
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Pay EMI
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Customer Support
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <!-- News -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    News
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Press Release
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Media
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <!-- Simple Links -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CSR</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ESG</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Investors</a>
+                            </li>
+
+
+                            <!-- People -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    People
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Careers
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Our People
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <!-- Customer Login -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    Customer Login
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Login
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Register
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <!-- Blogs -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    Blogs
+                                </a>
+                            </li>
+
+
+                            <!-- EMI Button -->
+                            <li class="nav-item ms-lg-2">
+
+                                <a href="#" class="emi-btn">
+                                    Pay Vehicle EMI
+                                </a>
+
+                            </li>
+
+
+                            <!-- Search -->
+                            <li class="nav-item search-item">
+
+                                <a href="#" class="search-btn">
+                                    <i class="bi bi-search"></i>
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </nav>
+
+                <!-- Logo Circle Overlapping (Top Right) -->
+                <!-- <div class="logo-circle">
+                    <div class="logo-content">
+                        <div class="custom-rupee-logo">
+                            <span class="leaf-left"></span>
+                            <span class="leaf-right"></span>
+                            <span class="rupee-char">₹</span>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN HEADER (WITH MEGA MENUS) ================= -->
+    <header class="main-header">
+        <div class="container">
+            <div class="main-header-wrapper">
+
+                <!-- Brand Logo on Left (Click to go back home) -->
+                <a href="index.html" class="brand-logo-container">
+                    <img src="assests/images/logo-removebg-preview.png" alt="Novaan Capital Logo"
+                        class="brand-logo-img">
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" type="button" aria-label="Toggle Navigation">
+                    <span class="toggle-bar"></span>
+                    <span class="toggle-bar"></span>
+                    <span class="toggle-bar"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <nav class="main-navigation">
+                    <ul class="main-menu">
+                        <!-- 1. Home Loan -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Home Loan</span>
+                                <span class="menu-desc">Purchase & Construction</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-house-door"></i> Home Purchase Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-tools"></i> Construction Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-arrows-angle-expand"></i> Extension Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-paint-bucket"></i> Renovation Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-map"></i> Plot + Construction</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> EMI Calculator</a></li>
+                                            <li><a href="#"><i class="bi bi-check-circle"></i> Eligibility Checker</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-pdf"></i> Required
+                                                    Documents</a></li>
+                                            <li><a href="#"><i class="bi bi-coin"></i> Balance Transfer Options</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> Frequently Asked
+                                                    Questions</a></li>
+                                            <li><a href="#"><i class="bi bi-shield-check"></i> Terms & Conditions</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-telephone-inbound"></i> Request a Call
+                                                    Back</a></li>
+                                            <li><a href="#"><i class="bi bi-geo-alt"></i> Find Nearest Branch</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-home">
+                                            <span class="promo-tag">Special Scheme</span>
+                                            <h5 class="promo-heading">Dream Home Loan</h5>
+                                            <p class="promo-desc">Interest rates starting at just <strong>8.45%*
+                                                    p.a.</strong> Apply online for faster processing.</p>
+                                            <a href="#" class="promo-action-btn">Apply Now <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 2. Personal Loan -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Personal Loan</span>
+                                <span class="menu-desc">Quick & Instant Cash</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-heart-pulse"></i> Medical Emergency Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-mortarboard"></i> Higher Education Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-airplane"></i> Travel & Holiday Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-gift"></i> Wedding / Festive Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-wallet2"></i> Debt Consolidation</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> Personal Loan
+                                                    Calculator</a></li>
+                                            <li><a href="#"><i class="bi bi-lightning"></i> Instant Eligibility
+                                                    Check</a></li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-check"></i> Paperless
+                                                    Approval</a></li>
+                                            <li><a href="#"><i class="bi bi-file-zip"></i> Document Checklist</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-percent"></i> Interest Rates & Charges</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-shield-check"></i> Safe & Secure Lending</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-chat-left-text"></i> Live Chat Support</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-personal">
+                                            <span class="promo-tag">Zero Collateral</span>
+                                            <h5 class="promo-heading">Instant Personal Loan</h5>
+                                            <p class="promo-desc">Disbursal in 24 hours. Rates starting from
+                                                <strong>10.49%* p.a.</strong></p>
+                                            <a href="#" class="promo-action-btn">Apply Now <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 3. Business Loan -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Business Loan</span>
+                                <span class="menu-desc">Growth & Expansion</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-shop"></i> MSME / SME Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-cash-stack"></i> Working Capital Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-graph-up-arrow"></i> Business Expansion
+                                                    Term</a></li>
+                                            <li><a href="#"><i class="bi bi-gender-female"></i> Women Entrepreneur
+                                                    Schemes</a></li>
+                                            <li><a href="#"><i class="bi bi-aspect-ratio"></i> Collateral-Free Loans</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> Business Loan EMI Tool</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-ruled"></i> GST & Tax
+                                                    Worksheets</a></li>
+                                            <li><a href="#"><i class="bi bi-clipboard-check"></i> Eligibility
+                                                    Criteria</a></li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-arrow-up"></i> Document Upload
+                                                    Portal</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> MSME Loan FAQs</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-award"></i> Benefits of Registration</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-telephone-inbound"></i> Speak with SME
+                                                    Expert</a></li>
+                                            <li><a href="#"><i class="bi bi-geo-alt"></i> Find SME Center</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-business">
+                                            <span class="promo-tag">SME Growth</span>
+                                            <h5 class="promo-heading">Power Your Business</h5>
+                                            <p class="promo-desc">Unsecured loans up to <strong>50 Lakhs</strong> with
+                                                minimum documentation.</p>
+                                            <a href="#" class="promo-action-btn">Grow Now <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 4. Machinery Loan -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Machinery Loan</span>
+                                <span class="menu-desc">Equipment Finance</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-cpu"></i> New Machinery Finance</a></li>
+                                            <li><a href="#"><i class="bi bi-recycle"></i> Pre-owned Equipment Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-arrow-repeat"></i> Technology
+                                                    Upgradation</a></li>
+                                            <li><a href="#"><i class="bi bi-bank"></i> Refinance on Machinery</a></li>
+                                            <li><a href="#"><i class="bi bi-printer"></i> Industrial Print &
+                                                    Packaging</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> Machinery Loan
+                                                    Calculator</a></li>
+                                            <li><a href="#"><i class="bi bi-lightning-charge"></i> Instant Valuation
+                                                    Support</a></li>
+                                            <li><a href="#"><i class="bi bi-shield-shaded"></i> Insurance Protection
+                                                    Plan</a></li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-check"></i> Eligibility
+                                                    Criteria</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-gear"></i> Supported Industries</a></li>
+                                            <li><a href="#"><i class="bi bi-coin"></i> Schemes & Interest Rates</a></li>
+                                            <li><a href="#"><i class="bi bi-telephone-inbound"></i> Request Technical
+                                                    Consultation</a></li>
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-machinery">
+                                            <span class="promo-tag">Industry 4.0</span>
+                                            <h5 class="promo-heading">Upgrade Your Plant</h5>
+                                            <p class="promo-desc">Finance up to <strong>90%</strong> of the machinery
+                                                cost. Special rates from 9.99%* p.a.</p>
+                                            <a href="#" class="promo-action-btn">Apply Online <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 5. Loan Against Property -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Loan Against Property</span>
+                                <span class="menu-desc">Secured Long Term Loans</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-house-lock"></i> Residential Property
+                                                    Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-building-lock"></i> Commercial Property
+                                                    Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-signpost-2"></i> Plot / Land Lease Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-journal-check"></i> Lease Rental Discounting
+                                                    (LRD)</a></li>
+                                            <li><a href="#"><i class="bi bi-briefcase"></i> LAP for Business Needs</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> LAP EMI Calculator</a></li>
+                                            <li><a href="#"><i class="bi bi-database-check"></i> Property Value
+                                                    Evaluator</a></li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-check"></i> Required
+                                                    Documents</a></li>
+                                            <li><a href="#"><i class="bi bi-percent"></i> Interest Rate Trends</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-hand-thumbs-up"></i> Advantages of LAP</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> Property Title
+                                                    FAQs</a></li>
+                                            <li><a href="#"><i class="bi bi-telephone-inbound"></i> Request Doorstep
+                                                    Assistance</a></li>
+                                            <li><a href="#"><i class="bi bi-geo-alt"></i> Find Nearest Hub</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-lap">
+                                            <span class="promo-tag">High Value</span>
+                                            <h5 class="promo-heading">Leverage Property Value</h5>
+                                            <p class="promo-desc">Get up to 70% value of your property. Longer tenure up
+                                                to 15 years.</p>
+                                            <a href="#" class="promo-action-btn">Apply Now <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 6. Two Wheeler Loan -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Two Wheeler Loan</span>
+                                <span class="menu-desc">Ride Your Dream Bike</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-scooter"></i> Standard Scooter / Bike</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-lightning-charge"></i> Electric 2-Wheeler
+                                                    Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-speedometer"></i> Superbike & Cruiser
+                                                    Finance</a></li>
+                                            <li><a href="#"><i class="bi bi-shield-plus"></i> Pre-owned Bike Loan</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> Two Wheeler EMI Tool</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-lightning"></i> 5-Min Paperless Approval</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-geo"></i> Dealer Locator</a></li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-check"></i> Documents
+                                                    Checklist</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-gift"></i> Special Festive Offers</a></li>
+                                            <li><a href="#"><i class="bi bi-wallet"></i> Downpayment Options</a></li>
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-twowheeler">
+                                            <span class="promo-tag">Super Fast</span>
+                                            <h5 class="promo-heading">Ride Home Today</h5>
+                                            <p class="promo-desc">Up to 100% on-road funding. Instant online approval
+                                                with minimal docs.</p>
+                                            <a href="#" class="promo-action-btn">Get Approved <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 7. Four Wheeler Loan -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Four Wheeler Loan</span>
+                                <span class="menu-desc">New & Used Cars</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-car-front"></i> New Car Financing</a></li>
+                                            <li><a href="#"><i class="bi bi-car-front-fill"></i> Pre-owned Car
+                                                    Finance</a></li>
+                                            <li><a href="#"><i class="bi bi-lightning-charge"></i> Electric Vehicle (EV)
+                                                    Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-gem"></i> Luxury Car Loan</a></li>
+                                            <li><a href="#"><i class="bi bi-arrow-left-right"></i> Loan Against Existing
+                                                    Car</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> Car Loan EMI Calculator</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-patch-check"></i> Pre-Approved Car Loan</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-clipboard-data"></i> Used Car Valuation
+                                                    Tool</a></li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-pdf"></i> Required
+                                                    Documents</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-percent"></i> Processing Fees & Charges</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> Car Financing FAQs</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-telephone-inbound"></i> Request a
+                                                    Representative Call</a></li>
+                                            <li><a href="#"><i class="bi bi-geo-alt"></i> Partner Car Dealers</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-fourwheeler">
+                                            <span class="promo-tag">90% Funding</span>
+                                            <h5 class="promo-heading">Drive Your Dream Car</h5>
+                                            <p class="promo-desc">Interest rates starting from <strong>8.75%*
+                                                    p.a.</strong> with tenure up to 7 years.</p>
+                                            <a href="#" class="promo-action-btn">Apply Now <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 8. Commercial Vehicle Loan -->
+                        <li class="menu-item has-mega">
+                            <a href="#" class="menu-link">
+                                <span class="menu-title">Commercial Vehicle Loan</span>
+                                <span class="menu-desc">Light & Heavy Vehicles</span>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Loan Options</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-truck"></i> Heavy Commercial Vehicles</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-truck-flatbed"></i> Light Commercial
+                                                    Vehicles</a></li>
+                                            <li><a href="#"><i class="bi bi-bus-front"></i> Bus & Passenger
+                                                    Transport</a></li>
+                                            <li><a href="#"><i class="bi bi-buildings"></i> Fleet Owner Financing
+                                                    Schemes</a></li>
+                                            <li><a href="#"><i class="bi bi-arrow-up-right-square"></i> Multi-Axle
+                                                    Vehicle Finance</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Tools & Calculators</h4>
+                                        <ul class="col-links">
+                                            <li><a href="emi-calculator.html"><i class="bi bi-calculator"></i> CV Loan EMI Calculator</a>
+                                            </li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-spreadsheet"></i> Custom
+                                                    Repayment Schedule</a></li>
+                                            <li><a href="#"><i class="bi bi-database-check"></i> Fleet Size
+                                                    Assessment</a></li>
+                                            <li><a href="#"><i class="bi bi-file-earmark-check"></i> Eligibility
+                                                    Criteria</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="col-title">Help & Info</h4>
+                                        <ul class="col-links">
+                                            <li><a href="#"><i class="bi bi-shield-check"></i> Loan Schemes & Interest
+                                                    Rates</a></li>
+                                            <li><a href="#"><i class="bi bi-telephone-inbound"></i> Talk to Fleet
+                                                    Specialist</a></li>
+                                            <li><a href="#"><i class="bi bi-geo-alt"></i> Branch Locator
+                                                    (Rural/Urban)</a></li>
+                                            <li><a href="#"><i class="bi bi-question-circle"></i> FAQs</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col promo-col">
+                                        <div class="promo-card p-card-commercial">
+                                            <span class="promo-tag">Fleet Support</span>
+                                            <h5 class="promo-heading">Grow Your Transport Fleet</h5>
+                                            <p class="promo-desc">Structured EMIs to match your business cycles. Rates
+                                                from 9.50%* p.a.</p>
+                                            <a href="#" class="promo-action-btn">Explore Deals <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= EMI CALCULATOR SECTION ================= -->
+    <section class="emi-calculator-section" id="emi-calculator">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-tag">Calculate Your Monthly Outgoings</span>
+                <h2 class="section-title">Interactive EMI Calculator</h2>
+                <div class="title-bar-separator"></div>
+                <p class="section-subtitle">Use our visual tool to estimate your monthly installments, total interest, and see a year-wise amortization break-up.</p>
+            </div>
+
+            <div class="calculator-card">
+                <!-- Loan Type Tabs -->
+                <div class="calculator-tabs">
+                    <button class="tab-btn active" data-loan-type="home"><i class="bi bi-house"></i> Home Loan</button>
+                    <button class="tab-btn" data-loan-type="personal"><i class="bi bi-person"></i> Personal Loan</button>
+                    <button class="tab-btn" data-loan-type="business"><i class="bi bi-briefcase"></i> Business Loan</button>
+                </div>
+
+                <div class="calculator-body">
+                    <!-- Left: Sliders and Inputs -->
+                    <div class="inputs-column">
+                        <!-- Loan Amount -->
+                        <div class="input-wrapper mb-4">
+                            <div class="input-label-row">
+                                <span class="input-label">Loan Amount</span>
+                                <div class="input-numeric-wrapper">
+                                    <span class="currency-prefix">₹</span>
+                                    <input type="number" id="loan-amount-input" class="numeric-input" min="100000" max="50000000" step="50000" value="5000000">
+                                </div>
+                            </div>
+                            <input type="range" id="loan-amount-slider" class="range-slider" min="100000" max="50000000" step="50000" value="5000000">
+                            <div class="slider-bounds">
+                                <span>₹1 L</span>
+                                <span>₹5 Cr</span>
+                            </div>
+                        </div>
+
+                        <!-- Interest Rate -->
+                        <div class="input-wrapper mb-4">
+                            <div class="input-label-row">
+                                <span class="input-label">Interest Rate</span>
+                                <div class="input-numeric-wrapper">
+                                    <input type="number" id="interest-rate-input" class="numeric-input" min="5" max="25" step="0.05" value="8.5">
+                                    <span class="currency-suffix">%</span>
+                                </div>
+                            </div>
+                            <input type="range" id="interest-rate-slider" class="range-slider" min="5" max="25" step="0.05" value="8.5">
+                            <div class="slider-bounds">
+                                <span>5%</span>
+                                <span>25%</span>
+                            </div>
+                        </div>
+
+                        <!-- Loan Tenure -->
+                        <div class="input-wrapper mb-4">
+                            <div class="input-label-row">
+                                <span class="input-label">Loan Tenure</span>
+                                <div class="input-numeric-wrapper">
+                                    <input type="number" id="loan-tenure-input" class="numeric-input" min="1" max="30" step="1" value="20">
+                                    <span class="currency-suffix">Yrs</span>
+                                </div>
+                            </div>
+                            <input type="range" id="loan-tenure-slider" class="range-slider" min="1" max="30" step="1" value="20">
+                            <div class="slider-bounds">
+                                <span>1 Yr</span>
+                                <span>30 Yrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Outputs and Charts -->
+                    <div class="outputs-column">
+                        <div class="results-summary">
+                            <div class="emi-result-box">
+                                <span class="emi-label">Monthly EMI Payment</span>
+                                <span class="emi-amount" id="monthly-emi-output">₹0</span>
+                            </div>
+                            
+                            <div class="breakdown-details mt-4">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-color-box principal-color"></span>
+                                    <span class="breakdown-label">Principal Amount</span>
+                                    <span class="breakdown-val" id="principal-amount-output">₹0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-color-box interest-color"></span>
+                                    <span class="breakdown-label">Total Interest Payable</span>
+                                    <span class="breakdown-val" id="total-interest-output">₹0</span>
+                                </div>
+                                <div class="breakdown-item total-payable-item pt-2 border-top mt-2">
+                                    <span class="breakdown-label font-weight-bold">Total Amount Payable</span>
+                                    <span class="breakdown-val font-weight-bold" id="total-payable-output">₹0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="chart-wrapper">
+                            <svg class="donut-chart" viewBox="0 0 100 100">
+                                <circle class="donut-bg" cx="50" cy="50" r="40" fill="transparent" stroke="#f1f3f5" stroke-width="12"></circle>
+                                <circle class="donut-segment principal-segment" cx="50" cy="50" r="40" fill="transparent" stroke="#10458c" stroke-width="12" stroke-dasharray="0 100" stroke-dashoffset="0"></circle>
+                                <circle class="donut-segment interest-segment" cx="50" cy="50" r="40" fill="transparent" stroke="#ef3438" stroke-width="12" stroke-dasharray="0 100" stroke-dashoffset="0"></circle>
+                                <g class="chart-text">
+                                    <text x="50" y="47" class="chart-pct-val" id="chart-interest-pct">0%</text>
+                                    <text x="50" y="60" class="chart-pct-label">Interest</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amortization Toggle -->
+                <div class="calculator-footer text-center pt-4 border-top">
+                    <button class="amortization-toggle-btn" id="toggle-schedule-btn">
+                        <span>Show Amortization Schedule</span> <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Amortization Panel -->
+            <div class="amortization-wrapper" id="amortization-panel">
+                <h3 class="schedule-title mb-4"><i class="bi bi-calendar-range"></i> Year-Wise Repayment Schedule</h3>
+                <div class="table-responsive">
+                    <table class="table amortization-table text-center">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Opening Balance</th>
+                                <th>Principal Paid</th>
+                                <th>Interest Paid</th>
+                                <th>Total Repaid</th>
+                                <th>Closing Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="amortization-table-body">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assests/js/script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
