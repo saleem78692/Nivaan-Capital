@@ -1,74 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.querySelector(".mobile-menu-toggle");
-  const mainNav = document.querySelector(".main-navigation");
-
-  if (!toggleBtn || !mainNav) return;
-
-  // Create and append mobile nav overlay dynamically to keep HTML clean
-  const overlay = document.createElement("div");
-  overlay.className = "mobile-nav-overlay";
-  document.body.appendChild(overlay);
-
-  // Toggle menu visibility on click
-  function toggleMobileMenu() {
-    toggleBtn.classList.toggle("active");
-    mainNav.classList.toggle("active");
-    overlay.classList.toggle("active");
-
-    // Prevent body scrolling when menu is active
-    if (mainNav.classList.contains("active")) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }
-
-  toggleBtn.addEventListener("click", toggleMobileMenu);
-  overlay.addEventListener("click", toggleMobileMenu);
-
-  // Accordion functionality for mega menu dropdowns on mobile
-  const menuLinks = document.querySelectorAll(
-    ".menu-item.has-mega > .menu-link",
-  );
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      // Only apply click-to-expand on mobile/tablet viewports
-      if (window.innerWidth < 1200) {
-        e.preventDefault();
-        const currentItem = this.parentElement;
-        const isAlreadyActive =
-          currentItem.classList.contains("active-dropdown");
-
-        // Collapse all other dropdowns first
-        document.querySelectorAll(".menu-item.has-mega").forEach((item) => {
-          if (item !== currentItem) {
-            item.classList.remove("active-dropdown");
-          }
-        });
-
-        // Toggle current dropdown
-        if (isAlreadyActive) {
-          currentItem.classList.remove("active-dropdown");
-        } else {
-          currentItem.classList.add("active-dropdown");
-        }
-      }
-    });
-  });
-
-  // Close mobile menu if window is resized above mobile breakpoint
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1200) {
-      if (mainNav.classList.contains("active")) {
-        toggleMobileMenu();
-      }
-      // Clear mobile-specific active dropdown classes
-      document.querySelectorAll(".menu-item.has-mega").forEach((item) => {
-        item.classList.remove("active-dropdown");
-      });
-    }
-  });
-
   // =========================================================================
   // EMI CALCULATOR LOGIC
   // =========================================================================
@@ -417,7 +346,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Calculator
     calculateEMI();
   }
-});
 
 /* =========================================================
    PRODUCT DATA
@@ -1371,32 +1299,32 @@ window.addEventListener("load", function () {
 
 // Eligibility Filter check 
 
- function showDocuments(type, button) {
+function showDocuments(type, button) {
 
-        // Hide all panels
-        document.querySelectorAll('.document-panel')
-            .forEach(function(panel) {
+  // Hide all panels
+  document.querySelectorAll('.document-panel')
+    .forEach(function (panel) {
 
-                panel.classList.remove('active');
+      panel.classList.remove('active');
 
-            });
-
-
-        // Remove active from buttons
-        document.querySelectorAll('.document-tab')
-            .forEach(function(tab) {
-
-                tab.classList.remove('active');
-
-            });
+    });
 
 
-        // Show selected panel
-        document.getElementById(type)
-            .classList.add('active');
+  // Remove active from buttons
+  document.querySelectorAll('.document-tab')
+    .forEach(function (tab) {
+
+      tab.classList.remove('active');
+
+    });
 
 
-        // Active selected button
-        button.classList.add('active');
+  // Show selected panel
+  document.getElementById(type)
+    .classList.add('active');
 
-    }
+
+  // Active selected button
+  button.classList.add('active');
+
+}

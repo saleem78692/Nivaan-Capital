@@ -1,74 +1,99 @@
 /* =====================================================
    BANNER
 ===================================================== */
+/* =========================================
+   BANNER
+========================================= */
+
 .banner {
-    width: 100%;
     position: relative;
+    width: 100%;
+    height: 380px;
     overflow: hidden;
+    background: #101827;
 }
+
+
+/* =========================================
+   BANNER IMAGE
+========================================= */
 
 .banner-img {
+    position: absolute;
+    inset: 0;
+
     width: 100%;
-    height: auto;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
     display: block;
-    object-fit: contain;
+
+    transform: scale(1.01);
+
+    transition: transform 1s ease;
 }
 
-/* =====================================================
-   NAVIGATION WRAPPER
-===================================================== */
+
+/* Slight zoom */
+
+.banner:hover .banner-img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.banner::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            rgba(7, 15, 29, 0.05) 30%,
+            rgba(7, 15, 29, 0.25) 55%,
+            rgba(7, 15, 29, 0.88) 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BOTTOM NAV WRAPPER
+========================================= */
 
 .redirect-wrapper {
-    width: 100%;
 
-    position: relative;
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     z-index: 5;
 
-    background: rgba(14, 46, 89, 0.96);
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.redirect-btn {
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
     display: flex;
-
-    align-items: stretch;
 
     justify-content: center;
 
-    gap: 0;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
+    padding: 25px 20px 28px;
 }
 
 
-.redirect-btn::-webkit-scrollbar {
-    display: none;
-}
+/* =========================================
+   NAVIGATION BOX
+========================================= */
 
+.redirect-btn {
 
-/* =====================================================
-   NAV LINK
-===================================================== */
+    width: min(1050px, 100%);
 
-.banner-nav {
-    position: relative;
-
-    min-height: 58px;
-
-    padding: 0 28px;
+    min-height: 70px;
 
     display: flex;
 
@@ -76,1198 +101,1158 @@
 
     justify-content: center;
 
-    color: #fff;
+    gap: 5px;
 
-    font-size: 15px;
+    padding: 7px;
 
-    font-weight: 500;
+    background:
+        rgba(15, 25, 42, 0.78);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.banner-nav {
+
+    position: relative;
+
+    min-height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 20px;
+
+    color: rgba(255, 255, 255, 0.82);
 
     text-decoration: none;
 
+    font-size: 14px;
+
+    font-weight: 500;
+
     white-space: nowrap;
 
-    border-bottom: 3px solid transparent;
+    border-radius: 9px;
 
     transition:
-        color .3s ease,
-        background .3s ease,
-        border-color .3s ease;
+        color 0.3s ease,
+        background 0.3s ease;
 }
 
 
-/* =====================================================
-   HOVER
-===================================================== */
+/* =========================================
+   NAV HOVER
+========================================= */
 
 .banner-nav:hover {
-    color: #fff;
 
-    background: linear-gradient(180deg,
-            rgba(40, 40, 40, 0.95),
-            rgba(20, 20, 20, 0.95));
+    color: #ffffff;
 
-    border-bottom-color: #ed1c24;
+    background:
+        rgba(255, 255, 255, 0.07);
+
 }
 
 
-/* =====================================================
-   ACTIVE
-===================================================== */
+/* =========================================
+   ACTIVE LINK
+========================================= */
 
 .banner-nav.active {
-    color: #fff;
 
-    background: linear-gradient(180deg,
-            rgba(40, 40, 40, 0.95),
-            rgba(20, 20, 20, 0.95));
+    color: #ffffff;
 
-    border-bottom-color: #ed1c24;
+    background:
+        rgba(255, 255, 255, 0.08);
 }
 
 
-/* =====================================================
-   ACTIVE TOP LINE
-===================================================== */
+/* Active golden line */
 
-.banner-nav.active::before {
+.banner-nav.active::after {
+
     content: "";
 
     position: absolute;
 
-    left: 50%;
+    left: 20px;
+    right: 20px;
 
-    bottom: -3px;
+    bottom: 5px;
 
-    transform: translateX(-50%);
+    height: 2px;
 
-    width: 45px;
+    border-radius: 10px;
 
-    height: 3px;
+    background: #d9a441;
 
-    background: #ed1c24;
+    box-shadow:
+        0 0 10px rgba(217, 164, 65, 0.65);
 }
 
+
+/* =========================================
+   APPLY LOAN BUTTON
+========================================= */
+
 .loan-form {
+
+    min-height: 52px;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 10px;
 
-    padding: 12px 24px;
+    margin-left: 8px;
 
-    background: #ed1c24;
-    color: #fff;
+    padding: 0 23px;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #e0ad48,
+            #b77c1e);
 
     text-decoration: none;
 
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px;
 
-    border-radius: 3px;
+    font-weight: 700;
 
-    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    box-shadow:
+        0 7px 20px rgba(190, 133, 35, 0.32);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
+
+/* =========================================
+   APPLY HOVER
+========================================= */
+
 .loan-form:hover {
-    background: #003b78;
-    color: #fff;
+
+    color: #ffffff;
 
     transform: translateY(-2px);
 
-    box-shadow: 0 6px 15px rgba(0, 59, 120, 0.25);
+    background:
+        linear-gradient(135deg,
+            #efc15f,
+            #c68b29);
+
+    box-shadow:
+        0 11px 28px rgba(190, 133, 35, 0.45);
 }
+
+
+/* =========================================
+   ARROW
+========================================= */
 
 .loan-form i {
-    transition: transform 0.3s ease;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.3s ease;
 }
+
 
 .loan-form:hover i {
+
     transform: translateX(5px);
-}
-
-
-/* =====================================================
-   LARGE DESKTOP
-===================================================== */
-
-@media (min-width: 1400px) {
-
-
-    .redirect-btn {
-        width: 85%;
-
-        max-width: 1250px;
-    }
-
-    .banner-nav {
-        padding: 0 32px;
-
-        font-size: 16px;
-    }
 
 }
 
 
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (max-width: 1199px) {
-
-
-    .redirect-btn {
-        width: 94%;
-    }
-
-    .banner-nav {
-        padding: 0 22px;
-
-        font-size: 14px;
-    }
-
-}
-
-
-/* =====================================================
+/* =========================================
    TABLET
-===================================================== */
+========================================= */
 
 @media (max-width: 991px) {
 
-
-    .redirect-btn {
-        width: 100%;
-
-        justify-content: flex-start;
+    .banner {
+        height: 250px;
     }
-
-    .banner-nav {
-        min-height: 55px;
-
-        padding: 0 20px;
-
-        font-size: 14px;
-    }
-
-}
-
-
-/* =====================================================
-   SMALL TABLET
-===================================================== */
-
-@media (max-width: 767px) {
-
 
     .redirect-wrapper {
-        background: #0e2e59;
-
-        box-shadow:
-            0 -4px 15px rgba(0, 0, 0, .15);
+        padding: 18px 15px 20px;
     }
 
     .redirect-btn {
-        width: 100%;
-
-        justify-content: flex-start;
-
-        padding: 0 8px;
-    }
-
-    .banner-nav {
-        min-height: 52px;
-
-        padding: 0 17px;
-
-        font-size: 13px;
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 576px) {
-
-    .redirect-wrapper {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .redirect-btn {
-        width: 100%;
-
-        padding: 0;
 
         justify-content: flex-start;
 
         overflow-x: auto;
 
-        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        padding: 6px;
+
+    }
+
+    .redirect-btn::-webkit-scrollbar {
+        display: none;
     }
 
     .banner-nav {
-        flex: 0 0 auto;
-
-        min-height: 50px;
-
         padding: 0 16px;
-
-        font-size: 13px;
     }
 
-    .banner-nav.active::before {
-        width: 35px;
+    .loan-form {
+        padding: 0 19px;
     }
 
 }
 
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+/* =========================================
+   MOBILE
+========================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 767px) {
+
+    .banner {
+
+        height: 250px;
+
+    }
+
+
+    .banner-img {
+
+        object-position: center;
+
+    }
+
+
+    .redirect-wrapper {
+
+        padding:
+            12px 10px 15px;
+
+    }
+
+
+    .redirect-btn {
+
+        width: 100%;
+
+        min-height: 58px;
+
+        justify-content: flex-start;
+
+        gap: 2px;
+
+        border-radius: 11px;
+
+        padding: 5px;
+
+    }
+
+
     .banner-nav {
-        min-height: 48px;
 
-        padding: 0 14px;
+        min-height: 46px;
+
+        padding: 0 13px;
 
         font-size: 12px;
+
+    }
+
+
+    .banner-nav.active::after {
+
+        left: 14px;
+        right: 14px;
+
+        bottom: 4px;
+
+    }
+
+
+    .loan-form {
+
+        min-height: 46px;
+
+        padding: 0 15px;
+
+        margin-left: 3px;
+
+        font-size: 12px;
+
     }
 
 }
 
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .banner {
+
+        height: 180px;
+        object-fit: contain !important;
+
+    }
+
+    .redirect-wrapper {
+
+        padding:
+            8px 8px 12px;
+
+    }
+
+    .redirect-btn {
+
+        backdrop-filter: blur(14px);
+
+    }
+
+    .banner-nav {
+
+        font-size: 11px;
+
+        padding: 0 11px;
+
+    }
+
+    .loan-form {
+
+        font-size: 11px;
+
+        padding: 0 13px;
+
+    }
+
+}
 
 
 /* Home Loan Ovverview section start  */
 
+    /* =========================================
+   LOAN SECTION
+========================================= */
+
 .loan-section {
-    width: 100%;
-    min-height: 100vh;
-    padding-top: 80px;
-    display: flex;
-    align-items: center;
+    background: #f8f9fb;
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.loan-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(212, 154, 40, 0.07);
+    top: -180px;
+    right: -150px;
+}
+
+.loan-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   LEFT CARD
+========================================= */
+
+.loan-main-card {
     background: #fff;
+    border-radius: 22px;
+    padding: 42px;
+    border: 1px solid #eee;
+    box-shadow: 0 15px 45px rgba(20, 30, 50, 0.07);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.35s ease;
+}
+
+.loan-main-card::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+
+    background: rgba(212, 154, 40, 0.08);
+
+    right: -70px;
+    bottom: -80px;
+}
+
+.loan-main-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 55px rgba(20, 30, 50, 0.11);
 }
 
 
-.loan-container {
-    width: 100%;
-    max-width: 1500px;
-    margin: auto;
-    padding: 0 35px;
+/* =========================================
+   BADGE
+========================================= */
+
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 17px;
+
+    border-radius: 50px;
+
+    color: #b27c12;
+    background: rgba(212, 154, 40, 0.10);
+
+    border: 1px solid rgba(212, 154, 40, 0.25);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 
-
-
-
-/* =================================================
-           LEFT CONTENT
-        ================================================= */
-
-.loan-content {
-    height: 100%;
-
-    padding: 15px 45px 20px 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-/* =================================================
-           HEADING
-        ================================================= */
+/* =========================================
+   MAIN HEADING
+========================================= */
 
 .loan-heading {
-    position: relative;
+    color: #172033;
 
-    display: inline-block;
+    font-size: clamp(36px, 4vw, 52px);
 
-    width: fit-content;
+    font-weight: 800;
 
-    color: #24466d;
+    line-height: 1.08;
 
-    font-size: 30px;
+    letter-spacing: -1px;
 
-    font-weight: 500;
+    margin-bottom: 22px;
+}
 
-    margin-bottom: 25px;
+.loan-heading span {
+    display: block;
+    color: #d49a28;
 }
 
 
-.loan-heading::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -8px;
-
-    width: 30px;
-    height: 2px;
-
-    background: #ed1c24;
-}
-
-
-/* =================================================
-           DESCRIPTION
-        ================================================= */
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .loan-description {
-    font-size: 18px;
-
-    line-height: 1.55;
-
-    color: #111;
-
-    margin-bottom: 42px;
-
-    max-width: 1100px;
-}
-
-
-/* =================================================
-           SUB HEADING
-        ================================================= */
-
-.loan-subheading {
-    color: #ed1c24;
-
-    font-size: 25px;
-
-    font-weight: 400;
-
-    margin-bottom: 20px;
-}
-
-
-/* =================================================
-           LOAN LIST
-        ================================================= */
-
-.loan-list {
-    list-style: none;
-
-    padding: 0;
-    margin: 0;
-}
-
-
-.loan-list li {
-    position: relative;
-
-    padding-left: 25px;
-
-    margin-bottom: 23px;
-
-    color: #24466d;
-
-    font-size: 18px;
-
-    font-weight: 600;
-
-    line-height: 1.4;
-}
-
-
-.loan-list li::before {
-    content: "";
-
-    position: absolute;
-
-    left: 7px;
-    top: 9px;
-
-    width: 6px;
-    height: 6px;
-
-    background: #ed1c24;
-}
-
-
-/* =================================================
-           RIGHT SIDEBAR
-        ================================================= */
-
-.loan-sidebar {
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 25px;
-
-    justify-content: center;
-}
-
-
-/* =================================================
-           SUPPORT FORM
-        ================================================= */
-
-.support-box {
-    width: 100%;
-
-    background: #12468b;
-
-    padding: 22px 25px 27px;
-
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, .10);
-}
-
-
-.support-title {
-    color: #fff;
-
-    font-size: 25px;
-
-    font-weight: 400;
-
-    margin-bottom: 25px;
-}
-
-
-/* =================================================
-           FORM INPUT
-        ================================================= */
-
-.support-input {
-    width: 100%;
-
-    height: 52px;
-
-    border: none;
-
-    border-radius: 2px;
-
-    padding: 0 17px;
-
-    margin-bottom: 24px;
-
-    background: #fff;
-
-    color: #333;
+    color: #667085;
 
     font-size: 15px;
 
-    outline: none;
+    line-height: 1.8;
+
+    margin-bottom: 16px;
+
+    max-width: 620px;
 }
 
 
-.support-input::placeholder {
-    color: #777;
+/* =========================================
+   STATS
+========================================= */
+
+.loan-stats {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 30px;
 }
 
+.stat-box {
+    display: flex;
+    align-items: center;
 
-.support-input:focus {
-    box-shadow:
-        0 0 0 2px rgba(237, 28, 36, .5);
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    background: #fffaf0;
+
+    border: 1px solid #f0dfba;
+
+    border-radius: 12px;
 }
 
+.stat-box > i {
+    width: 42px;
+    height: 42px;
 
-/* =================================================
-           CALLBACK BUTTON
-        ================================================= */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.callback-btn {
-    position: relative;
+    border-radius: 10px;
 
-    width: 100%;
-
-    height: 57px;
-
-    border: none;
-
-    background: #111;
+    background: #d49a28;
 
     color: #fff;
 
     font-size: 17px;
+}
 
-    font-weight: 700;
+.stat-box strong {
+    display: block;
 
-    display: flex;
+    color: #202838;
 
-    align-items: center;
+    font-size: 15px;
+}
 
-    justify-content: center;
+.stat-box small {
+    color: #7b8190;
 
-    cursor: pointer;
-
-    overflow: hidden;
-
-    transition: all .3s ease;
+    font-size: 12px;
 }
 
 
-.callback-btn::before {
+/* =========================================
+   RIGHT CARD
+========================================= */
+
+.solutions-card {
+    background: #081a40;
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    box-shadow: 0 15px 45px rgba(20, 30, 50, 0.13);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.solutions-card::before {
     content: "";
 
     position: absolute;
 
-    left: 0;
-    top: 0;
+    width: 230px;
+    height: 230px;
 
-    width: 5px;
-    height: 100%;
+    border-radius: 50%;
 
-    background: #ed1c24;
+    background: rgba(212, 154, 40, 0.12);
 
-    transition: width .3s ease;
+    top: -100px;
+    right: -80px;
 }
 
 
-.callback-btn i {
-    position: absolute;
+/* =========================================
+   RIGHT HEADING
+========================================= */
 
-    right: 22px;
+.solutions-heading {
+    position: relative;
+    z-index: 2;
 
-    font-size: 16px;
+    margin-bottom: 24px;
+}
 
-    transition: transform .3s ease;
+.small-title {
+    color: #d49a28;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.small-title i {
+    margin-right: 5px;
+}
+
+.solutions-heading h2 {
+    color: #fff;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 750;
+
+    margin: 10px 0;
+}
+
+.solutions-heading h2 span {
+    color: #d49a28;
+}
+
+.solutions-heading p {
+    color: #b7becb;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+    max-width: 500px;
 }
 
 
-.callback-btn:hover {
-    background: #003b78;
+/* =========================================
+   SOLUTION LIST
+========================================= */
+
+.solution-list {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
 }
 
+.solution-item {
+    display: flex;
 
-.callback-btn:hover::before {
-    width: 100%;
-    opacity: .08;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 14px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 13px;
+
+    transition: 0.3s ease;
 }
 
+.solution-item:hover {
+    background: rgba(212, 154, 40, 0.12);
 
-.callback-btn:hover i {
+    border-color: rgba(212, 154, 40, 0.45);
+
     transform: translateX(5px);
 }
 
 
-/* =================================================
-           PROMO CARD
-        ================================================= */
+/* =========================================
+   SOLUTION ICON
+========================================= */
 
-.promo-card {
-    width: 100%;
+.solution-icon {
+    flex-shrink: 0;
 
-    background: #fff;
+    width: 44px;
+    height: 44px;
 
-    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border: 1px solid #ddd;
+    border-radius: 10px;
 
-    box-shadow:
-        0 2px 8px rgba(0, 0, 0, .12);
+    background: rgba(212, 154, 40, 0.14);
 
-    overflow: hidden;
+    color: #d49a28;
+
+    font-size: 16px;
+}
+
+.solution-item:hover .solution-icon {
+    background: #d49a28;
+    color: #fff;
 }
 
 
-.promo-card img {
-    width: 100%;
+/* =========================================
+   SOLUTION TEXT
+========================================= */
 
-    height: auto;
+.solution-content {
+    flex: 1;
+}
 
-    display: block;
+.solution-content h5 {
+    color: #fff;
 
-    object-fit: cover;
+    font-size: 14px;
+
+    font-weight: 650;
+
+    margin: 0 0 3px;
+}
+
+.solution-content p {
+    color: #aeb6c4;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    margin: 0;
 }
 
 
-/* =================================================
-           LARGE DESKTOP
-        ================================================= */
+/* =========================================
+   ARROW
+========================================= */
 
-@media (min-width: 1400px) {
+.solution-arrow {
+    color: #777f8d;
 
-    .loan-container {
-        max-width: 1550px;
+    font-size: 12px;
 
-        padding: 0 45px;
-    }
+    transition: 0.3s ease;
+}
 
-    .loan-content {
-        padding-right: 60px;
-    }
+.solution-item:hover .solution-arrow {
+    color: #d49a28;
 
-    .loan-heading {
-        font-size: 32px;
-    }
-
-    .loan-description {
-        font-size: 19px;
-    }
-
-    .loan-subheading {
-        font-size: 27px;
-    }
-
-    .loan-list li {
-        font-size: 19px;
-    }
-
+    transform: translateX(4px);
 }
 
 
-/* =================================================
-           LAPTOP
-        ================================================= */
-
-@media (max-width: 1199px) {
-
-    .loan-section {
-        padding: 25px 0;
-    }
-
-    .loan-container {
-        padding: 0 25px;
-    }
-
-    .loan-content {
-        padding-right: 25px;
-    }
-
-    .loan-description {
-        font-size: 16px;
-
-        margin-bottom: 30px;
-    }
-
-    .loan-subheading {
-        font-size: 22px;
-    }
-
-    .loan-list li {
-        font-size: 16px;
-
-        margin-bottom: 18px;
-    }
-
-    .support-box {
-        padding: 20px;
-    }
-
-    .support-title {
-        font-size: 22px;
-    }
-
-}
-
-
-/* =================================================
-           TABLET
-        ================================================= */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 991px) {
 
-    .loan-section {
-        min-height: auto;
-
-        padding: 45px 0;
-    }
-
-    .loan-row {
-        min-height: auto;
-    }
-
-    .loan-content {
-        height: auto;
-
-        padding: 0;
-
-        margin-bottom: 40px;
+    .loan-main-card,
+    .solutions-card {
+        padding: 30px;
     }
 
     .loan-heading {
-        font-size: 30px;
+        font-size: 42px;
     }
 
-    .loan-description {
-        font-size: 17px;
-
-        line-height: 1.6;
+    .solutions-heading h2 {
+        font-size: 27px;
     }
-
-    .loan-sidebar {
-        height: auto;
-
-        max-width: 550px;
-
-        margin: auto;
-    }
-
-    .support-box {
-        padding: 25px;
-    }
-
 }
 
 
-/* =================================================
-           MOBILE
-        ================================================= */
+/* =========================================
+   MOBILE
+========================================= */
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
 
     .loan-section {
-        padding: 30px 0;
+        padding: 15px 0;
     }
 
-    .loan-container {
-        padding: 0 18px;
-    }
-
-    .loan-content {
-        margin-bottom: 30px;
-    }
-
-    .loan-heading {
-        font-size: 26px;
-
-        margin-bottom: 22px;
-    }
-
-    .loan-heading::after {
-        bottom: -7px;
-
-        width: 28px;
-    }
-
-    .loan-description {
-        font-size: 15px;
-
-        line-height: 1.6;
-
-        margin-bottom: 30px;
-
-        text-align: left;
-    }
-
-    .loan-subheading {
-        font-size: 21px;
-
-        line-height: 1.3;
-
-        margin-bottom: 18px;
-    }
-
-    .loan-list li {
-        font-size: 15px;
-
-        line-height: 1.45;
-
-        margin-bottom: 18px;
-
-        padding-left: 20px;
-    }
-
-    .loan-list li::before {
-        left: 3px;
-    }
-
-    .loan-sidebar {
-        gap: 20px;
-    }
-
-    .support-box {
-        padding: 20px 18px 22px;
-    }
-
-    .support-title {
-        font-size: 21px;
-
-        margin-bottom: 20px;
-    }
-
-    .support-input {
-        height: 50px;
-
-        margin-bottom: 18px;
-
-        font-size: 14px;
-    }
-
-    .callback-btn {
-        height: 52px;
-
-        font-size: 15px;
-    }
-
-}
-
-
-/* =================================================
-           SMALL MOBILE
-        ================================================= */
-
-@media (max-width: 400px) {
-
-    .loan-container {
-        padding: 0 15px;
+    .loan-main-card,
+    .solutions-card {
+        padding: 25px 20px;
+        border-radius: 18px;
     }
 
     .loan-heading {
-        font-size: 24px;
+        font-size: 34px;
     }
 
     .loan-description {
         font-size: 14px;
+        line-height: 1.7;
     }
 
-    .loan-subheading {
-        font-size: 19px;
+    .loan-stats {
+        flex-direction: column;
     }
 
-    .loan-list li {
-        font-size: 14px;
-
-        margin-bottom: 16px;
+    .stat-box {
+        width: 100%;
     }
 
-    .support-title {
-        font-size: 19px;
+    .solutions-heading h2 {
+        font-size: 25px;
     }
 
+    .solution-item {
+        padding: 12px;
+    }
+
+    .solution-icon {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Home Loan Ovverview section end */
 
 
-
-/* Feature section start  */
-
 .features-section {
-    width: 100%;
-    /* background: #fff; */
+    position: relative;
+    padding: 80px 0;
+    background: #f7f9fc;
+    overflow: hidden;
 }
+
+/* Soft background decoration */
+.features-section::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(212, 157, 45, 0.08);
+    top: -120px;
+    left: -100px;
+}
+
+.features-section::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgb(7, 60, 139);
+    right: -100px;
+    bottom: -100px;
+}
+
+
+/* ================================
+   SECTION HEADING
+================================ */
 
 .section-heading {
-    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 50px;
 }
-
 
 .section-heading h2 {
-    display: inline-block;
-
-    position: relative;
-
     margin: 0;
-
-    color: #24466d;
-
-    font-size: 30px;
-
-    font-weight: 500;
-
-    line-height: 1.2;
+    color: #101d32;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
-
 
 .section-heading span {
     display: block;
+    width: 70px;
+    height: 4px;
+    margin: 14px auto 0;
+    border-radius: 50px;
+    background: linear-gradient(90deg,
+            #c58a20,
+            #e5b84f);
+    position: relative;
+}
 
-    width: 30px;
-
-    height: 2px;
-
-    background: #ed1c24;
-
-    margin-top: 6px;
+.section-heading span::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #d49a28;
+    border-radius: 50%;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #f7f9fc;
 }
 
 
-/* =========================================
-   CARD
-========================================= */
+/* ================================
+   FEATURE CARD
+================================ */
 
 .feature-card {
-    width: 100%;
+    position: relative;
+    z-index: 2;
 
-    background: #fff;
+    min-height: 205px;
+    padding: 30px 22px;
 
-    border: 1px solid #dedede;
+    background: #ffffff;
+    border: 1px solid rgba(15, 29, 50, 0.08);
+    border-radius: 18px;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 
-    /* padding: 25px 25px 20px;    */
-
-    position: relative;
+    box-shadow:
+        0 8px 25px rgba(15, 29, 50, 0.06);
 
     overflow: hidden;
 
-    transition: all .35s ease;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
 
-/* =========================================
-   HOVER
-========================================= */
+/* Top gold line */
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 4px;
+
+    background: linear-gradient(90deg,
+            #c88d24,
+            #e7bd5b);
+
+    transition: width 0.4s ease;
+}
+
+
+/* Hover */
 
 .feature-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
+
+    border-color: rgba(202, 147, 39, 0.35);
 
     box-shadow:
-        0 10px 25px rgba(0, 0, 0, .10);
+        0 18px 40px rgba(15, 29, 50, 0.12);
+}
 
-    border-color: #d3d3d3;
+.feature-card:hover::before {
+    width: 100%;
 }
 
 
-/* =========================================
+/* ================================
    ICON
-========================================= */
+================================ */
 
 .feature-icon {
-    width: 105px;
-
-    height: 105px;
+    width: 70px;
+    height: 70px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    color: #111;
+    border-radius: 18px;
 
-    font-size: 60px !important;
+    background: linear-gradient(145deg,
+            #fff8e8,
+            #f8e5b7);
 
-    position: relative;
+    color: #b77a14;
 
-    transition: all .35s ease;
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(190, 135, 29, 0.12);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
 }
-
 
 .feature-card:hover .feature-icon {
-    transform: scale(1.08);
+    transform: rotate(-5deg) scale(1.08);
 
-    color: #003b78;
+    background: linear-gradient(145deg,
+            #c58a20,
+            #e4b64d);
+
+    color: #ffffff;
 }
 
 
-/* =========================================
-   RED LINE
-========================================= */
+/* ================================
+   SMALL LINE
+================================ */
 
 .feature-line {
-    width: 125px;
+    width: 35px;
+    height: 3px;
 
-    height: 2px;
+    border-radius: 20px;
 
-    background: #ed1c24;
+    background: #d49a28;
 
-    margin: 8px 0 17px;
+    margin-bottom: 16px;
 
-    transition: all .35s ease;
+    transition:
+        width 0.35s ease;
 }
-
 
 .feature-card:hover .feature-line {
-    width: 145px;
+    width: 60px;
 }
 
 
-/* =========================================
-   TITLE
-========================================= */
+/* ================================
+   CARD HEADING
+================================ */
 
 .feature-card h3 {
-    color: #24466d;
-
-    font-size: 18px;
-
-    font-weight: 400;
-
-    line-height: 1.35;
-
     margin: 0;
 
-    max-width: 230px;
+    color: #17253a;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    line-height: 1.5;
 }
 
 
-/* =========================================
+/* ================================
+   BOOTSTRAP ROW
+================================ */
+
+.features-section .row {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================================
    RESPONSIVE
-========================================= */
-
-
-/* Large Desktop */
-
-@media (min-width: 1400px) {
-
-    .features-section {
-        padding-top: 50px;
-    }
-
-    .feature-card {
-        min-height: 225px;
-    }
-
-    .feature-icon {
-        font-size: 68px;
-    }
-
-}
-
-
-/* Laptop */
+================================ */
 
 @media (max-width: 1199px) {
 
     .features-section {
-        padding: 40px 0 50px;
+        padding: 70px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
     }
 
     .feature-card {
-        min-height: 210px;
-
-        padding: 22px 18px;
+        min-height: 190px;
     }
-
-    .feature-icon {
-        width: 95px;
-        height: 95px;
-
-        font-size: 58px;
-    }
-
-    .feature-line {
-        width: 115px;
-    }
-
-    .feature-card h3 {
-        font-size: 17px;
-    }
-
 }
 
-
-/* Tablet */
 
 @media (max-width: 767px) {
 
     .features-section {
-        padding: 35px 0 45px;
+        padding: 55px 15px;
+    }
+
+    .features-section>.container {
+        padding: 0;
     }
 
     .section-heading {
-        margin-bottom: 20px;
+        margin-bottom: 35px;
     }
 
     .section-heading h2 {
-        font-size: 27px;
+        font-size: 28px;
+    }
+
+    .section-heading span {
+        width: 55px;
     }
 
     .feature-card {
-        min-height: 200px;
-
-        padding: 20px 15px;
+        min-height: 175px;
+        padding: 25px 18px;
+        border-radius: 15px;
     }
 
     .feature-icon {
-        width: 85px;
-        height: 85px;
-
-        font-size: 52px;
-    }
-
-    .feature-line {
-        width: 105px;
-
-        margin: 7px 0 15px;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        border-radius: 15px;
+        margin-bottom: 14px;
     }
 
     .feature-card h3 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
 }
 
 
-/* Mobile */
-
 @media (max-width: 575px) {
 
     .features-section {
-        padding: 30px 15px 40px;
-    }
-
-    .section-heading {
-        text-align: center;
-        margin-bottom: 20px;
+        padding: 45px 12px;
     }
 
     .section-heading h2 {
         font-size: 25px;
     }
 
-    .section-heading span {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .feature-card {
-        min-height: 200px;
-
-        padding: 20px;
+        min-height: 165px;
+        padding: 22px 14px;
     }
 
     .feature-icon {
-        width: 80px;
-        height: 80px;
-
-        font-size: 48px;
-    }
-
-    .feature-line {
-        width: 100px;
+        width: 55px;
+        height: 55px;
+        font-size: 21px;
     }
 
     .feature-card h3 {
-        font-size: 16px;
-
-        max-width: 280px;
-    }
-
-}
-
-
-/* Small Mobile */
-
-@media (max-width: 400px) {
-
-    .features-section {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .feature-card {
-        min-height: 200px;
-    }
-
-    .feature-icon {
-        font-size: 45px;
-    }
-
-    .feature-card h3 {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.45;
     }
 
 }
@@ -1275,514 +1260,1029 @@
 /* Feature section end */
 
 /* EMI calculator and home loan section start  */
+/* =========================================
+   LOAN OPTIONS SECTION
+========================================= */
+
 .loan-options {
-    width: 100%;
-    margin-top: 30px;
-    min-height: 330px;
-
     position: relative;
-
-    padding: 0 0 10px;
-
+    padding: 90px 0;
     overflow: hidden;
+    background: #f5f7fa;
 }
+
+
+/* =========================================
+   DARK BLUE BACKGROUND
+========================================= */
 
 .blue-bg {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
+    height: 58%;
 
-    height: 217px;
-
-    background: #0d4082;
+    background:
+        radial-gradient(circle at 10% 20%,
+            rgba(211, 157, 48, 0.15),
+            transparent 35%),
+        linear-gradient(135deg,
+            #0d1a2d,
+            #142640);
 
     z-index: 0;
 }
 
-.loan-options .container {
-    position: relative;
 
+/* Decorative circles */
+
+.blue-bg::before {
+    content: "";
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+
+    right: -180px;
+    top: -180px;
+}
+
+.blue-bg::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(218, 166, 55, 0.12);
+    border-radius: 50%;
+
+    left: -150px;
+    bottom: -180px;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.loan-section-heading {
+    position: relative;
     z-index: 2;
 
-    padding-top: 151px;
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 45px;
 }
 
+.loan-section-heading span {
+    display: inline-block;
+
+    color: #e1ad42;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.loan-section-heading h2 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.loan-section-heading p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ROW
+========================================= */
 
 .loan-row {
-    align-items: stretch;
+    position: relative;
+    z-index: 2;
 }
+
+
+/* =========================================
+   LOAN CARD
+========================================= */
 
 .loan-card {
     position: relative;
 
-    width: 100%;
-
-    min-height: 170px;
-
-    background: #fff;
-
-    border: 1px solid #dfe4e9;
-
-    border-radius: 7px;
+    min-height: 330px;
 
     display: flex;
-
     align-items: center;
 
     overflow: hidden;
 
     text-decoration: none;
 
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(15, 29, 50, 0.08);
+
     box-shadow:
-        0 4px 12px rgba(0, 0, 0, .04);
+        0 15px 45px rgba(11, 27, 47, 0.12);
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
-
 
 .loan-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-10px);
 
     box-shadow:
-        0 12px 28px rgba(0, 0, 0, .13);
+        0 25px 60px rgba(11, 27, 47, 0.20);
 }
+
+
+/* Gold top line */
+
+.loan-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 5px;
+
+    background: linear-gradient(90deg,
+            #bd8120,
+            #edc15b);
+
+    z-index: 5;
+
+    transition: width 0.4s ease;
+}
+
+.loan-card:hover::before {
+    width: 100%;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
 
 .loan-content {
-    width: 58%;
-
-    padding-left: 53px;
-
     position: relative;
+    z-index: 3;
 
-    z-index: 2;
+    width: 57%;
+
+    padding: 40px 0 40px 40px;
 }
 
+
+/* =========================================
+   ICON
+========================================= */
+
+.loan-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(135deg,
+            #fff6dc,
+            #f4dfaa);
+
+    color: #b77a17;
+
+    font-size: 21px;
+
+    transition: 0.35s ease;
+}
+
+.loan-card:hover .loan-icon {
+    color: #ffffff;
+
+    background: linear-gradient(135deg,
+            #bf8522,
+            #e3b64e);
+
+    transform: scale(1.08) rotate(-5deg);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
 
 .loan-content h2 {
     margin: 0;
 
-    color: #050505;
+    color: #14243a;
 
-    font-size: 39px;
-
-    line-height: 1.08;
-
+    font-size: 25px;
     font-weight: 700;
-}
 
+    line-height: 1.25;
+}
 
 .loan-content h2 span {
     display: block;
 
-    color: #d71920;
+    margin-top: 4px;
 
-    margin-top: 3px;
+    color: #c68c25;
+
+    font-size: 28px;
 }
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.loan-content p {
+    margin: 14px 0 20px;
+
+    max-width: 300px;
+
+    color: #697586;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.loan-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #17263b;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.loan-btn i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #17263b;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    transition: 0.3s ease;
+}
+
+.loan-card:hover .loan-btn {
+    color: #c28722;
+}
+
+.loan-card:hover .loan-btn i {
+    background: #c28722;
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   IMAGE AREA
+========================================= */
 
 .loan-image {
     position: absolute;
 
-    right: 5px;
+    right: -10px;
+    bottom: 0;
 
-    top: 0;
-
-    width: 44%;
-
+    width: 48%;
     height: 100%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
+
+    overflow: hidden;
 }
 
 
-.loan-image img {
-    width: 100%;
+/* =========================================
+   IMAGE CIRCLE
+========================================= */
 
-    height: 100%;
+.image-circle {
+    position: absolute;
+
+    width: 245px;
+    height: 245px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg,
+            #fff4d3,
+            #eac36b);
+
+    opacity: 0.55;
+
+    transition: 0.5s ease;
+}
+
+.loan-card:hover .image-circle {
+    transform: scale(1.12);
+
+    opacity: 0.75;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.loan-image img {
+    position: relative;
+    z-index: 2;
+
+    width: 190px;
+
+    max-height: 245px;
 
     object-fit: contain;
 
-    display: block;
-
     transition:
-        transform .4s ease;
+        transform 0.5s ease;
 }
-
 
 .loan-card:hover .loan-image img {
-    transform: scale(1.05);
-}
-
-.apply-image {
-    right: 0;
-
-    width: 47%;
-}
-
-.demo-section {
-    min-height: 400px;
-
-    padding: 80px 20px;
-
-    text-align: center;
-
-    background: #f7f8fa;
+    transform: scale(1.08) translateY(-6px);
 }
 
 
-.demo-section h2 {
-    color: #0d4082;
+/* =========================================
+   APPLY CARD DIFFERENCE
+========================================= */
 
-    font-size: 32px;
+.apply-image .image-circle {
+    background:
+        linear-gradient(135deg,
+            #e8f0fa,
+            #c7d9ed);
 }
 
-@media (min-width: 1400px) {
 
-    .loan-options .container {
-        max-width: 1500px;
-    }
-
-    .loan-content h2 {
-        font-size: 40px;
-    }
-
-}
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 1199px) {
 
     .loan-options {
+        padding: 75px 0;
+    }
+
+    .loan-section-heading h2 {
+        font-size: 34px;
+    }
+
+    .loan-card {
         min-height: 310px;
     }
 
-    .blue-bg {
-        height: 200px;
-    }
-
-    .loan-options .container {
-        padding-top: 135px;
-    }
-
-    .loan-card {
-        min-height: 160px;
-    }
-
     .loan-content {
-        padding-left: 40px;
+        padding-left: 30px;
     }
 
     .loan-content h2 {
-        font-size: 32px;
+        font-size: 22px;
     }
 
+    .loan-content h2 span {
+        font-size: 25px;
+    }
+
+    .loan-image img {
+        width: 165px;
+    }
+
+    .image-circle {
+        width: 215px;
+        height: 215px;
+    }
 }
 
 
-@media (max-width: 991px) {
-
-    .loan-options {
-        min-height: 500px;
-
-        padding-bottom: 35px;
-    }
-
-    .blue-bg {
-        height: 180px;
-    }
-
-    .loan-options .container {
-        padding-top: 115px;
-    }
-
-    .loan-card {
-        min-height: 150px;
-    }
-
-    .loan-content {
-        padding-left: 28px;
-
-        width: 60%;
-    }
-
-    .loan-content h2 {
-        font-size: 27px;
-    }
-
-    .loan-image {
-        width: 43%;
-    }
-
-}
-
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 767px) {
 
     .loan-options {
-        min-height: auto;
-
-        padding: 0 0 35px;
+        padding: 60px 15px;
     }
 
     .blue-bg {
-        height: 150px;
+        height: 42%;
     }
 
-    .loan-options .container {
-        padding-top: 90px;
+    .loan-section-heading {
+        margin-bottom: 30px;
+    }
 
-        padding-left: 20px;
-        padding-right: 20px;
+    .loan-section-heading h2 {
+        font-size: 28px;
+    }
+
+    .loan-section-heading p {
+        font-size: 14px;
     }
 
     .loan-card {
-        min-height: 145px;
+        min-height: 285px;
+
+        border-radius: 20px;
+    }
+
+    .loan-content {
+        width: 58%;
+
+        padding: 28px 0 28px 25px;
+    }
+
+    .loan-icon {
+        width: 45px;
+        height: 45px;
+
+        font-size: 18px;
+
+        margin-bottom: 14px;
+    }
+
+    .loan-content h2 {
+        font-size: 20px;
+    }
+
+    .loan-content h2 span {
+        font-size: 22px;
+    }
+
+    .loan-content p {
+        font-size: 13px;
+        margin: 10px 0 17px;
+    }
+
+    .loan-image {
+        width: 45%;
+    }
+
+    .loan-image img {
+        width: 145px;
+    }
+
+    .image-circle {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+    .loan-options {
+        padding: 50px 12px;
+    }
+
+    .blue-bg {
+        height: 35%;
+    }
+
+    .loan-section-heading h2 {
+        font-size: 25px;
+    }
+
+    .loan-section-heading span {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .loan-card {
+        min-height: 260px;
     }
 
     .loan-content {
         width: 60%;
 
-        padding-left: 25px;
+        padding: 25px 0 25px 20px;
     }
-
-    .loan-content h2 {
-        font-size: 25px;
-    }
-
-    .loan-image {
-        width: 45%;
-
-        right: 0;
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-    .blue-bg {
-        height: 125px;
-    }
-
-    .loan-options .container {
-        padding-top: 75px;
-
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .loan-card {
-        min-height: 125px;
-
-        border-radius: 5px;
-    }
-
-    .loan-content {
-        width: 62%;
-
-        padding-left: 18px;
-    }
-
-    .loan-content h2 {
-        font-size: 21px;
-    }
-
-    .loan-image {
-        width: 43%;
-    }
-
-}
-
-@media (max-width: 360px) {
 
     .loan-content h2 {
         font-size: 18px;
     }
 
-    .loan-content {
-        padding-left: 14px;
+    .loan-content h2 span {
+        font-size: 20px;
     }
 
+    .loan-content p {
+        max-width: 190px;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+    .loan-btn {
+        font-size: 12px;
+    }
+
+    .loan-btn i {
+        width: 27px;
+        height: 27px;
+    }
+
+    .loan-image {
+        width: 43%;
+        right: -5px;
+    }
+
+    .loan-image img {
+        width: 125px;
+    }
+
+    .image-circle {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .loan-card {
+        min-height: 240px;
+    }
+
+    .loan-content {
+        padding-left: 16px;
+    }
+
+    .loan-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 16px;
+    }
+
+    .loan-content h2 {
+        font-size: 16px;
+    }
+
+    .loan-content h2 span {
+        font-size: 18px;
+    }
+
+    .loan-content p {
+        font-size: 11px;
+    }
+
+    .loan-image img {
+        width: 110px;
+    }
+
+    .image-circle {
+        width: 140px;
+        height: 140px;
+    }
 }
 
 /* EMI calculator and home loan section end */
 
 /* Eligibility section start  */
-.e-h {
-    font-size: 30px;
-    color: #003b78;
-    position: relative;
-    padding-left: 10px;
+/* =========================================
+   ELIGIBILITY + DOCUMENTS
+========================================= */
 
+.eligibility-documents {
+    position: relative;
+    padding: 90px 0;
+    background: #f6f8fb;
+    overflow: hidden;
 }
 
-.e-h::before {
+.eligibility-documents::before {
     content: "";
     position: absolute;
-    height: 3px;
-    width: 40px;
-    background-color: #d71920;
-    bottom: -3px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(204, 148, 38, 0.06);
+    top: -180px;
+    right: -120px;
 }
 
-.e-h-desc ul {
-    margin-top: 20px;
-    color: #d71920;
-}
-
-.e-h-desc ul li {
-    color: #003b78;
-    font-weight: bold;
-}
-
-.documents-section {
-    width: 100%;
-    padding: 45px 0 60px;
-}
-
-
-.documents-container {
-    max-width: 1500px;
-    margin: auto;
-    padding: 0 25px;
+.eligibility-documents::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(18, 35, 57, 0.04);
+    bottom: -150px;
+    left: -120px;
 }
 
 
 /* =========================================
-           HEADING
-        ========================================= */
+   ELIGIBILITY BOX
+========================================= */
 
-.documents-heading {
+.eligibility-box {
     position: relative;
+    z-index: 2;
 
-    display: inline-block;
+    padding: 50px;
 
-    color: #24466d;
+    border-radius: 24px;
 
-    font-size: 28px;
-    font-weight: 400;
+    background:
+        linear-gradient(
+            135deg,
+            #101f34,
+            #172d49
+        );
 
-    margin: 0 0 22px;
+    box-shadow:
+        0 20px 50px rgba(12, 29, 49, 0.14);
+
+    overflow: hidden;
 }
 
 
-.documents-heading::after {
+/* Decorative gold circle */
+
+.eligibility-box::after {
     content: "";
 
     position: absolute;
 
-    left: 0;
-    bottom: -8px;
+    width: 300px;
+    height: 300px;
 
-    width: 30px;
-    height: 2px;
+    border: 1px solid rgba(221, 172, 74, 0.15);
 
-    background: #ed1c24;
+    border-radius: 50%;
+
+    right: -130px;
+    top: -130px;
 }
 
 
 /* =========================================
-           DESCRIPTION
-        ========================================= */
+   HEADING
+========================================= */
 
-.documents-description {
-    color: #111;
+.eligibility-heading {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin-bottom: 35px;
+}
+
+.eligibility-heading span {
+    color: #e2b34e;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.eligibility-heading h2 {
+    margin: 7px 0 10px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.eligibility-heading p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.70);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ELIGIBILITY LIST
+========================================= */
+
+.eligibility-list {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.eligibility-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    transition: 0.35s ease;
+}
+
+.eligibility-item:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255,255,255,0.11);
+
+    border-color:
+        rgba(225, 177, 73, 0.35);
+}
+
+
+/* Icon */
+
+.eligibility-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c38a24,
+            #e4b753
+        );
+
+    color: #ffffff;
 
     font-size: 18px;
-    line-height: 1.5;
+}
 
-    margin-bottom: 20px;
+.eligibility-item h3 {
+    margin: 2px 0 6px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.eligibility-item p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.68);
+
+    font-size: 13px;
+
+    line-height: 1.6;
 }
 
 
 /* =========================================
-           TABS
-        ========================================= */
+   DOCUMENT SECTION
+========================================= */
+
+.documents-section {
+    position: relative;
+    z-index: 2;
+
+    padding-top: 90px;
+}
+
+.documents-container {
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   DOCUMENT HEADING
+========================================= */
+
+.documents-heading-wrap {
+    text-align: center;
+
+    max-width: 720px;
+
+    margin: 0 auto 35px;
+}
+
+.documents-heading-wrap > span {
+    color: #c58b24;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.documents-heading {
+    margin: 8px 0 12px;
+
+    color: #14243a;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.documents-description {
+    margin: 0;
+
+    color: #697586;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   TABS
+========================================= */
 
 .document-tabs {
     display: flex;
 
-    gap: 19px;
+    justify-content: center;
 
-    max-width: 1000px;
+    gap: 10px;
 
-    margin-bottom: 16px;
+    margin-bottom: 25px;
 }
 
-
 .document-tab {
-    flex: 1;
+    display: flex;
 
-    min-height: 72px;
+    align-items: center;
 
-    border: none;
+    gap: 9px;
 
-    border-radius: 3px;
+    padding: 13px 25px;
 
-    background: #777;
+    border: 1px solid #dce1e8;
 
-    color: #fff;
+    border-radius: 50px;
 
-    font-size: 18px;
-    font-weight: 700;
+    background: #ffffff;
+
+    color: #526071;
+
+    font-size: 14px;
+    font-weight: 600;
 
     cursor: pointer;
 
-    transition: all .3s ease;
+    transition: 0.3s ease;
 }
 
+.document-tab i {
+    font-size: 14px;
+}
 
 .document-tab:hover {
-    background: #555;
+    border-color: #d19a31;
+
+    color: #b67b18;
 }
 
-
 .document-tab.active {
-    background: #12468b;
+    color: #ffffff;
+
+    border-color: #172940;
+
+    background:
+        linear-gradient(
+            135deg,
+            #122238,
+            #1c3654
+        );
+
+    box-shadow:
+        0 8px 20px rgba(17, 35, 57, 0.16);
 }
 
 
 /* =========================================
-           CONTENT BOX
-        ========================================= */
+   DOCUMENT CONTENT
+========================================= */
 
 .document-content {
-    width: 100%;
+    background: #ffffff;
 
-    min-height: 395px;
+    border-radius: 22px;
 
-    padding: 45px 42px;
-
-    border: 1px solid #d8e0e8;
-
-    background: #fff;
+    border: 1px solid #e4e8ee;
 
     box-shadow:
-        0 15px 35px rgba(18, 70, 139, .10);
+        0 12px 35px rgba(20, 36, 58, 0.07);
 
-    border-radius: 3px;
+    overflow: hidden;
 }
 
+
+/* =========================================
+   PANEL
+========================================= */
 
 .document-panel {
     display: none;
 
-    animation: fadeIn .35s ease;
+    padding: 35px 40px;
 }
-
 
 .document-panel.active {
     display: block;
+
+    animation:
+        documentFade 0.35s ease;
 }
 
-
-@keyframes fadeIn {
+@keyframes documentFade {
 
     from {
         opacity: 0;
@@ -1798,74 +2298,168 @@
 
 
 /* =========================================
-           PANEL HEADING
-        ========================================= */
+   PANEL TITLE
+========================================= */
 
-.document-panel h3 {
-    color: #ed1c24;
+.panel-title {
+    display: flex;
 
-    font-size: 19px;
+    align-items: center;
 
-    font-weight: 600;
+    gap: 15px;
 
-    margin-bottom: 30px;
+    padding-bottom: 25px;
+
+    margin-bottom: 10px;
+
+    border-bottom:
+        1px solid #edf0f4;
+}
+
+.panel-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #fff5da;
+
+    color: #bc801d;
+
+    font-size: 20px;
+}
+
+.panel-title h3 {
+    margin: 0 0 4px;
+
+    color: #172940;
+
+    font-size: 20px;
+}
+
+.panel-title p {
+    margin: 0;
+
+    color: #7a8491;
+
+    font-size: 13px;
 }
 
 
 /* =========================================
-           DOCUMENT LIST
-        ========================================= */
+   DOCUMENT LIST
+========================================= */
 
 .document-list {
     list-style: none;
 
-    padding: 0;
+    padding: 10px 0 0;
+
     margin: 0;
 }
 
-
 .document-list li {
-    position: relative;
+    display: flex;
 
-    padding-left: 25px;
+    align-items: flex-start;
 
-    margin-bottom: 27px;
+    gap: 13px;
 
-    color: #24466d;
+    padding: 15px 0;
 
-    font-size: 18px;
+    color: #4c596a;
 
-    line-height: 1.45;
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    border-bottom:
+        1px dashed #e2e6eb;
 }
 
+.document-list li:last-child {
+    border-bottom: none;
+}
 
-.document-list li::before {
-    content: "";
+.document-list li i {
+    flex-shrink: 0;
 
-    position: absolute;
+    margin-top: 3px;
 
-    left: 6px;
-    top: 9px;
+    color: #c58b24;
 
-    width: 6px;
-    height: 6px;
-
-    background: #ed1c24;
+    font-size: 16px;
 }
 
 
 /* =========================================
-           TABLET
-        ========================================= */
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 991px) {
 
-    .documents-section {
-        padding: 40px 0 50px;
+    .eligibility-documents {
+        padding: 70px 0;
     }
 
-    .documents-container {
-        padding: 0 20px;
+    .eligibility-box {
+        padding: 40px 30px;
+    }
+
+    .eligibility-list {
+        grid-template-columns: 1fr;
+    }
+
+    .eligibility-heading h2 {
+        font-size: 30px;
+    }
+
+    .documents-section {
+        padding-top: 70px;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .eligibility-documents {
+        padding: 55px 15px;
+    }
+
+    .eligibility-box {
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+    .eligibility-heading h2 {
+        font-size: 26px;
+    }
+
+    .eligibility-heading p {
+        font-size: 14px;
+    }
+
+    .eligibility-item {
+        padding: 18px;
+    }
+
+    .eligibility-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 16px;
+    }
+
+    .documents-section {
+        padding-top: 55px;
     }
 
     .documents-heading {
@@ -1873,111 +2467,526 @@
     }
 
     .documents-description {
-        font-size: 16px;
-    }
-
-    .document-content {
-        padding: 35px 30px;
-    }
-
-    .document-list li {
-        font-size: 16px;
-    }
-
-}
-
-
-/* =========================================
-           MOBILE
-        ========================================= */
-
-@media (max-width: 576px) {
-
-    .documents-section {
-        padding: 30px 0 40px;
-    }
-
-    .documents-container {
-        padding: 0 15px;
-    }
-
-    .documents-heading {
-        font-size: 24px;
-
-        margin-bottom: 20px;
-    }
-
-    .documents-description {
-        font-size: 15px;
-
-        line-height: 1.55;
-
-        margin-bottom: 20px;
-    }
-
-    .document-tabs {
-        gap: 8px;
-
-        margin-bottom: 12px;
-    }
-
-    .document-tab {
-        min-height: 58px;
-
-        padding: 8px;
-
         font-size: 14px;
     }
-
-    .document-content {
-        min-height: auto;
-
-        padding: 28px 20px;
-    }
-
-    .document-panel h3 {
-        font-size: 18px;
-
-        margin-bottom: 25px;
-    }
-
-    .document-list li {
-        font-size: 15px;
-
-        margin-bottom: 20px;
-
-        padding-left: 20px;
-    }
-
-}
-
-
-/* =========================================
-           SMALL MOBILE
-        ========================================= */
-
-@media (max-width: 400px) {
 
     .document-tabs {
         flex-direction: column;
+
+        max-width: 350px;
+
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .document-tab {
-        width: 100%;
+        justify-content: center;
+    }
+
+    .document-panel {
+        padding: 25px 20px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .eligibility-heading h2 {
+        font-size: 24px;
+    }
+
+    .eligibility-item {
+        gap: 12px;
+    }
+
+    .eligibility-item h3 {
+        font-size: 15px;
+    }
+
+    .eligibility-item p {
+        font-size: 12px;
     }
 
     .documents-heading {
-        font-size: 22px;
+        font-size: 23px;
     }
 
-    .document-content {
-        padding: 25px 16px;
+    .panel-title h3 {
+        font-size: 18px;
+    }
+
+    .panel-title p {
+        font-size: 12px;
     }
 
     .document-list li {
-        font-size: 14px;
+        font-size: 13px;
+        gap: 10px;
     }
 
 }
 
 /* Eligibility section end */
+
+/* FAQ Section Start  */
+     /* =========================================
+   FAQ SECTION
+========================================= */
+
+.faq-section {
+    position: relative;
+    padding: 90px 0;
+    background:
+        radial-gradient(circle at 10% 20%,
+        rgba(212, 154, 40, 0.08),
+        transparent 30%),
+        radial-gradient(circle at 90% 80%,
+        rgba(7, 77, 207, 0.06),
+        transparent 30%),
+        #f8fafc;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.faq-heading {
+    max-width: 760px;
+    margin: 0 auto 50px;
+}
+
+.faq-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 17px;
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background: rgba(212, 154, 40, 0.10);
+    border: 1px solid rgba(212, 154, 40, 0.25);
+
+    color: #b37d13;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.faq-tag i {
+    font-size: 14px;
+}
+
+
+.faq-heading h2 {
+    margin: 0;
+
+    color: #14213d;
+
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.faq-heading h2 span {
+    color: #d49a28;
+}
+
+
+.faq-heading p {
+    max-width: 680px;
+
+    margin: 17px auto 0;
+
+    color: #6b7280;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   ACCORDION
+========================================= */
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+/* Accordion Item */
+
+.faq-accordion .accordion-item {
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb !important;
+    border-radius: 14px !important;
+
+    background: #ffffff;
+
+    box-shadow: 0 5px 20px rgba(20, 33, 61, 0.04);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+.faq-accordion .accordion-item:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(212, 154, 40, 0.35) !important;
+
+    box-shadow:
+        0 12px 30px rgba(20, 33, 61, 0.08);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.faq-accordion .accordion-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 76px;
+
+    padding: 17px 22px;
+
+    border: 0 !important;
+
+    background: #ffffff !important;
+
+    color: #172033 !important;
+
+    box-shadow: none !important;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-align: left;
+}
+
+
+/* Remove Bootstrap default arrow */
+
+.faq-accordion .accordion-button::after {
+    display: none;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.faq-number {
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f8f1e2;
+
+    color: #b37d13;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Active number */
+
+.faq-accordion .accordion-button:not(.collapsed) .faq-number {
+    background: #d49a28;
+    color: #ffffff;
+
+    box-shadow: 0 6px 15px rgba(212, 154, 40, 0.28);
+}
+
+
+/* =========================================
+   QUESTION
+========================================= */
+
+.faq-question {
+    flex: 1;
+
+    padding-right: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PLUS ICON
+========================================= */
+
+.faq-icon {
+    flex: 0 0 36px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f5f6f8;
+
+    color: #536074;
+
+    font-size: 13px;
+
+    transition: all 0.35s ease;
+}
+
+
+/* Rotate icon */
+
+.faq-accordion .accordion-button:not(.collapsed) .faq-icon {
+    background: #d49a28;
+    color: #ffffff;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   ANSWER
+========================================= */
+
+.faq-accordion .accordion-body {
+    position: relative;
+
+    margin: 0 22px 20px 82px;
+
+    padding: 18px 20px;
+
+    border-left: 3px solid #d49a28;
+
+    border-radius: 0 10px 10px 0;
+
+    background: #fafafa;
+
+    color: #626b7a;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   EMI BUTTON
+========================================= */
+
+.faq-calculator-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 21px;
+
+    border-radius: 8px;
+
+    background: #d49a28;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 18px rgba(212, 154, 40, 0.22);
+
+    transition: all 0.3s ease;
+}
+
+
+.faq-calculator-btn i {
+    transition: transform 0.3s ease;
+}
+
+
+.faq-calculator-btn:hover {
+    background: #b98016;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 25px rgba(212, 154, 40, 0.3);
+}
+
+
+.faq-calculator-btn:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .faq-section {
+        padding: 70px 0;
+    }
+
+    .faq-heading {
+        margin-bottom: 40px;
+    }
+
+    .faq-heading h2 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .faq-section {
+        padding: 55px 0;
+    }
+
+    .faq-heading {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .faq-heading h2 {
+        font-size: 29px;
+    }
+
+    .faq-heading p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    .faq-tag {
+        font-size: 10px;
+        padding: 7px 13px;
+    }
+
+
+    .faq-accordion {
+        gap: 10px;
+    }
+
+
+    .faq-accordion .accordion-button {
+        min-height: 68px;
+
+        gap: 12px;
+
+        padding: 13px 14px;
+
+        font-size: 14px;
+    }
+
+
+    .faq-number {
+        flex: 0 0 34px;
+
+        width: 34px;
+        height: 34px;
+
+        border-radius: 8px;
+
+        font-size: 11px;
+    }
+
+
+    .faq-icon {
+        flex: 0 0 30px;
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 11px;
+    }
+
+
+    .faq-question {
+        line-height: 1.45;
+    }
+
+
+    .faq-accordion .accordion-body {
+        margin: 0 14px 15px 14px;
+
+        padding: 15px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .faq-heading h2 {
+        font-size: 26px;
+    }
+
+    .faq-accordion .accordion-button {
+        gap: 9px;
+
+        padding: 12px;
+    }
+
+    .faq-number {
+        flex: 0 0 31px;
+
+        width: 31px;
+        height: 31px;
+    }
+
+    .faq-icon {
+        flex: 0 0 27px;
+
+        width: 27px;
+        height: 27px;
+    }
+
+    .faq-question {
+        font-size: 13px;
+    }
+
+}
+/* FAQ Section end */
