@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EMI Calculator - Nivaan Capital</title>
+    <title>Nivaan Capital</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +25,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="assests/css/applyloan.css">
 </head>
 
 <body>
 
-      <!-- Navbar start  -->
+    <!-- Navbar start  -->
     <!-- ================= TOP HEADER ================= -->
     <header class="top-header">
 
@@ -129,7 +132,7 @@
                                             Vahical Loan
                                         </a>
                                     </li>
-                                     <li>
+                                    <li>
                                         <a class="dropdown-item" href="#">
                                             <i class="bi bi-camera"></i>
                                             Home Loan
@@ -139,7 +142,13 @@
                                 </ul>
 
                             </li>
-                            
+
+
+
+
+
+
+
                             <!-- Investors -->
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
@@ -148,7 +157,7 @@
                             </li>
 
 
-                          
+
 
                             <!-- Customer Login -->
                             <li class="nav-item dropdown">
@@ -234,7 +243,8 @@
 
                 <!-- LOGO -->
                 <a href="index.html" class="brand-logo-container">
-                    <img src="assests/images/logo-nivaan-capital-removebg-preview.png" alt="Nivaan Capital" class="brand-logo-img">
+                    <img src="assests/images/logo-nivaan-capital-removebg-preview.png" alt="Nivaan Capital"
+                        class="brand-logo-img">
                 </a>
 
 
@@ -1703,166 +1713,1477 @@
 
     <!-- Navbar end  -->
 
+   
+   
+    <!-- Loan section start  -->
+            <section class="loan-section">
 
-    <!-- ================= EMI CALCULATOR SECTION ================= -->
-    <section class="emi-calculator-section" id="emi-calculator">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-tag">Calculate Your Monthly Outgoings</span>
-                <h2 class="section-title">Interactive EMI Calculator</h2>
-                <div class="title-bar-separator"></div>
-                <p class="section-subtitle">Use our visual tool to estimate your monthly installments, total interest,
-                    and see a year-wise amortization break-up.</p>
+        <div class="container-fluid px-3 px-md-4">
+
+
+            <!-- Heading -->
+
+            <div class="loan-heading">
+
+                <span class="loan-tag">
+
+                    <i class="bi bi-bank2"></i>
+
+                    Our Loan Products
+
+                </span>
+
+
+                <h2>
+
+                    Choose the loan
+                    <span>that meets your needs</span>
+
+                </h2>
+
+
+                <p>
+
+                    Chola offers a variety of loans to cater to your
+                    different needs. If you are looking for a quick
+                    and easy loan with minimum paperwork, then you
+                    have come to the right place. Click on a loan
+                    below to know more &amp; apply.
+
+                </p>
+
             </div>
 
-            <div class="calculator-card">
-                <!-- Loan Type Tabs -->
-                <div class="calculator-tabs">
-                    <button class="tab-btn active" data-loan-type="home"><i class="bi bi-house"></i> Home Loan</button>
-                    <button class="tab-btn" data-loan-type="personal"><i class="bi bi-person"></i> Personal
-                        Loan</button>
-                    <button class="tab-btn" data-loan-type="business"><i class="bi bi-briefcase"></i> Business
-                        Loan</button>
+
+
+            <!-- =========================================
+                 LOAN GRID
+            ========================================== -->
+
+            <div class="row g-3 g-lg-4 loan-grid">
+
+
+                <!-- ================= GOLD LOAN ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="gold-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <div class="gold-icon">
+
+                                <span>GOLD</span>
+
+                                LOAN
+
+                            </div>
+
+                        </div>
+
+
+                        <h5>
+                            Gold Loan
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
                 </div>
 
-                <div class="calculator-body">
-                    <!-- Left: Sliders and Inputs -->
-                    <div class="inputs-column">
-                        <!-- Loan Amount -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Amount</span>
-                                <div class="input-numeric-wrapper">
-                                    <span class="currency-prefix">₹</span>
-                                    <input type="number" id="loan-amount-input" class="numeric-input" min="100000"
-                                        max="50000000" step="50000" value="5000000">
-                                </div>
-                            </div>
-                            <input type="range" id="loan-amount-slider" class="range-slider" min="100000" max="50000000"
-                                step="50000" value="5000000">
-                            <div class="slider-bounds">
-                                <span>₹1 L</span>
-                                <span>₹5 Cr</span>
-                            </div>
+
+
+                <!-- ================= CAR LOAN ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="car-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-car-front-fill"></i>
+
                         </div>
 
-                        <!-- Interest Rate -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Interest Rate</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="interest-rate-input" class="numeric-input" min="5" max="25"
-                                        step="0.05" value="8.5">
-                                    <span class="currency-suffix">%</span>
-                                </div>
-                            </div>
-                            <input type="range" id="interest-rate-slider" class="range-slider" min="5" max="25"
-                                step="0.05" value="8.5">
-                            <div class="slider-bounds">
-                                <span>5%</span>
-                                <span>25%</span>
-                            </div>
-                        </div>
 
-                        <!-- Loan Tenure -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Tenure</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="loan-tenure-input" class="numeric-input" min="1" max="30"
-                                        step="1" value="20">
-                                    <span class="currency-suffix">Yrs</span>
-                                </div>
-                            </div>
-                            <input type="range" id="loan-tenure-slider" class="range-slider" min="1" max="30" step="1"
-                                value="20">
-                            <div class="slider-bounds">
-                                <span>1 Yr</span>
-                                <span>30 Yrs</span>
-                            </div>
-                        </div>
-                    </div>
+                        <h5>
+                            Car &amp; MUV - Loans
+                        </h5>
 
-                    <!-- Right: Outputs and Charts -->
-                    <div class="outputs-column">
-                        <div class="results-summary">
-                            <div class="emi-result-box">
-                                <span class="emi-label">Monthly EMI Payment</span>
-                                <span class="emi-amount" id="monthly-emi-output">₹0</span>
-                            </div>
 
-                            <div class="breakdown-details mt-4">
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box principal-color"></span>
-                                    <span class="breakdown-label">Principal Amount</span>
-                                    <span class="breakdown-val" id="principal-amount-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box interest-color"></span>
-                                    <span class="breakdown-label">Total Interest Payable</span>
-                                    <span class="breakdown-val" id="total-interest-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item total-payable-item pt-2 border-top mt-2">
-                                    <span class="breakdown-label font-weight-bold">Total Amount Payable</span>
-                                    <span class="breakdown-val font-weight-bold" id="total-payable-output">₹0</span>
-                                </div>
-                            </div>
-                        </div>
+                        <i class="bi bi-arrow-right loan-arrow"></i>
 
-                        <!-- Chart Container -->
-                        <div class="chart-wrapper">
-                            <svg class="donut-chart" viewBox="0 0 100 100">
-                                <circle class="donut-bg" cx="50" cy="50" r="40" fill="transparent" stroke="#f1f3f5"
-                                    stroke-width="12"></circle>
-                                <circle class="donut-segment principal-segment" cx="50" cy="50" r="40"
-                                    fill="transparent" stroke="#10458c" stroke-width="12" stroke-dasharray="0 100"
-                                    stroke-dashoffset="0"></circle>
-                                <circle class="donut-segment interest-segment" cx="50" cy="50" r="40" fill="transparent"
-                                    stroke="#ef3438" stroke-width="12" stroke-dasharray="0 100" stroke-dashoffset="0">
-                                </circle>
-                                <g class="chart-text">
-                                    <text x="50" y="47" class="chart-pct-val" id="chart-interest-pct">0%</text>
-                                    <text x="50" y="60" class="chart-pct-label">Interest</text>
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
+                    </a>
+
                 </div>
 
-                <!-- Amortization Toggle -->
-                <div class="calculator-footer text-center pt-4 border-top">
-                    <button class="amortization-toggle-btn" id="toggle-schedule-btn">
-                        <span>Show Amortization Schedule</span> <i class="bi bi-chevron-down"></i>
-                    </button>
+
+
+                <!-- ================= TWO WHEELER ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="two-wheeler-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-bicycle"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Two Wheeler Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
                 </div>
+
+
+
+                <!-- ================= COMMERCIAL VEHICLE ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="commercial-vehicle-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-truck"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Commercial Vehicle Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= THREE WHEELER ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="three-wheeler-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-truck-front"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Three Wheeler Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= CONSTRUCTION ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="construction-equipment-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-buildings"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Construction Equipment Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= TRACTOR ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="tractor-farm-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                           <i class="fa-solid fa-tractor"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Tractor &amp; Farm Equipment Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= BUSINESS LOAN ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="secured-business-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-shop"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Secured Business Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= HOME LOAN ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="home-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-house-heart-fill"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Home Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= LAP ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="loan-against-property.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-cash-coin"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Loan Against Property
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= CONSUMER LOAN ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="consumer-small-enterprise-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-person-badge"></i>
+
+                        </div>
+
+
+                        <h5>
+                            Consumer &amp; Small Enterprise Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= SME LOAN ================= -->
+
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl">
+
+                    <a href="sme-loan.html" class="loan-card">
+
+                        <div class="loan-icon">
+
+                            <i class="bi bi-building"></i>
+
+                        </div>
+
+
+                        <h5>
+                            SME Loans
+                        </h5>
+
+
+                        <i class="bi bi-arrow-right loan-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
             </div>
 
-            <!-- Amortization Panel -->
-            <div class="amortization-wrapper" id="amortization-panel">
-                <h3 class="schedule-title mb-4"><i class="bi bi-calendar-range"></i> Year-Wise Repayment Schedule</h3>
-                <div class="table-responsive">
-                    <table class="table amortization-table text-center">
-                        <thead>
-                            <tr>
-                                <th>Year</th>
-                                <th>Opening Balance</th>
-                                <th>Principal Paid</th>
-                                <th>Interest Paid</th>
-                                <th>Total Repaid</th>
-                                <th>Closing Balance</th>
-                            </tr>
-                        </thead>
-                        <tbody id="amortization-table-body">
-                            <!-- Populated dynamically via JS -->
-                        </tbody>
-                    </table>
-                </div>
+
+
+            <!-- =========================================
+                 EXPLORE BUTTON
+            ========================================== -->
+
+            <div class="loan-apply">
+
+                <a href="LoanProducts.html" class="apply-loan-btn">
+
+                    Explore All Loans
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
             </div>
+
+
         </div>
+
+    </section>
+    <!-- Loan section end -->
+
+
+
+
+
+    <!-- Why Nivaan start  -->
+
+    <section class="why-chola container">
+
+        <div class="container-fluid px-0">
+
+            <div class="why-wrapper">
+
+                <div class="why-intro">
+
+                    <div>
+
+                        <h2 class="why-title">
+                            Why<br>
+                            Nivaan Capital?
+                        </h2>
+
+                        <p class="why-subtitle">
+                            There's more than one reason
+                            to be confident
+                        </p>
+                        <a href="#" class="know-more">
+
+                            Know More
+
+                            <span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="stats-area">
+
+
+                    <!-- 48 YEARS -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-award"></i>
+
+                        </div>
+
+                        <div>
+
+                            <div class="stat-number">
+                                48
+                            </div>
+
+                            <div class="stat-label">
+                                Years of<br>
+                                Excellence
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STATES -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                        </div>
+
+                        <div>
+
+                            <div class="stat-number">
+                                32
+                            </div>
+
+                            <div class="stat-label">
+                                States & Union<br>
+                                Territories
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- WORKFORCE -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <div>
+
+                            <div class="stat-number">
+                                71,260+
+                            </div>
+
+                            <div class="stat-label">
+                                Strong Workforce
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BRANCHES -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-building"></i>
+
+                        </div>
+
+                        <div>
+
+                            <div class="stat-number">
+                                1820
+                            </div>
+
+                            <div class="stat-label">
+                                Branches
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ASSETS -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-sack-dollar"></i>
+
+                        </div>
+
+                        <div>
+
+                            <div class="stat-number small">
+                                ₹2.54+ lakh
+                            </div>
+
+                            <div class="stat-number small">
+                                Cr
+                            </div>
+
+                            <div class="stat-label">
+                                Assets Under<br>
+                                Management
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CUSTOMERS -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-regular fa-face-smile"></i>
+
+                        </div>
+
+                        <div>
+
+                            <div class="stat-number">
+                                44.7 lakh+
+                            </div>
+
+                            <div class="stat-label">
+                                Happy Customers
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
+    <!-- Why Nivaan end -->
 
-     <footer class="nivaan-footer">
+    <!-- News and Press Realeses start  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="news-heading">News <span class="news-heading-underline">& Press Re</span>leases</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Section  -->
+    <section class="news-section container">
+
+        <div class="news-container">
+
+
+            <!-- LEFT ARROW -->
+
+            <button class="news-arrow news-prev" id="prevBtn">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+
+            <!-- SLIDER -->
+
+            <div class="news-slider">
+
+                <div class="news-track" id="newsTrack">
+
+
+                    <!-- =================================================
+                     CARD 1
+                ================================================= -->
+
+                    <div class="news-card">
+
+                        <div class="news-image">
+
+                            <img src="https://files.cholamandalam.com/Common_Thumbnail_Images_for_News_Section_02_947b87eac1.jpg"
+                                alt="Annual Report">
+
+                        </div>
+
+
+                        <div class="news-content">
+
+                            <div class="news-date">
+
+                                Jul 09, 2025, 19:00 PM IST
+
+                            </div>
+
+
+                            <h3 class="news-title">
+
+                                Annual Report FY 2024 - 2025
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="news-footer">
+
+                            <a href="#" class="news-btn">
+
+                                View Report
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CARD 2 - NIVAAAN
+                ================================================= -->
+
+                    <div class="news-card">
+
+                        <div class="nivaan-logo">
+
+                            <div class="logo-symbol"></div>
+
+                            <div class="nivaan-logo-text">
+                                Nivaan
+                            </div>
+
+                            <div class="nivaan-tagline">
+                                Enter a better life
+                            </div>
+
+                        </div>
+
+
+                        <div class="news-content">
+
+                            <div class="news-date">
+
+                                Mar 29, 2025, 12:35 PM IST
+
+                            </div>
+
+
+                            <h3 class="news-title">
+
+                                Postal Ballot Notice 2025
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="news-footer">
+
+                            <a href="#" class="news-btn">
+
+                                Click Here
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CARD 3
+                ================================================= -->
+
+                    <div class="news-card">
+
+                        <div class="news-image">
+
+                            <img src="https://files.cholamandalam.com/Common_Thumbnail_Images_for_News_Section_02_947b87eac1.jpg"
+                                alt="Notice of AGM">
+
+                        </div>
+
+
+                        <div class="news-content">
+
+                            <div class="news-date">
+
+                                Jul 09, 2025, 18:55 PM IST
+
+                            </div>
+
+
+                            <h3 class="news-title">
+
+                                Notice of AGM
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="news-footer">
+
+                            <a href="#" class="news-btn">
+
+                                View Report
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CARD 4
+                ================================================= -->
+
+                    <div class="news-card">
+
+                        <div class="news-image">
+
+                            <img src="https://files.cholamandalam.com/Common_Thumbnail_Images_for_News_Section_04_6718998f82.jpg"
+                                alt="Women Empowerment">
+
+                        </div>
+
+
+                        <div class="news-content">
+
+                            <div class="news-date">
+
+                                Mar 09, 2025, 11:35 AM IST
+
+                            </div>
+
+
+                            <h3 class="news-title">
+
+                                Nivaan Capital Partners with Women
+                                Education & Environment to
+                                transform rural sanitation
+                                in Cuttack.
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="news-footer">
+
+                            <a href="#" class="news-btn">
+
+                                Read More
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CARD 5
+                ================================================= -->
+
+                    <div class="news-card">
+
+                        <div class="news-image">
+
+                            <img src="https://files.cholamandalam.com/Common_Thumbnail_Images_for_News_Section_02_947b87eac1.jpg"
+                                alt="Nivaan Partnership">
+
+                        </div>
+
+
+                        <div class="news-content">
+
+                            <div class="news-date">
+
+                                Feb 14, 2025, 11:05 AM IST
+
+                            </div>
+
+
+                            <h3 class="news-title">
+
+                                Nivaan Capital strengthens commitment
+                                towards sustainable growth
+                                and financial inclusion.
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="news-footer">
+
+                            <a href="#" class="news-btn">
+
+                                View More
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CARD 6
+                ================================================= -->
+
+                    <div class="news-card">
+
+                        <div class="nivaan-logo">
+
+                            <div class="logo-symbol"></div>
+
+                            <div class="nivaan-logo-text">
+                                Nivaan
+                            </div>
+
+                            <div class="nivaan-tagline">
+                                Enter a better life
+                            </div>
+
+                        </div>
+
+
+                        <div class="news-content">
+
+                            <div class="news-date">
+
+                                Jan 18, 2025, 10:30 AM IST
+
+                            </div>
+
+
+                            <h3 class="news-title">
+
+                                Nivaan Capital announces new initiatives
+                                to empower customers and
+                                strengthen communities.
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="news-footer">
+
+                            <a href="#" class="news-btn">
+
+                                Read More
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CARD 7
+                ================================================= -->
+
+                    <div class="news-card">
+
+                        <div class="nivaan-logo">
+
+                            <div class="logo-symbol"></div>
+
+                            <div class="nivaan-logo-text">
+                                Nivaan
+                            </div>
+
+                            <div class="nivaan-tagline">
+                                Enter a better life
+                            </div>
+
+                        </div>
+
+
+                        <div class="news-content">
+
+                            <div class="news-date">
+
+                                Dec 20, 2024, 12:15 PM IST
+
+                            </div>
+
+
+                            <h3 class="news-title">
+
+                                Nivaan Capital expands its services
+                                across multiple locations.
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="news-footer">
+
+                            <a href="#" class="news-btn">
+
+                                View More
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT ARROW -->
+
+            <button class="news-arrow news-next" id="nextBtn">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+    <!-- News and Press Realeses end -->
+
+    <!-- Testomonial section start  -->
+    <section class="testimonial-section">
+
+        <div class="container">
+
+
+            <!-- Heading -->
+
+            <div class="testimonial-heading">
+
+                <h2>
+                    What Our Customers Say
+                </h2>
+
+                <p>
+                    Hear from our happy customers
+                </p>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+
+            <div class="testimonial-container">
+
+
+                <!-- Previous -->
+
+                <button class="testimonial-arrow testimonial-prev" id="testimonialPrev">
+
+                    <i class="fa-solid fa-chevron-left"></i>
+
+                </button>
+
+
+
+                <!-- Slider -->
+
+                <div class="testimonial-slider">
+
+                    <div class="testimonial-track" id="testimonialTrack">
+
+
+                        <!-- =================================
+                         TESTIMONIAL 1
+                    ================================== -->
+
+                        <div class="testimonial-card">
+
+                            <i class="fa-solid fa-quote-right quote-icon"></i>
+
+
+                            <div class="testimonial-stars">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+
+
+                            <p class="testimonial-text">
+
+                                Nivaan Capital made the entire loan process
+                                very simple and transparent. The staff
+                                was extremely helpful and guided me
+                                at every step.
+
+                            </p>
+
+
+                            <div class="testimonial-user">
+
+                                <div class="user-image">
+
+                                    <div class="user-placeholder">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="user-info">
+
+                                    <h5>
+                                        Rahul Sharma
+                                    </h5>
+
+                                    <span>
+                                        Lucknow
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                         TESTIMONIAL 2
+                    ================================== -->
+
+                        <div class="testimonial-card">
+
+                            <i class="fa-solid fa-quote-right quote-icon"></i>
+
+
+                            <div class="testimonial-stars">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+
+
+                            <p class="testimonial-text">
+
+                                I purchased my dream car with the
+                                help of Nivaan Capital. The documentation
+                                process was quick and the team was
+                                very professional.
+
+                            </p>
+
+
+                            <div class="testimonial-user">
+
+                                <div class="user-image">
+
+                                    <div class="user-placeholder">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="user-info">
+
+                                    <h5>
+                                        Amit Verma
+                                    </h5>
+
+                                    <span>
+                                        Kanpur
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                         TESTIMONIAL 3
+                    ================================== -->
+
+                        <div class="testimonial-card">
+
+                            <i class="fa-solid fa-quote-right quote-icon"></i>
+
+
+                            <div class="testimonial-stars">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+
+
+                            <p class="testimonial-text">
+
+                                The customer service was excellent.
+                                I received proper guidance and my
+                                loan was processed without any
+                                unnecessary delay.
+
+                            </p>
+
+
+                            <div class="testimonial-user">
+
+                                <div class="user-image">
+
+                                    <div class="user-placeholder">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="user-info">
+
+                                    <h5>
+                                        Priya Singh
+                                    </h5>
+
+                                    <span>
+                                        Delhi
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                         TESTIMONIAL 4
+                    ================================== -->
+
+                        <div class="testimonial-card">
+
+                            <i class="fa-solid fa-quote-right quote-icon"></i>
+
+
+                            <div class="testimonial-stars">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+
+
+                            <p class="testimonial-text">
+
+                                Very smooth experience from start
+                                to finish. Nivaan's team understood
+                                my requirements and provided the
+                                right financial solution.
+
+                            </p>
+
+
+                            <div class="testimonial-user">
+
+                                <div class="user-image">
+
+                                    <div class="user-placeholder">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="user-info">
+
+                                    <h5>
+                                        Suresh Kumar
+                                    </h5>
+
+                                    <span>
+                                        Jaipur
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                         TESTIMONIAL 5
+                    ================================== -->
+
+                        <div class="testimonial-card">
+
+                            <i class="fa-solid fa-quote-right quote-icon"></i>
+
+
+                            <div class="testimonial-stars">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+
+
+                            <p class="testimonial-text">
+
+                                I am very happy with the service.
+                                Everything was explained clearly
+                                and the complete process was
+                                hassle-free.
+
+                            </p>
+
+
+                            <div class="testimonial-user">
+
+                                <div class="user-image">
+
+                                    <div class="user-placeholder">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="user-info">
+
+                                    <h5>
+                                        Neha Gupta
+                                    </h5>
+
+                                    <span>
+                                        Noida
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                         TESTIMONIAL 6
+                    ================================== -->
+
+                        <div class="testimonial-card">
+
+                            <i class="fa-solid fa-quote-right quote-icon"></i>
+
+
+                            <div class="testimonial-stars">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+
+
+                            <p class="testimonial-text">
+
+                                Nivaan Capital helped me fulfill my financial
+                                needs with a simple and convenient
+                                process. I would definitely recommend
+                                their services.
+
+                            </p>
+
+
+                            <div class="testimonial-user">
+
+                                <div class="user-image">
+
+                                    <div class="user-placeholder">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="user-info">
+
+                                    <h5>
+                                        Mohit Singh
+                                    </h5>
+
+                                    <span>
+                                        Varanasi
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Next -->
+
+                <button class="testimonial-arrow testimonial-next" id="testimonialNext">
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Dots -->
+
+            <div class="testimonial-dots" id="testimonialDots">
+            </div>
+
+
+        </div>
+
+    </section>
+    <!-- Testomonial section end -->
+
+
+    <!-- footer start  -->
+    <footer class="nivaan-footer">
 
 
         <div class="footer-main">
@@ -2245,8 +3566,10 @@
         </div>
 
     </footer>
+    <!-- footer end -->
 
     <script src="assests/js/script.js"></script>
+    <script src="assests/js/about.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

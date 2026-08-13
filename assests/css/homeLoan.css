@@ -202,10 +202,10 @@
 
     border-radius: 10px;
 
-    background: #d9a441;
+    background: #c80202;
 
     box-shadow:
-        0 0 10px rgba(217, 164, 65, 0.65);
+        0 0 10px #c80202;
 }
 
 
@@ -235,8 +235,8 @@
 
     background:
         linear-gradient(135deg,
-            #e0ad48,
-            #b77c1e);
+            #c80202,
+            #c80202);
 
     text-decoration: none;
 
@@ -268,8 +268,8 @@
 
     background:
         linear-gradient(135deg,
-            #efc15f,
-            #c68b29);
+            #c80202,
+            #c80202);
 
     box-shadow:
         0 11px 28px rgba(190, 133, 35, 0.45);
@@ -541,7 +541,7 @@
 
     border-radius: 50px;
 
-    color: #b27c12;
+    color: #c80202;
     background: rgba(212, 154, 40, 0.10);
 
     border: 1px solid rgba(212, 154, 40, 0.25);
@@ -572,7 +572,7 @@
 
 .loan-heading span {
     display: block;
-    color: #d49a28;
+    color: #c80202;
 }
 
 
@@ -629,7 +629,7 @@
 
     border-radius: 10px;
 
-    background: #d49a28;
+    background: #c80202;
 
     color: #fff;
 
@@ -697,7 +697,7 @@
 }
 
 .small-title {
-    color: #d49a28;
+    color: #c80202;
 
     font-size: 11px;
 
@@ -723,7 +723,7 @@
 }
 
 .solutions-heading h2 span {
-    color: #d49a28;
+    color: #c80202;
 }
 
 .solutions-heading p {
@@ -774,7 +774,7 @@
 .solution-item:hover {
     background: rgba(212, 154, 40, 0.12);
 
-    border-color: rgba(212, 154, 40, 0.45);
+    border-color: #c80202;
 
     transform: translateX(5px);
 }
@@ -798,13 +798,13 @@
 
     background: rgba(212, 154, 40, 0.14);
 
-    color: #d49a28;
+    color: #c80202;
 
     font-size: 16px;
 }
 
 .solution-item:hover .solution-icon {
-    background: #d49a28;
+    background: #c80202;
     color: #fff;
 }
 
@@ -851,7 +851,7 @@
 }
 
 .solution-item:hover .solution-arrow {
-    color: #d49a28;
+    color: #c80202;
 
     transform: translateX(4px);
 }
@@ -985,8 +985,8 @@
     margin: 14px auto 0;
     border-radius: 50px;
     background: linear-gradient(90deg,
-            #c58a20,
-            #e5b84f);
+            #c80202,
+            #c80202);
     position: relative;
 }
 
@@ -995,7 +995,7 @@
     position: absolute;
     width: 12px;
     height: 12px;
-    background: #d49a28;
+    background: #c80202;
     border-radius: 50%;
     top: -4px;
     left: 50%;
@@ -1050,8 +1050,8 @@
     height: 4px;
 
     background: linear-gradient(90deg,
-            #c88d24,
-            #e7bd5b);
+            #c80202,
+            #c80202);
 
     transition: width 0.4s ease;
 }
@@ -1091,7 +1091,7 @@
             #fff8e8,
             #f8e5b7);
 
-    color: #b77a14;
+    color: #c80202;
 
     font-size: 28px;
 
@@ -1110,8 +1110,8 @@
     transform: rotate(-5deg) scale(1.08);
 
     background: linear-gradient(145deg,
-            #c58a20,
-            #e4b64d);
+            #c80202,
+            #c80202);
 
     color: #ffffff;
 }
@@ -1127,7 +1127,7 @@
 
     border-radius: 20px;
 
-    background: #d49a28;
+    background: #c80202;
 
     margin-bottom: 16px;
 
@@ -1344,7 +1344,7 @@
 .loan-section-heading span {
     display: inline-block;
 
-    color: #e1ad42;
+    color: #c80202;
 
     font-size: 14px;
     font-weight: 700;
@@ -1436,8 +1436,8 @@
     height: 5px;
 
     background: linear-gradient(90deg,
-            #bd8120,
-            #edc15b);
+            #c80202,
+            #c80202);
 
     z-index: 5;
 
@@ -1483,7 +1483,7 @@
             #fff6dc,
             #f4dfaa);
 
-    color: #b77a17;
+    color: #c80202;
 
     font-size: 21px;
 
@@ -1494,8 +1494,8 @@
     color: #ffffff;
 
     background: linear-gradient(135deg,
-            #bf8522,
-            #e3b64e);
+            #c80202,
+            #c80202);
 
     transform: scale(1.08) rotate(-5deg);
 }
@@ -1521,7 +1521,7 @@
 
     margin-top: 4px;
 
-    color: #c68c25;
+    color: #c80202;
 
     font-size: 28px;
 }
@@ -1581,11 +1581,11 @@
 }
 
 .loan-card:hover .loan-btn {
-    color: #c28722;
+    color: #c80202;
 }
 
 .loan-card:hover .loan-btn i {
-    background: #c28722;
+    background: #c80202;
     transform: translateX(5px);
 }
 
@@ -1625,8 +1625,8 @@
 
     background:
         linear-gradient(135deg,
-            #fff4d3,
-            #eac36b);
+            #c10000,
+            #c80202);
 
     opacity: 0.55;
 
@@ -2072,7 +2072,7 @@
     background: rgba(255,255,255,0.11);
 
     border-color:
-        rgba(225, 177, 73, 0.35);
+        #c80202;
 }
 
 
@@ -2093,8 +2093,8 @@
     background:
         linear-gradient(
             135deg,
-            #c38a24,
-            #e4b753
+            #c80202,
+            #c80202
         );
 
     color: #ffffff;
@@ -2153,7 +2153,7 @@
 }
 
 .documents-heading-wrap > span {
-    color: #c58b24;
+    color: #c80202;
 
     font-size: 13px;
     font-weight: 700;
@@ -2225,9 +2225,9 @@
 }
 
 .document-tab:hover {
-    border-color: #d19a31;
+    border-color: #c80202;
 
-    color: #b67b18;
+    color: #c80202;
 }
 
 .document-tab.active {
@@ -2330,7 +2330,7 @@
 
     background: #fff5da;
 
-    color: #bc801d;
+    color: #c80202;
 
     font-size: 20px;
 }
@@ -2392,7 +2392,7 @@
 
     margin-top: 3px;
 
-    color: #c58b24;
+    color: #c80202;
 
     font-size: 16px;
 }
@@ -2594,7 +2594,7 @@
 }
 
 .faq-heading h2 span {
-    color: #d49a28;
+    color: #c80202;
 }
 
 
@@ -2642,7 +2642,7 @@
 .faq-accordion .accordion-item:hover {
     transform: translateY(-2px);
 
-    border-color: rgba(212, 154, 40, 0.35) !important;
+    border-color: #c80202 !important;
 
     box-shadow:
         0 12px 30px rgba(20, 33, 61, 0.08);
@@ -2705,7 +2705,7 @@
 
     background: #f8f1e2;
 
-    color: #b37d13;
+    color: #c80202;
 
     font-size: 13px;
     font-weight: 800;
@@ -2717,7 +2717,7 @@
 /* Active number */
 
 .faq-accordion .accordion-button:not(.collapsed) .faq-number {
-    background: #d49a28;
+    background: #c80202;
     color: #ffffff;
 
     box-shadow: 0 6px 15px rgba(212, 154, 40, 0.28);
@@ -2766,7 +2766,7 @@
 /* Rotate icon */
 
 .faq-accordion .accordion-button:not(.collapsed) .faq-icon {
-    background: #d49a28;
+    background: #c80202;
     color: #ffffff;
 
     transform: rotate(45deg);
@@ -2784,7 +2784,7 @@
 
     padding: 18px 20px;
 
-    border-left: 3px solid #d49a28;
+    border-left: 3px solid #c80202;
 
     border-radius: 0 10px 10px 0;
 
@@ -2810,7 +2810,7 @@
 
     border-radius: 8px;
 
-    background: #d49a28;
+    background: #c80202;
 
     color: #ffffff;
 
@@ -2831,7 +2831,7 @@
 
 
 .faq-calculator-btn:hover {
-    background: #b98016;
+    background: #c80202;
 
     color: #ffffff;
 

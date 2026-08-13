@@ -44,7 +44,7 @@
      transform: translateX(-50%);
      width: 70px;
      height: 3px;
-     background: #01015d;
+     background: #001139;
      border-radius: 20px;
  }
 
@@ -60,7 +60,7 @@
      font-size: 14px;
      font-weight: 700;
      letter-spacing: 3px;
-     color: #01015d;
+     color: #001139;
      margin-bottom: 12px;
  }
 
@@ -68,12 +68,12 @@
      font-size: clamp(40px, 6vw, 72px);
      line-height: 1.1;
      font-weight: 800;
-     color: #10152f;
+     color: #001139;
      margin-bottom: 15px;
  }
 
  .background-content h1 span {
-     color: #315cff;
+     color: #001139;
  }
 
  .background-content p {
@@ -88,7 +88,7 @@
      align-items: center;
      gap: 10px;
      padding: 13px 25px;
-     background: #01015d;
+     background: #001139;
      color: #fff;
      text-decoration: none;
      border-radius: 50px;
@@ -103,10 +103,10 @@
  }
 
  .hero-btn:hover {
-     background: #315cff;
+     background: #c80202;
      color: #fff;
      transform: translateY(-3px);
-     box-shadow: 0 15px 30px rgba(49, 92, 255, .25);
+     box-shadow: 0 15px 30px #001139;
  }
 
  .hero-btn:hover i {
@@ -255,14 +255,14 @@
  /* Hover */
  .filter-btn:hover {
      color: #fff;
-     background: #cb9d43;
+     background: #c80202;
      transform: translateY(-2px);
  }
 
  /* Active */
  .filter-btn.active {
      color: #fff;
-     background: linear-gradient(135deg, #cb9d43, rgba(89, 88, 88, 0.702), #315cff);
+     background: linear-gradient(135deg, #c80202, rgba(89, 88, 88, 0.702), #001139);
      box-shadow: 0 5px 15px rgba(1, 1, 93, 0.2);
  }
 
@@ -372,7 +372,7 @@
      padding: 6px 12px;
 
      background: rgba(255, 255, 255, 0.95);
-     color: #01015d;
+     color: #001139;
 
      border-radius: 30px;
 
@@ -383,7 +383,7 @@
  }
 
  .loan-badge i {
-     color: #f5a400;
+     color: #c80202;
      margin-right: 4px;
  }
 
