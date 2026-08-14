@@ -1,0 +1,658 @@
+/* ==============================
+           BANNER
+        ============================== */
+
+.machinery-banner {
+    min-height: 430px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+.machinery-banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(8, 37, 63, .94),
+            rgba(8, 37, 63, .72),
+            rgba(8, 37, 63, .20));
+}
+
+
+.machinery-banner-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+
+    color: #fff;
+}
+
+
+.breadcrumb-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+
+    color: rgba(255, 255, 255, .75);
+}
+
+
+.breadcrumb-box a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.breadcrumb-box span {
+    color: #ed1c24;
+}
+
+
+.machinery-banner h1 {
+    font-size: 52px;
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+
+.machinery-banner h1 span {
+    color: #ed1c24;
+}
+
+
+.machinery-banner h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    background: #ed1c24;
+
+    margin-top: 14px;
+
+    border-radius: 5px;
+}
+
+
+.machinery-banner p {
+    max-width: 580px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, .9);
+
+    margin-bottom: 28px;
+}
+
+
+.banner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #ed1c24;
+    color: #fff;
+
+    padding: 13px 24px;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+
+.banner-btn:hover {
+    background: #fff;
+    color: #23466d;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+           NAVIGATION
+        ============================== */
+
+.loan-navigation {
+    position: relative;
+
+    margin-top: -1px;
+
+    background: #fff;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+
+    z-index: 5;
+}
+
+
+.loan-navigation-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 14px 0;
+}
+
+
+.loan-nav {
+    color: #23466d;
+
+    padding: 10px 20px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 5px;
+
+    transition: .3s;
+}
+
+
+.loan-nav:hover,
+.loan-nav.active {
+    background: #23466d;
+    color: #fff;
+}
+
+
+.apply-btn {
+    background: #ed1c24;
+    color: #fff;
+
+    padding: 11px 22px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-left: 10px;
+
+    transition: .3s;
+}
+
+
+.apply-btn:hover {
+    background: #c81017;
+    color: #fff;
+}
+
+
+/* ==============================
+           OVERVIEW
+        ============================== */
+
+.machinery-overview {
+    padding: 70px 0;
+}
+
+
+.section-title {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #23466d;
+
+    margin-bottom: 15px;
+}
+
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 40px;
+    height: 3px;
+
+    background: #ed1c24;
+
+    margin-top: 10px;
+}
+
+
+.overview-text {
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    color: #444;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==============================
+           MACHINERY CARDS
+        ============================== */
+
+.machinery-card {
+    height: 100%;
+
+    background: #fff;
+
+    border: 1px solid #e7edf3;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: .35s;
+
+    box-shadow: 0 5px 20px rgba(28, 58, 88, .06);
+}
+
+
+.machinery-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #ed1c24;
+
+    box-shadow: 0 15px 35px rgba(28, 58, 88, .12);
+}
+
+
+.machinery-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    transition: .4s;
+}
+
+
+.machinery-card:hover img {
+    transform: scale(1.06);
+}
+
+
+.machinery-card-body {
+    padding: 22px;
+}
+
+
+.machinery-card h3 {
+    font-size: 19px;
+
+    color: #064b96;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.machinery-card p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #687789;
+
+    margin-bottom: 0;
+}
+
+
+/* ==============================
+           FEATURES
+        ============================== */
+
+.features-section {
+    padding: 70px 0;
+
+    background: #f7f9fc;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.section-heading h2 {
+    color: #23466d;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.section-heading span {
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    background: #ed1c24;
+
+    margin: auto;
+}
+
+
+.feature-card {
+    height: 100%;
+
+    background: #fff;
+
+    border: 1px solid #e7edf3;
+
+    border-radius: 12px;
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(35, 70, 109, .10);
+
+    border-color: #ed1c24;
+}
+
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #eef4fa;
+
+    color: #ed1c24;
+
+    font-size: 24px;
+}
+
+
+.feature-line {
+    width: 30px;
+    height: 2px;
+
+    background: #ed1c24;
+
+    margin: 0 auto 15px;
+}
+
+
+.feature-card h3 {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: #23466d;
+
+    font-weight: 600;
+
+    margin: 0;
+}
+
+
+/* ==============================
+           WHY MACHINERY LOAN
+        ============================== */
+
+.why-section {
+    padding: 70px 0;
+}
+
+
+.why-box {
+    background: #23466d;
+
+    color: #fff;
+
+    border-radius: 15px;
+
+    padding: 40px;
+}
+
+
+.why-box h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    font-weight: 700;
+}
+
+
+.why-list {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+
+.why-list li {
+    position: relative;
+
+    padding: 10px 0 10px 30px;
+
+    color: rgba(255, 255, 255, .88);
+
+    font-size: 15px;
+}
+
+
+.why-list li i {
+    position: absolute;
+
+    left: 0;
+    top: 14px;
+
+    color: #ed1c24;
+}
+
+
+/* ==============================
+           CTA
+        ============================== */
+
+.cta-section {
+    padding: 65px 0;
+}
+
+
+.cta-box {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(110deg,
+            #ed1c24,
+            #b70f16);
+
+    color: #fff;
+}
+
+
+.cta-box h2 {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.cta-box p {
+    margin-bottom: 25px;
+
+    color: rgba(255, 255, 255, .9);
+}
+
+
+.cta-btn {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: #fff;
+
+    color: #23466d;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+
+.cta-btn:hover {
+    background: #23466d;
+    color: #fff;
+}
+
+
+/* ==============================
+           RESPONSIVE
+        ============================== */
+
+@media(max-width: 991px) {
+
+    .machinery-banner {
+        min-height: 380px;
+    }
+
+    .machinery-banner h1 {
+        font-size: 43px;
+    }
+
+    .loan-navigation-inner {
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        white-space: nowrap;
+
+        padding: 12px 15px;
+    }
+
+    .loan-nav {
+        flex-shrink: 0;
+    }
+
+}
+
+
+@media(max-width: 767px) {
+
+    .machinery-banner {
+        min-height: 330px;
+
+        background-position: 65% center;
+    }
+
+    .machinery-banner h1 {
+        font-size: 35px;
+    }
+
+    .machinery-banner p {
+        font-size: 14px;
+    }
+
+    .machinery-overview,
+    .features-section,
+    .why-section,
+    .cta-section {
+        padding: 45px 0;
+    }
+
+    .section-title,
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .why-box,
+    .cta-box {
+        padding: 28px 22px;
+    }
+
+    .cta-box h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+@media(max-width: 480px) {
+
+    .machinery-banner {
+        min-height: 300px;
+    }
+
+    .machinery-banner h1 {
+        font-size: 30px;
+    }
+
+    .breadcrumb-box {
+        font-size: 12px;
+    }
+
+    .loan-nav {
+        padding: 9px 14px;
+
+        font-size: 13px;
+    }
+
+}

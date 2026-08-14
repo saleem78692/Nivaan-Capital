@@ -1,99 +1,394 @@
-/* =====================================================
-   BANNER
-===================================================== */
-/* =========================================
-   BANNER
+/* Loan bannner start  */
+        /* =========================================
+   HOME LOAN BANNER
 ========================================= */
 
-.banner {
+.home-loan-banner {
+
     position: relative;
-    width: 100%;
-    height: 380px;
+
+    height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
     overflow: hidden;
-    background: #101827;
+
+    background: #183b60;
 }
 
 
 /* =========================================
-   BANNER IMAGE
+   BACKGROUND
 ========================================= */
 
-.banner-img {
+.home-banner-bg {
+
     position: absolute;
+
     inset: 0;
 
-    width: 100%;
-    height: 100%;
+    background-image:
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85");
 
-    object-fit: cover;
-    object-position: center;
+    background-size: cover;
 
-    display: block;
+    background-position: center;
 
-    transform: scale(1.01);
-
-    transition: transform 1s ease;
-}
-
-
-/* Slight zoom */
-
-.banner:hover .banner-img {
-    transform: scale(1.04);
+    transform: scale(1.02);
 }
 
 
 /* =========================================
-   DARK OVERLAY
+   OVERLAY
 ========================================= */
 
-.banner::after {
-    content: "";
+.home-banner-overlay {
 
     position: absolute;
+
     inset: 0;
 
     background:
-        linear-gradient(180deg,
-            rgba(7, 15, 29, 0.05) 30%,
-            rgba(7, 15, 29, 0.25) 55%,
-            rgba(7, 15, 29, 0.88) 100%);
-
-    pointer-events: none;
+        linear-gradient(
+            90deg,
+            rgba(13, 43, 73, .96) 0%,
+            rgba(20, 58, 94, .88) 42%,
+            rgba(20, 58, 94, .45) 72%,
+            rgba(20, 58, 94, .25) 100%
+        );
 }
 
 
 /* =========================================
-   BOTTOM NAV WRAPPER
+   CONTENT
 ========================================= */
 
-.redirect-wrapper {
+.home-banner-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 520px;
+
+    padding-top: 35px;
+
+    padding-bottom: 100px;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.home-banner-text {
+
+    max-width: 680px;
+}
+
+
+.banner-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    margin-bottom: 18px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,.12);
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    border-radius: 50px;
+
+    backdrop-filter: blur(8px);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.banner-eyebrow i {
+
+    color: #ed1c24;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.home-banner-text h1 {
+
+    max-width: 650px;
+
+    margin: 0 0 18px;
+
+    color: #fff;
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -.8px;
+}
+
+
+.home-banner-text h1 span {
+
+    color: #ed1c24;
+
+    position: relative;
+}
+
+
+.home-banner-text h1 span::after {
+
+    content: "";
 
     position: absolute;
 
     left: 0;
-    right: 0;
-    bottom: 0;
 
-    z-index: 5;
+    bottom: -5px;
 
-    display: flex;
+    width: 100%;
 
-    justify-content: center;
+    height: 3px;
 
-    padding: 25px 20px 28px;
+    background: #ed1c24;
+
+    border-radius: 10px;
 }
 
 
 /* =========================================
-   NAVIGATION BOX
+   DESCRIPTION
 ========================================= */
 
-.redirect-btn {
+.home-banner-text p {
 
-    width: min(1050px, 100%);
+    max-width: 590px;
 
-    min-height: 70px;
+    margin: 0 0 28px;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.banner-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.banner-apply-btn,
+.banner-emi-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 46px;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all .3s ease;
+}
+
+
+.banner-apply-btn {
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border: 1px solid #ed1c24;
+
+    box-shadow:
+        0 8px 22px rgba(237,28,36,.25);
+}
+
+
+.banner-apply-btn:hover {
+
+    color: #fff;
+
+    background: #c81017;
+
+    transform: translateY(-2px);
+}
+
+
+.banner-apply-btn i {
+
+    transition: .3s;
+}
+
+
+.banner-apply-btn:hover i {
+
+    transform: translateX(4px);
+}
+
+
+.banner-emi-btn {
+
+    color: #fff;
+
+    background: rgba(255,255,255,.10);
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.banner-emi-btn:hover {
+
+    color: #23466d;
+
+    background: #fff;
+
+    border-color: #fff;
+}
+
+
+/* =========================================
+   RIGHT HIGHLIGHT
+========================================= */
+
+.home-banner-highlight {
+
+    position: relative;
+
+    max-width: 330px;
+
+    margin-left: auto;
+
+    padding: 28px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,.10);
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.15);
+}
+
+
+.highlight-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+
+.home-banner-highlight span {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.home-banner-highlight strong {
+
+    color: #fff;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   BOTTOM FILTER
+========================================= */
+
+.home-filter-wrapper {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 100%;
+
+    transform: translateX(-50%);
+
+    padding: 0 25px;
+}
+
+
+.home-filter {
 
     display: flex;
 
@@ -103,119 +398,33 @@
 
     gap: 5px;
 
-    padding: 7px;
+    /* max-width: 1150px; */
+    width: 100%;
 
-    background:
-        rgba(15, 25, 42, 0.78);
+    min-height: 65px;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.16);
+    margin: auto;
 
-    border-radius: 14px;
+    padding: 8px;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: #fff;
+
+    border: 1px solid #e5eaf0;
+
+    border-radius: 10px 10px 0 0;
 
     box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        0 -5px 25px rgba(20,48,75,.10);
 }
 
 
 /* =========================================
-   NAV LINKS
+   FILTER BUTTON
 ========================================= */
 
-.banner-nav {
+.home-filter-btn {
 
     position: relative;
-
-    min-height: 54px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 0 20px;
-
-    color: rgba(255, 255, 255, 0.82);
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    white-space: nowrap;
-
-    border-radius: 9px;
-
-    transition:
-        color 0.3s ease,
-        background 0.3s ease;
-}
-
-
-/* =========================================
-   NAV HOVER
-========================================= */
-
-.banner-nav:hover {
-
-    color: #ffffff;
-
-    background:
-        rgba(255, 255, 255, 0.07);
-
-}
-
-
-/* =========================================
-   ACTIVE LINK
-========================================= */
-
-.banner-nav.active {
-
-    color: #ffffff;
-
-    background:
-        rgba(255, 255, 255, 0.08);
-}
-
-
-/* Active golden line */
-
-.banner-nav.active::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 20px;
-    right: 20px;
-
-    bottom: 5px;
-
-    height: 2px;
-
-    border-radius: 10px;
-
-    background: #c80202;
-
-    box-shadow:
-        0 0 10px #c80202;
-}
-
-
-/* =========================================
-   APPLY LOAN BUTTON
-========================================= */
-
-.loan-form {
-
-    min-height: 52px;
 
     display: inline-flex;
 
@@ -223,76 +432,131 @@
 
     justify-content: center;
 
-    gap: 10px;
+    min-height: 46px;
 
-    margin-left: 8px;
+    padding: 10px 18px;
 
-    padding: 0 23px;
+    color: #23466d;
 
-    border-radius: 9px;
+    background: transparent;
 
-    color: #ffffff;
+    border: 1px solid transparent;
 
-    background:
-        linear-gradient(135deg,
-            #c80202,
-            #c80202);
+    border-radius: 6px;
 
     text-decoration: none;
 
-    font-size: 14px;
-
-    font-weight: 700;
-
     white-space: nowrap;
-
-    box-shadow:
-        0 7px 20px rgba(190, 133, 35, 0.32);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-}
-
-
-/* =========================================
-   APPLY HOVER
-========================================= */
-
-.loan-form:hover {
-
-    color: #ffffff;
-
-    transform: translateY(-2px);
-
-    background:
-        linear-gradient(135deg,
-            #c80202,
-            #c80202);
-
-    box-shadow:
-        0 11px 28px rgba(190, 133, 35, 0.45);
-}
-
-
-/* =========================================
-   ARROW
-========================================= */
-
-.loan-form i {
 
     font-size: 13px;
 
-    transition:
-        transform 0.3s ease;
+    font-weight: 600;
+
+    transition: all .3s ease;
 }
 
 
-.loan-form:hover i {
+.home-filter-btn:hover {
 
-    transform: translateX(5px);
+    color: #23466d;
 
+    background: #f3f6f9;
+
+    border-color: #e4e9ee;
+}
+
+
+/* =========================================
+   ACTIVE FILTER
+========================================= */
+
+.home-filter-btn.active {
+
+    color: #fff;
+
+    background: #23466d;
+
+    border-color: #23466d;
+
+    box-shadow:
+        0 5px 15px rgba(35,70,109,.20);
+}
+
+
+.home-filter-btn.active:hover {
+
+    color: #fff;
+
+    background: #23466d;
+
+    border-color: #23466d;
+}
+
+
+/* =========================================
+   APPLY FILTER BUTTON
+========================================= */
+
+.home-filter-apply {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 46px;
+
+    padding: 10px 20px;
+
+    margin-left: 6px;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border: 1px solid #ed1c24;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(237,28,36,.18);
+
+    transition: all .3s ease;
+}
+
+
+.home-filter-apply:hover {
+
+    color: #fff;
+
+    background: #c81017;
+
+    border-color: #c81017;
+
+    transform: translateY(-1px);
+}
+
+
+.home-filter-apply i {
+
+    transition: .3s;
+}
+
+
+.home-filter-apply:hover i {
+
+    transform: translateX(4px);
 }
 
 
@@ -302,36 +566,58 @@
 
 @media (max-width: 991px) {
 
-    .banner {
-        height: 250px;
+    .home-loan-banner {
+
+        height: 400px;
     }
 
-    .redirect-wrapper {
-        padding: 18px 15px 20px;
+
+    .home-banner-content {
+
+        height: 400px;
+
+        padding-bottom: 90px;
     }
 
-    .redirect-btn {
+
+    .home-banner-text h1 {
+
+        font-size: 35px;
+    }
+
+
+    .home-banner-text p {
+
+        font-size: 14px;
+    }
+
+
+    .home-filter-wrapper {
+
+        padding: 0 15px;
+    }
+
+
+    .home-filter {
 
         justify-content: flex-start;
 
         overflow-x: auto;
 
         scrollbar-width: none;
-
-        padding: 6px;
-
     }
 
-    .redirect-btn::-webkit-scrollbar {
+
+    .home-filter::-webkit-scrollbar {
+
         display: none;
     }
 
-    .banner-nav {
-        padding: 0 16px;
-    }
 
-    .loan-form {
-        padding: 0 19px;
+    .home-filter-btn,
+    .home-filter-apply {
+
+        flex-shrink: 0;
     }
 
 }
@@ -343,76 +629,113 @@
 
 @media (max-width: 767px) {
 
-    .banner {
+    .home-loan-banner {
 
-        height: 250px;
-
+        height: 330px;
     }
 
 
-    .banner-img {
+    .home-banner-bg {
 
-        object-position: center;
-
+        background-position: 65% center;
     }
 
 
-    .redirect-wrapper {
+    .home-banner-overlay {
 
-        padding:
-            12px 10px 15px;
-
+        background:
+            linear-gradient(
+                90deg,
+                rgba(13,43,73,.96),
+                rgba(13,43,73,.76)
+            );
     }
 
 
-    .redirect-btn {
+    .home-banner-content {
 
-        width: 100%;
+        height: auto;
 
-        min-height: 58px;
+        /* padding-top: 20px; */
+
+        /* padding-bottom: 50px; */
+    }
+
+
+    .home-banner-text h1 {
+
+        font-size: 22px;
+
+        line-height: 1;
+    }
+
+
+    .home-banner-text p {
+
+        max-width: 100%;
+
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+
+    .banner-actions {
+
+        gap: 9px;
+    }
+
+
+    .banner-apply-btn,
+    .banner-emi-btn {
+
+        /* height: 35px; */
+
+        padding: 8px 15px;
+
+        font-size: 12px;
+    }
+
+
+    .home-filter-wrapper {
+
+        padding: 0 8px;
+    }
+
+
+    .home-filter {
 
         justify-content: flex-start;
 
-        gap: 2px;
+        gap: 4px;
 
-        border-radius: 11px;
+        min-height: 60px;
 
-        padding: 5px;
+        padding: 7px;
 
+        border-radius: 8px 8px 0 0;
     }
 
 
-    .banner-nav {
+    .home-filter-btn {
 
-        min-height: 46px;
+        min-height: 42px;
 
-        padding: 0 13px;
+        padding: 9px 14px;
 
         font-size: 12px;
-
     }
 
 
-    .banner-nav.active::after {
+    .home-filter-apply {
 
-        left: 14px;
-        right: 14px;
+        min-height: 42px;
 
-        bottom: 4px;
+        padding: 9px 15px;
 
-    }
-
-
-    .loan-form {
-
-        min-height: 46px;
-
-        padding: 0 15px;
-
-        margin-left: 3px;
+        margin-left: 2px;
 
         font-size: 12px;
-
     }
 
 }
@@ -422,46 +745,8 @@
    SMALL MOBILE
 ========================================= */
 
-@media (max-width: 480px) {
 
-    .banner {
-
-        height: 180px;
-        object-fit: contain !important;
-
-    }
-
-    .redirect-wrapper {
-
-        padding:
-            8px 8px 12px;
-
-    }
-
-    .redirect-btn {
-
-        backdrop-filter: blur(14px);
-
-    }
-
-    .banner-nav {
-
-        font-size: 11px;
-
-        padding: 0 11px;
-
-    }
-
-    .loan-form {
-
-        font-size: 11px;
-
-        padding: 0 13px;
-
-    }
-
-}
-
+/* Loan bannner end */
 
 /* Home Loan Ovverview section start  */
 

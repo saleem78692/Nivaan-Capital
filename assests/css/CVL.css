@@ -1,0 +1,1599 @@
+/* =========================================================
+   COMMERCIAL VEHICLE BANNER
+========================================================= */
+
+.commercial-banner {
+
+    position: relative;
+
+    min-height: 510px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #123a5f;
+
+}
+
+
+.commercial-banner::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.commercial-banner-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9,38,67,.96) 0%,
+            rgba(12,53,86,.90) 42%,
+            rgba(12,53,86,.48) 75%,
+            rgba(12,53,86,.25) 100%
+        );
+
+}
+
+
+.commercial-banner-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 780px;
+
+    padding: 75px 0 85px;
+
+}
+
+
+.breadcrumb-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+
+}
+
+
+.breadcrumb-box a {
+
+    color: #fff;
+
+    text-decoration: none;
+
+    opacity: .85;
+
+}
+
+
+.breadcrumb-box span {
+
+    color: rgba(255,255,255,.55);
+
+}
+
+
+.banner-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 17px;
+
+    padding: 8px 14px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,.12);
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.banner-tag i {
+
+    color: #ed1c24;
+
+}
+
+
+.commercial-banner h1 {
+
+    margin: 0 0 18px;
+
+    color: #fff;
+
+    font-size: clamp(42px,5vw,64px);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+}
+
+
+.commercial-banner h1 span {
+
+    color: #ed1c24;
+
+}
+
+
+.commercial-banner p {
+
+    max-width: 650px;
+
+    margin-bottom: 28px;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+}
+
+
+.banner-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.banner-btn,
+.banner-outline-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 47px;
+
+    padding: 12px 21px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+
+}
+
+
+.banner-btn {
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border: 1px solid #ed1c24;
+
+}
+
+
+.banner-btn:hover {
+
+    color: #fff;
+
+    background: #c81017;
+
+    transform: translateY(-2px);
+
+}
+
+
+.banner-outline-btn {
+
+    color: #fff;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.35);
+
+}
+
+
+.banner-outline-btn:hover {
+
+    color: #173f64;
+
+    background: #fff;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.loan-navigation {
+
+    position: sticky;
+
+    top: 80px;
+
+    z-index: 1000;
+
+    background: #fff;
+
+    border-bottom: 1px solid #e7ebef;
+
+    box-shadow: 0 5px 20px rgba(20,50,80,.08);
+
+}
+
+
+.loan-navigation-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 8px 0;
+
+}
+
+
+.loan-nav {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 9px 15px;
+
+    color: #23466d;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+
+.loan-nav:hover {
+
+    color: #23466d;
+
+    background: #f3f6f9;
+
+}
+
+
+.loan-nav.active {
+
+    color: #fff;
+
+    background: #23466d;
+
+}
+
+
+.apply-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 44px;
+
+    margin-left: 5px;
+
+    padding: 9px 18px;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.apply-btn:hover {
+
+    color: #fff;
+
+    background: #c81017;
+
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.commercial-overview,
+.vehicle-types-section,
+.features-section,
+.commercial-faq-section {
+
+    padding: 80px 0;
+
+}
+
+
+.commercial-overview {
+
+    background: #fff;
+
+}
+
+
+.section-tag,
+.section-heading > span,
+.why-tag,
+.emi-box > div > span,
+.commercial-cta-box > div > span {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #ed1c24;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.section-title {
+
+    margin-bottom: 20px;
+
+    color: #173f64;
+
+    font-size: clamp(30px,4vw,44px);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+}
+
+
+.section-title span {
+
+    color: #ed1c24;
+
+}
+
+
+.overview-text {
+
+    color: #687787;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+.overview-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin-top: 25px;
+
+}
+
+
+.overview-point {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #314d68;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.overview-point i {
+
+    color: #ed1c24;
+
+}
+
+
+.overview-image-box {
+
+    position: relative;
+
+}
+
+
+.overview-image-box > img {
+
+    width: 100%;
+
+    min-height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+}
+
+
+.image-floating-card {
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    max-width: 300px;
+
+    padding: 16px;
+
+    color: #fff;
+
+    background: #173f64;
+
+    border-radius: 12px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+
+}
+
+
+.floating-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border-radius: 10px;
+
+}
+
+
+.image-floating-card strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 14px;
+
+}
+
+
+.image-floating-card span {
+
+    display: block;
+
+    color: #dce7f1;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    margin-bottom: 45px;
+
+    text-align: center;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 0 auto 12px;
+
+    color: #173f64;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+}
+
+
+.section-heading p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #718091;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.heading-line {
+
+    width: 60px;
+
+    height: 3px;
+
+    margin: 17px auto 0;
+
+    background: #ed1c24;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   VEHICLE TYPES
+========================================================= */
+
+.vehicle-types-section {
+
+    background: #f6f9fc;
+
+}
+
+
+.vehicle-card {
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e5ebf1;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(25,58,88,.06);
+
+    transition: .35s ease;
+
+}
+
+
+.vehicle-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 40px rgba(25,58,88,.13);
+
+}
+
+
+.vehicle-image {
+
+    position: relative;
+
+    height: 230px;
+
+    overflow: hidden;
+
+}
+
+
+.vehicle-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+}
+
+
+.vehicle-card:hover .vehicle-image img {
+
+    transform: scale(1.06);
+
+}
+
+
+.vehicle-number {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    padding: 7px 10px;
+
+    color: #fff;
+
+    background: #173f64;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.vehicle-body {
+
+    position: relative;
+
+    padding: 28px 25px 25px;
+
+}
+
+
+.vehicle-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: -52px;
+
+    margin-bottom: 18px;
+
+    position: relative;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border: 4px solid #fff;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+
+}
+
+
+.vehicle-body h3 {
+
+    margin-bottom: 10px;
+
+    color: #173f64;
+
+    font-size: 20px;
+
+    font-weight: 750;
+
+}
+
+
+.vehicle-body p {
+
+    min-height: 70px;
+
+    color: #748292;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.vehicle-body a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 8px;
+
+    color: #ed1c24;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.vehicle-body a i {
+
+    transition: .3s;
+
+}
+
+
+.vehicle-body a:hover i {
+
+    transform: translateX(4px);
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+
+    background: #fff;
+
+}
+
+
+.feature-card {
+
+    height: 100%;
+
+    padding: 25px 20px;
+
+    background: #fff;
+
+    border: 1px solid #e6ebf0;
+
+    border-radius: 12px;
+
+    transition: .3s;
+
+}
+
+
+.feature-card:hover {
+
+    border-color: #d4dfe9;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 30px rgba(30,65,95,.08);
+
+}
+
+
+.feature-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #fff;
+
+    background: #173f64;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+
+}
+
+
+.feature-line {
+
+    width: 35px;
+
+    height: 3px;
+
+    margin: 17px 0;
+
+    background: #ed1c24;
+
+    border-radius: 5px;
+
+}
+
+
+.feature-card h3 {
+
+    margin-bottom: 7px;
+
+    color: #173f64;
+
+    font-size: 16px;
+
+    font-weight: 750;
+
+}
+
+
+.feature-card p {
+
+    margin: 0;
+
+    color: #7a8794;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   WHY / ELIGIBILITY
+========================================================= */
+
+.why-commercial-section {
+
+    padding: 80px 0;
+
+    background: #f5f8fb;
+
+}
+
+
+.why-commercial-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 55px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            110deg,
+            #123b60,
+            #1d537d
+        );
+
+    border-radius: 20px;
+
+}
+
+
+.why-commercial-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    right: -100px;
+
+    top: -100px;
+
+    border: 50px solid rgba(255,255,255,.04);
+
+    border-radius: 50%;
+
+}
+
+
+.why-commercial-box h2 {
+
+    margin-bottom: 18px;
+
+    color: #fff;
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+}
+
+
+.why-commercial-box p {
+
+    color: #dce7f1;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+.eligibility-list {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.eligibility-item {
+
+    display: flex;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 10px;
+
+}
+
+
+.check-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border-radius: 50%;
+
+}
+
+
+.eligibility-item h4 {
+
+    margin-bottom: 4px;
+
+    color: #fff;
+
+    font-size: 14px;
+
+}
+
+
+.eligibility-item p {
+
+    margin: 0;
+
+    color: #c9d8e5;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   EMI
+========================================================= */
+
+.commercial-emi-section {
+
+    padding: 70px 0;
+
+    background: #fff;
+
+}
+
+
+.emi-box {
+
+    padding: 40px 45px;
+
+    color: #fff;
+
+    background: #173f64;
+
+    border-radius: 16px;
+
+    box-shadow: 0 15px 35px rgba(23,63,100,.15);
+
+}
+
+
+.emi-box h2 {
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+}
+
+
+.emi-box p {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #cfdeea;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.emi-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 22px;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.emi-button:hover {
+
+    color: #fff;
+
+    background: #c81017;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.commercial-faq-section {
+
+    background: #f7f9fc;
+
+}
+
+
+.commercial-faq-section .accordion-item {
+
+    overflow: hidden;
+
+    border: 1px solid #e4e9ee;
+
+    border-radius: 9px !important;
+
+}
+
+
+.commercial-faq-section .accordion-button {
+
+    padding: 20px;
+
+    color: #173f64;
+
+    background: #fff;
+
+    box-shadow: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.commercial-faq-section .accordion-button:not(.collapsed) {
+
+    color: #ed1c24;
+
+    background: #fff;
+
+}
+
+
+.commercial-faq-section .accordion-body {
+
+    color: #6d7c8b;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    background: #fff;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.commercial-cta-section {
+
+    padding: 0 0 80px;
+
+    background: #f7f9fc;
+
+}
+
+
+.commercial-cta-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 45px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            110deg,
+            #ed1c24,
+            #c81017
+        );
+
+    border-radius: 18px;
+
+}
+
+
+.commercial-cta-box h2 {
+
+    margin-bottom: 10px;
+
+    color: #fff;
+
+    font-size: 31px;
+
+    font-weight: 800;
+
+}
+
+
+.commercial-cta-box p {
+
+    max-width: 700px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.commercial-cta-box > div > span {
+
+    color: #fff;
+
+}
+
+
+.cta-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 14px 20px;
+
+    color: #173f64;
+
+    background: #fff;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    transition: .3s;
+
+}
+
+
+.cta-btn:hover {
+
+    color: #173f64;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .loan-navigation-inner {
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+
+    .loan-navigation-inner::-webkit-scrollbar {
+
+        display: none;
+
+    }
+
+
+    .loan-nav,
+    .apply-btn {
+
+        flex-shrink: 0;
+
+    }
+
+
+    .commercial-banner-content {
+
+        padding: 65px 0 70px;
+
+    }
+
+
+    .eligibility-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .why-commercial-box {
+
+        padding: 40px 30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .commercial-banner {
+
+        min-height: 540px;
+
+    }
+
+
+    .commercial-banner-content {
+
+        padding: 55px 0 65px;
+
+    }
+
+
+    .commercial-banner h1 {
+
+        font-size: 39px;
+
+    }
+
+
+    .commercial-banner p {
+
+        font-size: 14px;
+
+    }
+
+
+    .commercial-overview,
+    .vehicle-types-section,
+    .features-section,
+    .commercial-faq-section {
+
+        padding: 60px 0;
+
+    }
+
+
+    .section-title {
+
+        font-size: 31px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .overview-image-box > img {
+
+        min-height: 300px;
+
+    }
+
+
+    .image-floating-card {
+
+        right: 10px;
+
+        bottom: 10px;
+
+        max-width: 260px;
+
+        padding: 12px;
+
+    }
+
+
+    .why-commercial-box {
+
+        padding: 35px 22px;
+
+    }
+
+
+    .why-commercial-box h2 {
+
+        font-size: 29px;
+
+    }
+
+
+    .eligibility-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .emi-box {
+
+        padding: 30px 22px;
+
+    }
+
+
+    .emi-box h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .commercial-cta-box {
+
+        padding: 30px 22px;
+
+    }
+
+
+    .commercial-cta-box h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .cta-btn {
+
+        margin-top: 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .commercial-banner h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .banner-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .banner-btn,
+    .banner-outline-btn {
+
+        width: 100%;
+
+    }
+
+
+    .vehicle-image {
+
+        height: 210px;
+
+    }
+
+
+    .feature-card {
+
+        padding: 22px 18px;
+
+    }
+
+}

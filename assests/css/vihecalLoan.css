@@ -5,590 +5,1294 @@
      box-sizing: border-box;
  }
 
- .Background {
-     min-height: 350px;
-     width: 100%;
-     background:
-         radial-gradient(circle at 10% 20%, rgba(255, 255, 255, .25), transparent 25%),
-         radial-gradient(circle at 90% 80%, rgba(0, 0, 100, .15), transparent 30%),
-         linear-gradient(135deg, #eef5ff 0%, #ffffff 45%, #dce9ff 100%);
+ /* ==========================================
+   VEHICLE LOAN BANNER
+========================================== */
 
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     text-align: center;
-     padding: 60px 20px;
-     position: relative;
-     overflow: hidden;
- }
+.vehicle-banner {
+    height: 430px;
 
- /* Decorative Top Line */
- .Background::before {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 120px;
-     height: 4px;
-     background: linear-gradient(90deg, #01015d, #315cff, #01015d);
-     border-radius: 0 0 10px 10px;
- }
+    position: relative;
 
- /* Decorative Bottom Line */
- .Background::after {
-     content: "";
-     position: absolute;
-     bottom: 25px;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 70px;
-     height: 3px;
-     background: #001139;
-     border-radius: 20px;
- }
+    display: flex;
+    align-items: center;
 
- /* Content */
- .background-content {
-     position: relative;
-     z-index: 2;
-     max-width: 850px;
- }
+    background-image:
+        url("https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1800&q=85");
 
- .small-title {
-     display: inline-block;
-     font-size: 14px;
-     font-weight: 700;
-     letter-spacing: 3px;
-     color: #001139;
-     margin-bottom: 12px;
- }
+    background-size: cover;
+    background-position: center;
 
- .background-content h1 {
-     font-size: clamp(40px, 6vw, 72px);
-     line-height: 1.1;
-     font-weight: 800;
-     color: #001139;
-     margin-bottom: 15px;
- }
+    overflow: hidden;
+}
 
- .background-content h1 span {
-     color: #001139;
- }
 
- .background-content p {
-     font-size: 18px;
-     color: #5d6475;
-     margin-bottom: 25px;
- }
+/* Overlay */
 
- /* Button */
- .hero-btn {
-     display: inline-flex;
-     align-items: center;
-     gap: 10px;
-     padding: 13px 25px;
-     background: #001139;
-     color: #fff;
-     text-decoration: none;
-     border-radius: 50px;
-     font-size: 15px;
-     font-weight: 600;
-     transition: .3s ease;
-     box-shadow: 0 10px 25px rgba(1, 1, 93, .20);
- }
+.vehicle-banner-overlay {
+    position: absolute;
+    inset: 0;
 
- .hero-btn i {
-     transition: .3s ease;
- }
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 35, 60, .95) 0%,
+            rgba(7, 35, 60, .78) 45%,
+            rgba(7, 35, 60, .20) 100%
+        );
+}
 
- .hero-btn:hover {
-     background: #c80202;
-     color: #fff;
-     transform: translateY(-3px);
-     box-shadow: 0 15px 30px #001139;
- }
 
- .hero-btn:hover i {
-     transform: translateX(5px);
- }
+/* Content */
 
- /* Background Shapes */
- .shape {
-     position: absolute;
-     border-radius: 50%;
-     z-index: 1;
-     pointer-events: none;
- }
+.vehicle-banner-content {
+    position: relative;
 
- .shape-1 {
-     width: 180px;
-     height: 180px;
-     background: rgba(49, 92, 255, .08);
-     top: -70px;
-     left: -50px;
- }
+    z-index: 2;
 
- .shape-2 {
-     width: 250px;
-     height: 250px;
-     background: rgba(1, 1, 93, .06);
-     bottom: -120px;
-     right: -70px;
- }
+    max-width: 680px;
 
- /* Tablet */
- @media (max-width: 768px) {
+    color: #fff;
+}
 
-     .Background {
-         min-height: 320px;
-         padding: 50px 20px;
-     }
 
-     .small-title {
-         font-size: 12px;
-         letter-spacing: 2px;
-     }
+/* Breadcrumb */
 
-     .background-content h1 {
-         font-size: 45px;
-     }
+.vehicle-breadcrumb {
+    display: flex;
 
-     .background-content p {
-         font-size: 16px;
-     }
+    align-items: center;
 
-     .shape-1 {
-         width: 130px;
-         height: 130px;
-     }
+    gap: 10px;
 
-     .shape-2 {
-         width: 180px;
-         height: 180px;
-     }
- }
+    margin-bottom: 18px;
 
- /* Mobile */
- @media (max-width: 480px) {
+    font-size: 14px;
 
-     .Background {
-         min-height: 300px;
-         padding: 45px 15px;
-     }
+    color: rgba(255,255,255,.75);
+}
 
-     .Background::before {
-         width: 90px;
-         height: 3px;
-     }
 
-     .small-title {
-         font-size: 10px;
-         letter-spacing: 1.5px;
-     }
+.vehicle-breadcrumb a {
+    color: #fff;
 
-     .background-content h1 {
-         font-size: 36px;
-     }
+    text-decoration: none;
+}
 
-     .background-content p {
-         font-size: 14px;
-         margin-bottom: 20px;
-     }
 
-     .hero-btn {
-         padding: 11px 21px;
-         font-size: 14px;
-     }
+.vehicle-breadcrumb span:first-of-type {
+    color: #ed1c24;
+}
 
-     .Background::after {
-         bottom: 15px;
-         width: 50px;
-     }
- }
+
+/* Heading */
+
+.vehicle-banner h1 {
+    font-size: 50px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+
+.vehicle-banner h1 span {
+    color: #ed1c24;
+}
+
+
+/* Red underline */
+
+.vehicle-banner h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    background: #ed1c24;
+
+    margin-top: 15px;
+
+    border-radius: 5px;
+}
+
+
+/* Description */
+
+.vehicle-banner p {
+    max-width: 590px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,.9);
+
+    margin-bottom: 28px;
+}
+
+
+/* Button */
+
+.vehicle-banner-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 24px;
+
+    background: #ed1c24;
+
+    color: #fff;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+
+.vehicle-banner-btn:hover {
+    background: #fff;
+
+    color: #23466d;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 991px) {
+
+    .vehicle-banner {
+        height: 300px;
+    }
+
+    .vehicle-banner h1 {
+        font-size: 35px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+
+    .vehicle-banner {
+        height: 300px;
+
+        background-position: 65% center;
+    }
+
+
+    .vehicle-banner-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(7,35,60,.95),
+                rgba(7,35,60,.70)
+            );
+    }
+
+
+    .vehicle-banner-content {
+        padding: 40px 15px;
+    }
+
+
+    .vehicle-banner h1 {
+        font-size: 30px;
+    }
+
+
+    .vehicle-banner p {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    .vehicle-breadcrumb {
+        font-size: 12px;
+    }
+
+
+    .vehicle-banner-btn {
+        padding: 7px 13px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .vehicle-banner {
+        height: 200px;
+    }
+
+
+    .vehicle-banner h1 {
+        font-size: 22px;
+    }
+
+}
 
  /* Vahical Loan Banner end  */
 
 
  /* Sticky Filter  start*/
- .sticky-filter {
-     position: sticky;
-     top: 83px;
-     z-index: 999;
-     width: 100%;
-     background: rgba(255, 255, 255, 0.94);
-     backdrop-filter: blur(12px);
-     -webkit-backdrop-filter: blur(12px);
-     border-bottom: 1px solid #e5e7eb;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
- }
+ /* ==========================================
+   STICKY FILTER / LAP NAVIGATION
+========================================== */
 
- /* Filter Wrapper */
- .filter-wrapper {
-     max-width: 1200px;
-     margin: auto;
-     padding: 12px 20px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 10px;
- }
+.sticky-filter {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
- /* Buttons */
- .filter-btn {
-     position: relative;
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
-     padding: 10px 22px;
-     border-radius: 30px;
-     color: #555;
-     background: #f5f7fa;
-     text-decoration: none;
-     font-size: 15px;
-     font-weight: 600;
-     white-space: nowrap;
-     border: 1px solid transparent;
-     transition: all 0.3s ease;
- }
+    background: #fff;
 
- /* Hover */
- .filter-btn:hover {
-     color: #fff;
-     background: #c80202;
-     transform: translateY(-2px);
- }
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 
- /* Active */
- .filter-btn.active {
-     color: #fff;
-     background: linear-gradient(135deg, #c80202, rgba(89, 88, 88, 0.702), #001139);
-     box-shadow: 0 5px 15px rgba(1, 1, 93, 0.2);
- }
+    border-bottom: 1px solid #edf0f3;
+}
 
- /* Mobile */
- @media (max-width: 768px) {
 
-     .filter-wrapper {
-         justify-content: flex-start;
-         overflow-x: auto;
-         padding: 10px 15px;
-         gap: 8px;
+/* Wrapper */
 
-         /* Hide scrollbar */
-         scrollbar-width: none;
-     }
+.filter-wrapper {
+    display: flex;
 
-     .filter-wrapper::-webkit-scrollbar {
-         display: none;
-     }
+    align-items: center;
 
-     .filter-btn {
-         padding: 9px 17px;
-         font-size: 14px;
-     }
- }
+    justify-content: center;
 
- /* Small Mobile */
- @media (max-width: 480px) {
+    gap: 7px;
 
-     .filter-wrapper {
-         padding: 8px 12px;
-     }
+    padding: 12px 0;
+}
 
-     .filter-btn {
-         padding: 8px 15px;
-         font-size: 13px;
-     }
- }
 
+/* Filter Button */
+
+.filter-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 9px 18px;
+
+    border-radius: 5px;
+
+    color: #23466d;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: all .3s ease;
+}
+
+
+/* Hover */
+
+.filter-btn:hover {
+    background: #23466d;
+
+    color: #fff;
+}
+
+
+/* Active */
+
+.filter-btn.active {
+    background: #23466d;
+
+    color: #fff;
+}
+
+
+/* Apply Button */
+
+.filter-apply {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 40px;
+
+    padding: 9px 20px;
+
+    margin-left: 8px;
+
+    border-radius: 5px;
+
+    background: #ed1c24;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: all .3s ease;
+}
+
+
+.filter-apply:hover {
+    background: #c81017;
+
+    color: #fff;
+
+    transform: translateY(-1px);
+}
+
+
+.filter-apply i {
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+
+.filter-apply:hover i {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 991px) {
+
+    .filter-wrapper {
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        flex-wrap: nowrap;
+
+        padding: 10px 5px;
+
+        scrollbar-width: none;
+
+        -ms-overflow-style: none;
+    }
+
+
+    .filter-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .filter-btn,
+    .filter-apply {
+        flex: 0 0 auto;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .sticky-filter {
+        top: 0;
+    }
+
+
+    .filter-wrapper {
+        gap: 5px;
+
+        padding: 9px 0;
+    }
+
+
+    .filter-btn {
+        min-height: 38px;
+
+        padding: 8px 15px;
+
+        font-size: 13px;
+    }
+
+
+    .filter-apply {
+        min-height: 38px;
+
+        padding: 8px 16px;
+
+        margin-left: 3px;
+
+        font-size: 13px;
+    }
+
+}
  /* Sticky Filter end */
 
 
  /* Loan card start  */
- .loan-card {
-     margin-top: 20px;
-     width: 100%;
-     display: flex;
-     overflow: hidden;
-     position: relative;
-     background: #ffffff;
-     border: 1px solid #e8ebf2;
-     border-radius: 22px;
+ /* ==========================================
+   VEHICLE PRODUCTS SECTION
+========================================== */
 
-     box-shadow: 0 12px 35px rgba(1, 1, 93, 0.08);
+.vehicle-products {
+    padding: 80px 0;
 
-     transition: all 0.4s ease;
- }
-
- .loan-card:hover {
-     transform: translateY(-7px);
-     box-shadow: 0 20px 45px rgba(1, 1, 93, 0.15);
- }
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7f9fc 100%
+        );
+}
 
 
- /* ================= IMAGE ================= */
+/* ==========================================
+   SECTION HEADING
+========================================== */
 
- .loan-card-image {
-     width: 45%;
-     height: 280px;
-     position: relative;
-     overflow: hidden;
-     flex-shrink: 0;
-     border-radius: 10px;
- }
+.vehicle-section-heading {
+    text-align: center;
 
- .loan-card-image::after {
-     content: "";
-     position: absolute;
-     inset: 0;
+    max-width: 750px;
 
-     background: linear-gradient(90deg,
-             rgba(1, 1, 93, 0.05),
-             rgba(1, 1, 93, 0.25));
- }
+    margin: 0 auto 45px;
+}
 
- .loan-card-image img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
+
+.section-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 14px;
+
+    margin-bottom: 14px;
+
+    color: #ed1c24;
+
+    background: #fff1f2;
+
+    border: 1px solid #ffe0e2;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .8px;
+}
+
+
+.vehicle-section-heading h2 {
+    margin: 0;
+
+    color: #23466d;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    line-height: 1.25;
+}
+
+
+.vehicle-section-heading h2 span {
+    color: #ed1c24;
+}
+
+
+.vehicle-section-heading p {
+    max-width: 600px;
+
+    margin: 14px auto 0;
+
+    color: #687789;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   CARD LINK
+========================================== */
+
+.vehicle-card-link {
+    display: block;
+
+    height: 100%;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+.vehicle-card-link:hover {
+    color: inherit;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.vehicle-card {
+
+    height: 100%;
+
+    min-height: 100%;
+
+    background: #fff;
+
+    border: 1px solid #e6ebf0;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 25px rgba(26, 55, 80, .06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+.vehicle-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(237, 28, 36, .35);
+
+    box-shadow:
+        0 18px 45px rgba(25, 55, 80, .14);
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.vehicle-card-image {
+
+    position: relative;
+
+    height: 215px;
+
+    overflow: hidden;
+
+    background: #edf1f5;
+}
+
+
+.vehicle-card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s ease;
+}
+
+
+.vehicle-card:hover .vehicle-card-image img {
+
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   IMAGE OVERLAY
+========================================== */
+
+.image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.02) 35%,
+            rgba(7,35,60,.70) 100%
+        );
+
+    opacity: 0;
+
+    transition: .35s ease;
+}
+
+
+.vehicle-card:hover .image-overlay {
+
+    opacity: 1;
+}
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.vehicle-badge {
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    color: #fff;
+
+    background: rgba(35, 70, 109, .94);
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.12);
+}
+
+
+.vehicle-badge i {
+
+    color: #ffd24a;
+
+    font-size: 10px;
+}
+
+
+.green-badge {
+
+    background: #198754;
+}
+
+
+.green-badge i {
+
+    color: #fff;
+}
+
+
+/* ==========================================
+   VIEW DETAILS
+========================================== */
+
+.view-details {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 50%;
+    bottom: 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    color: #fff;
+
+    background: #ed1c24;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, 15px);
+
+    transition: all .35s ease;
+
+    white-space: nowrap;
+}
+
+
+.vehicle-card:hover .view-details {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+.view-details i {
+
+    transition: .3s;
+}
+
+
+.view-details:hover i {
+
+    transform: translateX(4px);
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.vehicle-card-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 22px;
+
+    min-height: 245px;
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.vehicle-card-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 16px;
+}
+
+
+.vehicle-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ed1c24;
+
+    background: #fff1f2;
+
+    border: 1px solid #ffe1e3;
+
     border-radius: 10px;
-     transition: transform 0.5s ease;
- }
 
- .loan-card:hover .loan-card-image img {
-     transform: scale(1.08);
- }
+    font-size: 19px;
 
+    transition: .3s;
+}
 
- /* ================= BADGE ================= */
 
- .loan-badge {
-     position: absolute;
-     top: 15px;
-     left: 15px;
-     z-index: 2;
+.vehicle-card:hover .vehicle-icon {
 
-     padding: 6px 12px;
+    color: #fff;
 
-     background: rgba(255, 255, 255, 0.95);
-     color: #001139;
+    background: #ed1c24;
 
-     border-radius: 30px;
+    border-color: #ed1c24;
 
-     font-size: 12px;
-     font-weight: 700;
+    transform: rotate(-4deg);
+}
 
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
- }
 
- .loan-badge i {
-     color: #c80202;
-     margin-right: 4px;
- }
+.vehicle-card-title h3 {
 
+    margin: 0 0 4px;
 
- /* ================= CONTENT ================= */
+    color: #23466d;
 
- .loan-card-content {
-     flex: 1;
-     padding: 25px 28px;
+    font-size: 19px;
 
-     display: flex;
-     flex-direction: column;
- }
+    font-weight: 750;
 
+    line-height: 1.3;
+}
 
- /* Title */
 
- .loan-title h3 {
-     margin: 0;
+.vehicle-card-title h3 span {
 
-     font-size: 20px;
-     font-weight: 800;
+    color: #ed1c24;
+}
 
-     color: #11152d;
- }
 
- .loan-title h3 span {
-     color: #315cff;
- }
+.vehicle-card-title p {
 
- .loan-subtitle {
-     margin: 3px 0 0;
+    margin: 0;
 
-     color: #8a8f9e;
-     font-size: 13px;
-     font-weight: 500;
- }
+    color: #7b8794;
 
+    font-size: 12px;
 
- /* Description */
+    line-height: 1.4;
+}
 
- .loan-description {
-     margin: 13px 0;
 
-     color: #646b7c;
-     font-size: 14px;
-     line-height: 1.6;
- }
+/* ==========================================
+   DESCRIPTION
+========================================== */
 
+.vehicle-description {
 
- /* ================= FEATURES ================= */
+    margin: 0;
 
- 
+    color: #687789;
 
+    font-size: 13.5px;
 
- /* ================= BOTTOM ================= */
+    line-height: 1.7;
+}
 
- .loan-bottom {
-     margin-top: auto;
 
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
+/* ==========================================
+   CARD FOOTER
+========================================== */
 
-     gap: 15px;
- }
+.vehicle-card-footer {
 
- .loan-info {
-     color: #777e8d;
-     font-size: 12px;
-     font-weight: 600;
- }
+    display: flex;
 
- .loan-info i {
-     color: #315cff;
-     margin-right: 4px;
- }
+    align-items: center;
 
+    justify-content: space-between;
 
- /* ================= BUTTON ================= */
+    margin-top: auto;
 
- .loan-btn {
-     display: inline-flex;
-     align-items: center;
-     padding: 5px 10px;
+    padding-top: 18px;
 
-     background: linear-gradient(135deg,
-             #01015d,
-             #315cff);
+    border-top: 1px solid #edf0f3;
+}
 
-     color: #fff;
-     text-decoration: none;
 
-     border-radius: 10px;
+.vehicle-info {
 
-     font-size: 13px;
-     font-weight: 700;
+    display: inline-flex;
 
-     box-shadow: 0 7px 18px rgba(1, 1, 93, 0.18);
+    align-items: center;
 
-     transition: all 0.3s ease;
- }
+    gap: 7px;
 
- .loan-btn i {
-     transition: transform 0.3s ease;
- }
+    color: #687789;
 
- .loan-btn:hover {
-     color: #fff;
-     transform: translateY(-2px);
- }
+    font-size: 12px;
 
- .loan-btn:hover i {
-     transform: translateX(4px);
- }
+    font-weight: 600;
+}
 
 
- /* ================= TABLET ================= */
+.vehicle-info i {
 
- @media (max-width: 768px) {
+    color: #ed1c24;
 
-     .loan-card {
-         max-width: 100%;
-     }
+    font-size: 13px;
+}
 
-     .loan-card-content {
-         padding: 20px;
-     }
 
-     .loan-title h3 {
-         font-size: 24px;
-     }
+/* Arrow */
 
-     .loan-features {
-         gap: 10px;
-         flex-wrap: wrap;
-     }
- }
+.vehicle-arrow {
 
+    width: 38px;
 
- /* ================= MOBILE ================= */
+    height: 38px;
 
- @media (max-width: 576px) {
+    display: flex;
 
-     .loan-card {
-         flex-direction: column;
-         border-radius: 18px;
-     }
+    align-items: center;
 
-     .loan-card-image {
-         width: 100%;
-         height: 200px;
-         min-height: 200px;
-     }
+    justify-content: center;
 
-     .loan-card-content {
-         padding: 20px;
-     }
+    color: #23466d;
 
-     .loan-icon {
-         width: 42px;
-         height: 42px;
-     }
+    background: #f3f6f9;
 
-     .loan-title h3 {
-         font-size: 23px;
-     }
+    border-radius: 50%;
 
-     .loan-description {
-         font-size: 13px;
-     }
+    transition: all .3s ease;
+}
 
-     .loan-bottom {
-         align-items: flex-start;
-     }
 
-     .loan-btn {
-         padding: 9px 14px;
-         font-size: 12px;
-     }
- }
+.vehicle-card:hover .vehicle-arrow {
 
+    color: #fff;
 
- /* ================= SMALL MOBILE ================= */
+    background: #ed1c24;
 
- @media (max-width: 400px) {
+    transform: translateX(3px);
+}
 
-     .loan-card-image {
-         height: 180px;
-         min-height: 180px;
-     }
 
-     .loan-features {
-         flex-direction: column;
-         gap: 7px;
-     }
+/* ==========================================
+   BOTTOM CTA
+========================================== */
 
-     .loan-bottom {
-         flex-direction: column;
-         align-items: stretch;
-     }
+.vehicle-bottom-cta {
 
-     .loan-btn {
-         justify-content: center;
-     }
- }
+    display: flex;
 
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 55px;
+
+    padding: 25px 30px;
+
+    background: #23466d;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.vehicle-bottom-cta::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    right: -80px;
+
+    top: -100px;
+
+    border: 45px solid rgba(255,255,255,.05);
+
+    border-radius: 50%;
+}
+
+
+.vehicle-bottom-cta span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #b9c8d7;
+
+    font-size: 12px;
+}
+
+
+.vehicle-bottom-cta h3 {
+
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+.vehicle-bottom-cta a {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+
+    padding: 12px 20px;
+
+    color: #23466d;
+
+    background: #fff;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+
+.vehicle-bottom-cta a:hover {
+
+    color: #fff;
+
+    background: #ed1c24;
+
+}
+
+
+.vehicle-bottom-cta a i {
+
+    transition: .3s;
+}
+
+
+.vehicle-bottom-cta a:hover i {
+
+    transform: translateX(4px);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 991px) {
+
+    .vehicle-products {
+
+        padding: 65px 0;
+
+    }
+
+
+    .vehicle-section-heading h2 {
+
+        font-size: 31px;
+
+    }
+
+
+    .vehicle-card-image {
+
+        height: 205px;
+
+    }
+
+
+    .vehicle-bottom-cta {
+
+        padding: 23px;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+
+    .vehicle-products {
+
+        padding: 50px 0;
+
+    }
+
+
+    .vehicle-section-heading {
+
+        margin-bottom: 32px;
+
+    }
+
+
+    .vehicle-section-heading h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .vehicle-section-heading p {
+
+        font-size: 14px;
+
+    }
+
+
+    .vehicle-card-image {
+
+        height: 210px;
+
+    }
+
+
+    .vehicle-card-content {
+
+        min-height: 225px;
+
+        padding: 19px;
+
+    }
+
+
+    .vehicle-card-title h3 {
+
+        font-size: 17px;
+
+    }
+
+
+    .vehicle-bottom-cta {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 22px;
+
+        margin-top: 40px;
+
+    }
+
+
+    .vehicle-bottom-cta h3 {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .vehicle-section-heading h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .vehicle-card-image {
+
+        height: 195px;
+
+    }
+
+
+    .vehicle-card-content {
+
+        padding: 18px;
+
+    }
+
+
+    .vehicle-icon {
+
+        width: 44px;
+
+        height: 44px;
+
+        flex-basis: 44px;
+
+    }
+
+
+    .vehicle-description {
+
+        font-size: 13px;
+
+    }
+
+}
  /* Loan card end */

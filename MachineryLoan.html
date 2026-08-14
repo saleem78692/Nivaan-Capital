@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EMI Calculator - Nivaan Capital</title>
+    <title>Nivaan Capital</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +25,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="assests/css/machineryLoan.css">
 </head>
 
 <body>
@@ -619,166 +622,785 @@
 
     <!-- Navbar end  -->
 
+    <!-- Machinary code start  -->
 
-    <!-- ================= EMI CALCULATOR SECTION ================= -->
-    <section class="emi-calculator-section" id="emi-calculator">
+                <!-- =================================================
+     BANNER
+================================================= -->
+
+    <section class="machinery-banner">
+
+        <div class="machinery-banner-overlay"></div>
+
         <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-tag">Calculate Your Monthly Outgoings</span>
-                <h2 class="section-title">Interactive EMI Calculator</h2>
-                <div class="title-bar-separator"></div>
-                <p class="section-subtitle">Use our visual tool to estimate your monthly installments, total interest,
-                    and see a year-wise amortization break-up.</p>
+
+            <div class="machinery-banner-content">
+
+               
+
+
+                <h1>
+                    Machinery <span>Loan</span>
+                </h1>
+
+
+                <p>
+                    Finance your business machinery and equipment with
+                    flexible loan solutions designed to support business
+                    expansion and growth.
+                </p>
+
+
+                <a href="#apply" class="banner-btn">
+
+                    Apply Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
             </div>
 
-            <div class="calculator-card">
-                <!-- Loan Type Tabs -->
-                <div class="calculator-tabs">
-                    <button class="tab-btn active" data-loan-type="home"><i class="bi bi-house"></i> Home Loan</button>
-                    <button class="tab-btn" data-loan-type="personal"><i class="bi bi-person"></i> Personal
-                        Loan</button>
-                    <button class="tab-btn" data-loan-type="business"><i class="bi bi-briefcase"></i> Business
-                        Loan</button>
-                </div>
-
-                <div class="calculator-body">
-                    <!-- Left: Sliders and Inputs -->
-                    <div class="inputs-column">
-                        <!-- Loan Amount -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Amount</span>
-                                <div class="input-numeric-wrapper">
-                                    <span class="currency-prefix">₹</span>
-                                    <input type="number" id="loan-amount-input" class="numeric-input" min="100000"
-                                        max="50000000" step="50000" value="5000000">
-                                </div>
-                            </div>
-                            <input type="range" id="loan-amount-slider" class="range-slider" min="100000" max="50000000"
-                                step="50000" value="5000000">
-                            <div class="slider-bounds">
-                                <span>₹1 L</span>
-                                <span>₹5 Cr</span>
-                            </div>
-                        </div>
-
-                        <!-- Interest Rate -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Interest Rate</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="interest-rate-input" class="numeric-input" min="5" max="25"
-                                        step="0.05" value="8.5">
-                                    <span class="currency-suffix">%</span>
-                                </div>
-                            </div>
-                            <input type="range" id="interest-rate-slider" class="range-slider" min="5" max="25"
-                                step="0.05" value="8.5">
-                            <div class="slider-bounds">
-                                <span>5%</span>
-                                <span>25%</span>
-                            </div>
-                        </div>
-
-                        <!-- Loan Tenure -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Tenure</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="loan-tenure-input" class="numeric-input" min="1" max="30"
-                                        step="1" value="20">
-                                    <span class="currency-suffix">Yrs</span>
-                                </div>
-                            </div>
-                            <input type="range" id="loan-tenure-slider" class="range-slider" min="1" max="30" step="1"
-                                value="20">
-                            <div class="slider-bounds">
-                                <span>1 Yr</span>
-                                <span>30 Yrs</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Outputs and Charts -->
-                    <div class="outputs-column">
-                        <div class="results-summary">
-                            <div class="emi-result-box">
-                                <span class="emi-label">Monthly EMI Payment</span>
-                                <span class="emi-amount" id="monthly-emi-output">₹0</span>
-                            </div>
-
-                            <div class="breakdown-details mt-4">
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box principal-color"></span>
-                                    <span class="breakdown-label">Principal Amount</span>
-                                    <span class="breakdown-val" id="principal-amount-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box interest-color"></span>
-                                    <span class="breakdown-label">Total Interest Payable</span>
-                                    <span class="breakdown-val" id="total-interest-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item total-payable-item pt-2 border-top mt-2">
-                                    <span class="breakdown-label font-weight-bold">Total Amount Payable</span>
-                                    <span class="breakdown-val font-weight-bold" id="total-payable-output">₹0</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Chart Container -->
-                        <div class="chart-wrapper">
-                            <svg class="donut-chart" viewBox="0 0 100 100">
-                                <circle class="donut-bg" cx="50" cy="50" r="40" fill="transparent" stroke="#f1f3f5"
-                                    stroke-width="12"></circle>
-                                <circle class="donut-segment principal-segment" cx="50" cy="50" r="40"
-                                    fill="transparent" stroke="#10458c" stroke-width="12" stroke-dasharray="0 100"
-                                    stroke-dashoffset="0"></circle>
-                                <circle class="donut-segment interest-segment" cx="50" cy="50" r="40" fill="transparent"
-                                    stroke="#ef3438" stroke-width="12" stroke-dasharray="0 100" stroke-dashoffset="0">
-                                </circle>
-                                <g class="chart-text">
-                                    <text x="50" y="47" class="chart-pct-val" id="chart-interest-pct">0%</text>
-                                    <text x="50" y="60" class="chart-pct-label">Interest</text>
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Amortization Toggle -->
-                <div class="calculator-footer text-center pt-4 border-top">
-                    <button class="amortization-toggle-btn" id="toggle-schedule-btn">
-                        <span>Show Amortization Schedule</span> <i class="bi bi-chevron-down"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Amortization Panel -->
-            <div class="amortization-wrapper" id="amortization-panel">
-                <h3 class="schedule-title mb-4"><i class="bi bi-calendar-range"></i> Year-Wise Repayment Schedule</h3>
-                <div class="table-responsive">
-                    <table class="table amortization-table text-center">
-                        <thead>
-                            <tr>
-                                <th>Year</th>
-                                <th>Opening Balance</th>
-                                <th>Principal Paid</th>
-                                <th>Interest Paid</th>
-                                <th>Total Repaid</th>
-                                <th>Closing Balance</th>
-                            </tr>
-                        </thead>
-                        <tbody id="amortization-table-body">
-                            <!-- Populated dynamically via JS -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
+
     </section>
 
 
-     <footer class="nivaan-footer">
+
+    <!-- =================================================
+     NAVIGATION
+================================================= -->
+
+    <div class="loan-navigation">
+
+        <div class="container">
+
+            <div class="loan-navigation-inner">
+
+                <a href="#overview" class="loan-nav active">
+
+                    Overview
+
+                </a>
+
+
+                <a href="#features" class="loan-nav">
+
+                    Features & Benefits
+
+                </a>
+
+
+                <a href="#eligibility" class="loan-nav">
+
+                    Eligibility
+
+                </a>
+
+
+                <a href="#emi" class="loan-nav">
+
+                    EMI Calculator
+
+                </a>
+
+
+                <a href="#faqs" class="loan-nav">
+
+                    FAQs
+
+                </a>
+
+
+                <a href="#apply" class="apply-btn">
+
+                    Apply Loan
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+     OVERVIEW
+================================================= -->
+
+    <section class="machinery-overview" id="overview">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <!-- Content -->
+
+                <div class="col-lg-6">
+
+                    <h2 class="section-title">
+
+                        Machinery Loan
+
+                    </h2>
+
+
+                    <p class="overview-text">
+
+                        A Machinery Loan can help businesses purchase
+                        new machinery, equipment and tools required
+                        for business expansion, modernization and
+                        improved productivity.
+
+                    </p>
+
+
+                    <p class="overview-text">
+
+                        Whether you are upgrading existing equipment
+                        or investing in new machinery, a structured
+                        financing solution can help manage the cost
+                        while keeping your working capital available
+                        for day-to-day business needs.
+
+                    </p>
+
+
+                    <p class="overview-text">
+
+                        Machinery financing can be useful for
+                        manufacturing, construction, engineering,
+                        service and other equipment-intensive
+                        businesses.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Image -->
+
+                <div class="col-lg-6">
+
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85"
+                        class="img-fluid rounded-4 shadow" alt="Machinery Loan">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+     MACHINERY TYPES
+================================================= -->
+
+    <section class="features-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Machinery You Can Finance
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- Card -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="machinery-card">
+
+                        <img src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&w=900&q=85"
+                            alt="Manufacturing Machinery">
+
+                        <div class="machinery-card-body">
+
+                            <h3>
+                                Manufacturing Machinery
+                            </h3>
+
+                            <p>
+                                Equipment used for manufacturing,
+                                production and industrial operations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Card -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="machinery-card">
+
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=85"
+                            alt="Construction Equipment">
+
+                        <div class="machinery-card-body">
+
+                            <h3>
+                                Construction Equipment
+                            </h3>
+
+                            <p>
+                                Finance equipment required for
+                                construction and infrastructure projects.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Card -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="machinery-card">
+
+                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=85"
+                            alt="Industrial Equipment">
+
+                        <div class="machinery-card-body">
+
+                            <h3>
+                                Industrial Equipment
+                            </h3>
+
+                            <p>
+                                Support your business with modern
+                                industrial and specialized equipment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+     FEATURES & BENEFITS
+================================================= -->
+
+    <section class="features-section" id="features">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Features & Benefits
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="row g-3">
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-gears"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Finance for New Machinery
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Flexible Financing Options
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Convenient Repayment Tenure
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Support Business Expansion
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-building"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Suitable for Multiple Industries
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Improve Business Productivity
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-file-circle-check"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Simple Documentation
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <h3>
+                            Preserve Working Capital
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+     WHY MACHINERY LOAN
+================================================= -->
+
+    <section class="why-section" id="eligibility">
+
+        <div class="container">
+
+            <div class="why-box">
+
+                <div class="row align-items-center g-4">
+
+                    <div class="col-lg-5">
+
+                        <h2>
+                            Why Choose a Machinery Loan?
+                        </h2>
+
+                        <p class="mb-0" style="line-height:1.8;color:#dce7f1;">
+
+                            Invest in the right machinery without
+                            putting unnecessary pressure on your
+                            business cash flow.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-7">
+
+                        <ul class="why-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Upgrade outdated machinery
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Increase production capacity
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Improve operational efficiency
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Support business expansion
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Manage machinery purchase through
+                                structured repayments
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+     EMI PLACEHOLDER
+================================================= -->
+
+    <section id="emi" style="padding:70px 0;background:#f7f9fc;">
+
+        <div class="container text-center">
+
+            <h2 class="section-title d-inline-block">
+
+                Machinery Loan EMI Calculator
+
+            </h2>
+
+            <p class="text-muted mt-3 mb-4">
+
+                Calculate your estimated monthly EMI based on
+                loan amount, interest rate and tenure.
+
+            </p>
+
+
+            <a href="emi-calculator.html" class="banner-btn">
+
+                Calculate EMI
+
+                <i class="fa-solid fa-calculator"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+     FAQ
+================================================= -->
+
+    <section id="faqs" style="padding:70px 0;">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Frequently Asked Questions
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="accordion" id="machineryFAQ">
+
+
+                <div class="accordion-item mb-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faqOne">
+
+                            What is a Machinery Loan?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#machineryFAQ">
+
+                        <div class="accordion-body">
+
+                            A Machinery Loan is financing designed
+                            to help eligible businesses purchase
+                            machinery, equipment and other assets
+                            required for their operations.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item mb-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faqTwo">
+
+                            What can a Machinery Loan be used for?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#machineryFAQ">
+
+                        <div class="accordion-body">
+
+                            It can be used for eligible machinery,
+                            equipment and business-related assets,
+                            subject to the lender's terms and
+                            eligibility criteria.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item mb-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faqThree">
+
+                            Who can apply for a Machinery Loan?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#machineryFAQ">
+
+                        <div class="accordion-body">
+
+                            Business owners and eligible enterprises
+                            requiring machinery or equipment financing
+                            can explore this type of loan, subject to
+                            lender-specific eligibility requirements.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+     CTA
+================================================= -->
+
+    <section class="cta-section" id="apply">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-8">
+
+                        <h2>
+                            Ready to Upgrade Your Machinery?
+                        </h2>
+
+                        <p>
+                            Explore financing options and take the
+                            next step towards growing your business.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-4 text-lg-end">
+
+                        <a href="ApplyLoan.html" class="cta-btn">
+
+                            Apply for Machinery Loan
+
+                            <i class="fa-solid fa-arrow-right ms-1"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Machinary code end -->
+
+
+
+    <!-- footer start  -->
+    <footer class="nivaan-footer">
 
 
         <div class="footer-main">
@@ -1161,8 +1783,10 @@
         </div>
 
     </footer>
+    <!-- footer end -->
 
     <script src="assests/js/script.js"></script>
+    <script src="assests/js/about.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

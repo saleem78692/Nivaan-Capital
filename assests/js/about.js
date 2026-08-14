@@ -1,4 +1,4 @@
-    // filter btn start
+// filter btn start
 document.querySelectorAll(".nav-link-custom").forEach(function (button) {
   button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -12,8 +12,7 @@ document.querySelectorAll(".nav-link-custom").forEach(function (button) {
     this.classList.add("active");
   });
 });
-    //filter btn end
-
+//filter btn end
 
 let a = document.getElementById("vision&Review");
 function vision() {
@@ -270,8 +269,7 @@ function Heritage() {
 }
 
 function boardOfDirectors() {
-
-    a.innerHTML = `
+  a.innerHTML = `
 
         <section class="directors-section py-5">
 
@@ -693,57 +691,45 @@ function boardOfDirectors() {
 
     `;
 
+  // Modal setup
+  const directorModal = document.getElementById("directorModal");
 
-    // Modal setup
-    const directorModal = document.getElementById("directorModal");
+  const modalImage = document.getElementById("modalImage");
+  const modalName = document.getElementById("modalName");
+  const modalDesignation = document.getElementById("modalDesignation");
+  const modalDescription = document.getElementById("modalDescription");
 
-    const modalImage = document.getElementById("modalImage");
-    const modalName = document.getElementById("modalName");
-    const modalDesignation = document.getElementById("modalDesignation");
-    const modalDescription = document.getElementById("modalDescription");
+  // All cards
+  const directorCards = document.querySelectorAll(".director-card");
 
+  directorCards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      const name = this.dataset.name;
+      const designation = this.dataset.designation;
+      const image = this.dataset.image;
+      const description = this.dataset.description;
 
-    // All cards
-    const directorCards = document.querySelectorAll(".director-card");
+      // Set data
+      modalName.textContent = name;
 
+      modalDesignation.textContent = designation;
 
-    directorCards.forEach(function (card) {
+      modalDescription.textContent = description;
 
-        card.addEventListener("click", function () {
+      modalImage.src = image;
 
-            const name = this.dataset.name;
-            const designation = this.dataset.designation;
-            const image = this.dataset.image;
-            const description = this.dataset.description;
+      modalImage.alt = name;
 
+      // Open modal
+      const modal = bootstrap.Modal.getOrCreateInstance(directorModal);
 
-            // Set data
-            modalName.textContent = name;
-
-            modalDesignation.textContent = designation;
-
-            modalDescription.textContent = description;
-
-            modalImage.src = image;
-
-            modalImage.alt = name;
-
-
-            // Open modal
-            const modal = bootstrap.Modal.getOrCreateInstance(
-                directorModal
-            );
-
-            modal.show();
-
-        });
-
+      modal.show();
     });
-
+  });
 }
 
-function subsidiaries(){
-    a.innerHTML=`
+function subsidiaries() {
+  a.innerHTML = `
         <section class="subsidiaries-section py-5">
 
     <div class="container">
@@ -901,11 +887,11 @@ function subsidiaries(){
     </div>
 
 </section>
-    `
+    `;
 }
 
-function presence(){
-    a.innerHTML=`
+function presence() {
+  a.innerHTML = `
         <section class="presence-section py-5">
 
     <div class="container">
@@ -1108,11 +1094,11 @@ function presence(){
     </div>
 
 </section>    
-    `
+    `;
 }
 
-function certifications(){
-    a.innerHTML=`
+function certifications() {
+  a.innerHTML = `
         <section class="iso-section py-5">
 
     <div class="container">
@@ -1369,12 +1355,11 @@ function certifications(){
     </div>
 
 </div>
-    `
+    `;
 }
 
-
-function awards(){
-    a.innerHTML=`
+function awards() {
+  a.innerHTML = `
         <section class="awards-section">
 
     <div class="awards-container">
@@ -1443,219 +1428,149 @@ function awards(){
     </div>
 
 </section>    
-    `
+    `;
 
-
-     /* =========================================
+  /* =========================================
        AWARDS DATA
     ========================================= */
 
-    const awardsData = {
-
-
-        /* =========================
+  const awardsData = {
+    /* =========================
            2026
         ========================= */
 
-        2026: {
+    2026: {
+      category: "Business Excellence",
 
-            category:
-                "Business Excellence",
+      title: "Chola Award 2026",
 
-            title:
-                "Chola Award 2026",
+      image: "./assests/images/award-2026.jpg",
 
-            image:
-                "./assests/images/award-2026.jpg",
+      description:
+        "Cholamandalam has been recognized for its outstanding contribution, excellence and commitment towards delivering innovative and customer-centric financial solutions.",
+    },
 
-            description:
-                "Cholamandalam has been recognized for its outstanding contribution, excellence and commitment towards delivering innovative and customer-centric financial solutions."
-
-        },
-
-
-        /* =========================
+    /* =========================
            2025
         ========================= */
 
-        2025: {
+    2025: {
+      category: "Business Excellence",
 
-            category:
-                "Business Excellence",
+      title: "Chola Award 2025",
 
-            title:
-                "Chola Award 2025",
+      image: "./assests/images/award-2025.jpg",
 
-            image:
-                "./assests/images/award-2025.jpg",
+      description:
+        "Cholamandalam received recognition for its continued excellence, innovation and contribution towards the financial services industry.",
+    },
 
-            description:
-                "Cholamandalam received recognition for its continued excellence, innovation and contribution towards the financial services industry."
-
-        },
-
-
-        /* =========================
+    /* =========================
            2024
         ========================= */
 
-        2024: {
+    2024: {
+      category: "Risk Management",
 
-            category:
-                "Risk Management",
+      title: "Liquidity Risk Management of the Year",
 
-            title:
-                "Liquidity Risk Management of the Year",
+      image: "./assests/images/award-2024.jpg",
 
-            image:
-                "./assests/images/award-2024.jpg",
+      description:
+        "At the India Credit Risk Management Summit & Awards 2024, Chola was awarded the prestigious Liquidity Risk Management of the Year award for its predictive approach to managing liquidity risk.",
+    },
 
-            description:
-                "At the India Credit Risk Management Summit & Awards 2024, Chola was awarded the prestigious Liquidity Risk Management of the Year award for its predictive approach to managing liquidity risk."
-
-        },
-
-
-        /* =========================
+    /* =========================
            2023
         ========================= */
 
-        2023: {
+    2023: {
+      category: "Technology & Innovation",
 
-            category:
-                "Technology & Innovation",
+      title: "Platinum Award in the 6th CII",
 
-            title:
-                "Platinum Award in the 6th CII",
+      image: "./assests/images/award-2023.jpg",
 
-            image:
-                "./assests/images/award-2023.jpg",
+      description:
+        "Chola CII Ops team was awarded the Platinum Award in the 6th CII Conference on Indian Industry's Technology, Automation, Technology & Solutions Providers.",
+    },
 
-            description:
-                "Chola CII Ops team was awarded the Platinum Award in the 6th CII Conference on Indian Industry's Technology, Automation, Technology & Solutions Providers."
-
-        },
-
-
-        /* =========================
+    /* =========================
            2022
         ========================= */
 
-        2022: {
+    2022: {
+      category: "Digital Innovation",
 
-            category:
-                "Digital Innovation",
+      title: "Excellence in Digital Transformation",
 
-            title:
-                "Excellence in Digital Transformation",
+      image: "./assests/images/award-2022.jpg",
 
-            image:
-                "./assests/images/award-2022.jpg",
+      description:
+        "Cholamandalam was recognized for its excellence in digital transformation, technology innovation and customer-focused digital solutions.",
+    },
 
-            description:
-                "Cholamandalam was recognized for its excellence in digital transformation, technology innovation and customer-focused digital solutions."
-
-        },
-
-
-        /* =========================
+    /* =========================
            2021
         ========================= */
 
-        2021: {
+    2021: {
+      category: "Customer Excellence",
 
-            category:
-                "Customer Excellence",
+      title: "Customer Service Excellence Award",
 
-            title:
-                "Customer Service Excellence Award",
+      image: "./assests/images/award-2021.jpg",
 
-            image:
-                "./assests/images/award-2021.jpg",
+      description:
+        "The organization was recognized for its strong commitment to customer service, operational excellence and delivering better customer experiences.",
+    },
 
-            description:
-                "The organization was recognized for its strong commitment to customer service, operational excellence and delivering better customer experiences."
-
-        },
-
-
-        /* =========================
+    /* =========================
            2020
         ========================= */
 
-        2020: {
+    2020: {
+      category: "Financial Services",
 
-            category:
-                "Financial Services",
+      title: "Excellence in Financial Services",
 
-            title:
-                "Excellence in Financial Services",
+      image: "./assests/images/award-2020.jpg",
 
-            image:
-                "./assests/images/award-2020.jpg",
+      description:
+        "Cholamandalam received recognition for its contribution to the financial services sector and its commitment to sustainable business growth.",
+    },
+  };
 
-            description:
-                "Cholamandalam received recognition for its contribution to the financial services sector and its commitment to sustainable business growth."
-
-        }
-
-    };
-
-
-
-    /* =========================================
+  /* =========================================
        ELEMENTS
     ========================================= */
 
-    const awardsTimeline =
-        document.getElementById(
-            "awardsTimeline"
-        );
+  const awardsTimeline = document.getElementById("awardsTimeline");
 
+  const loadAwardsBtn = document.getElementById("loadAwards");
 
-    const loadAwardsBtn =
-        document.getElementById(
-            "loadAwards"
-        );
-
-
-
-    /* =========================================
+  /* =========================================
        CURRENT YEAR
     ========================================= */
 
-    let currentYear = 2026;
+  let currentYear = 2026;
 
-
-
-    /* =========================================
+  /* =========================================
        CREATE AWARD
     ========================================= */
 
-    function createAward(year) {
+  function createAward(year) {
+    const award = awardsData[year];
 
+    if (!award) {
+      return;
+    }
 
-        const award =
-            awardsData[year];
+    const awardItem = document.createElement("div");
 
+    awardItem.className = "award-item";
 
-        if (!award) {
-
-            return;
-        }
-
-
-        const awardItem =
-            document.createElement(
-                "div"
-            );
-
-
-        awardItem.className =
-            "award-item";
-
-
-        awardItem.innerHTML = `
+    awardItem.innerHTML = `
 
             <!-- YEAR -->
 
@@ -1765,170 +1680,558 @@ function awards(){
 
         `;
 
+    awardsTimeline.appendChild(awardItem);
 
-        awardsTimeline.appendChild(
-            awardItem
-        );
-
-
-        /*
+    /*
             Animation trigger
         */
 
-        requestAnimationFrame(
-            () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        awardItem.classList.add("award-show");
+      });
+    });
+  }
 
-                requestAnimationFrame(
-                    () => {
-
-                        awardItem.classList.add(
-                            "award-show"
-                        );
-
-                    }
-                );
-
-            }
-        );
-
-    }
-
-
-
-    /* =========================================
+  /* =========================================
        INITIAL LOAD
        2026 ONLY
     ========================================= */
 
-    createAward(2026);
+  createAward(2026);
 
-
-
-    /* =========================================
+  /* =========================================
        LOAD MORE CLICK
     ========================================= */
 
-    loadAwardsBtn.addEventListener(
-        "click",
-        function () {
-
-
-            /*
+  loadAwardsBtn.addEventListener("click", function () {
+    /*
                 Loading state
             */
 
-            loadAwardsBtn.classList.add(
-                "loading"
-            );
+    loadAwardsBtn.classList.add("loading");
 
+    loadAwardsBtn.querySelector("span").textContent = "Loading...";
 
-            loadAwardsBtn.querySelector(
-                "span"
-            ).textContent =
-                "Loading...";
+    loadAwardsBtn.querySelector("i").className = "bi bi-arrow-repeat";
 
-
-            loadAwardsBtn.querySelector(
-                "i"
-            ).className =
-                "bi bi-arrow-repeat";
-
-
-
-            /*
+    /*
                 Small delay
                 for smooth effect
             */
 
-            setTimeout(
-                function () {
-
-
-                    /*
+    setTimeout(function () {
+      /*
                         Move to previous year
                     */
 
-                    currentYear--;
+      currentYear--;
 
-
-
-                    /*
+      /*
                         Check data
                     */
 
-                    if (
-                        awardsData[
-                            currentYear
-                        ]
-                    ) {
+      if (awardsData[currentYear]) {
+        createAward(currentYear);
+      }
 
-                        createAward(
-                            currentYear
-                        );
-
-                    }
-
-
-
-                    /*
+      /*
                         Reset button
                     */
 
-                    loadAwardsBtn.classList.remove(
-                        "loading"
-                    );
+      loadAwardsBtn.classList.remove("loading");
 
+      loadAwardsBtn.querySelector("i").className = "bi bi-arrow-down";
 
-                    loadAwardsBtn.querySelector(
-                        "i"
-                    ).className =
-                        "bi bi-arrow-down";
+      loadAwardsBtn.querySelector("span").textContent = "Load More";
 
-
-                    loadAwardsBtn.querySelector(
-                        "span"
-                    ).textContent =
-                        "Load More";
-
-
-
-                    /*
+      /*
                         2020 ke baad
                     */
 
-                    if (
-                        currentYear <= 2020
-                    ) {
+      if (currentYear <= 2020) {
+        loadAwardsBtn.disabled = true;
+
+        loadAwardsBtn.classList.add("all-loaded");
+
+        loadAwardsBtn.querySelector("span").textContent = "All Awards Loaded";
+
+        loadAwardsBtn.querySelector("i").className = "bi bi-check-circle-fill";
+      }
+    }, 450);
+  });
+}
 
 
-                        loadAwardsBtn.disabled =
-                            true;
+//========================================================
+//Personal Loan 
+//=========================================================
+ //overview
+let personalLoan = document.getElementById("personalLoan");
+function overviewpersonalLoan() {
+  
+  personalLoan.innerHTML = `
+         <section class="loan-section">
+
+            <div class="container loan-container">
+
+                <!-- Heading -->
+                <h1 class="section-title">
+                    Personal Loans
+                </h1>
+
+                <!-- Intro -->
+                <p class="intro-text">
+                    If you are looking for an unsecured business or personal loan,
+                    you have come to the right place. Chola Consumer and Small
+                    Enterprise Loans (CSEL) presents you a wide range of loan
+                    products without asking for a collateral security for your loan.
+                </p>
+
+                <p class="intro-text">
+                    Chola's business and personal loans support budding entrepreneurs
+                    and aspiring professionals to achieve their goals.
+                </p>
 
 
-                        loadAwardsBtn.classList.add(
-                            "all-loaded"
-                        );
+                <!-- Loan Offerings -->
+                <div class="offer-heading">
+                    <h3>Our Loan Offerings</h3>
+                </div>
 
 
-                        loadAwardsBtn.querySelector(
-                            "span"
-                        ).textContent =
-                            "All Awards Loaded";
+                <!-- Cards -->
+                <div class="row g-4">
+
+                    <!-- Personal Loan -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <a href="#" class="text-decoration-none">
+
+                            <!-- <div class="loan-card card">
+
+                               <div class="card-header">
+                                 <div class="h-25">
+                                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80"
+                                        alt="Personal Loan" height="100px">
+                                </div>
+                               </div>
+
+                                <div class="loan-content">
+
+                                    <span class="loan-title">
+                                        Personal Loans
+                                    </span>
+
+                                    <p class="loan-desc">
+                                        Salaried Employees
+                                    </p>
+
+                                </div>
+
+                            </div> -->
+
+                            <div class="card loan-card-p">
+                                <div class="card-header card-header-p">
+                                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80"
+                                        alt="Personal Loan" height="200px" width="100%">
+                                </div>
+                                <div class="card-body text-center">
 
 
-                        loadAwardsBtn.querySelector(
-                            "i"
-                        ).className =
-                            "bi bi-check-circle-fill";
+                                    <p class="loan-title ">
+                                        Personal Loans
+                                    </p>
 
-                    }
+                                    <p class="loan-desc">
+                                        Salaried Employees
+                                    </p>
 
 
-                },
-                450
-            );
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Professional Loan -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <a href="#" class="text-decoration-none">
+                            <div class="card loan-card-p">
+                                <div class="card-header card-header-p">
+                                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
+                                        alt="Personal Loan" height="200px" width="100%">
+                                </div>
+                                <div class="card-body text-center">
+
+
+                                    <span class="loan-title">
+                                        Professional Loans
+                                    </span>
+
+                                    <p class="loan-desc">
+                                        Self-Employed Professionals
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+
+
+
+                    <!-- Business Loan -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <a href="#" class="text-decoration-none">
+
+
+
+                            <div class="card loan-card-p">
+                                <div class="card-header card-header-p">
+                                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80"
+                                        alt="Business Loan" height="200px" width="100%">
+                                </div>
+                                <div class="card-body text-center">
+
+
+                                    <span class="loan-title">
+                                        Business Loans
+                                    </span>
+
+                                    <p class="loan-desc">
+                                        Proprietorship, Partnership &amp; Private
+                                        Limited Companies.
+                                    </p>
+
+
+                                </div>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    `;
+}
+
+function emicalculatorPersonal(){
+    personalLoan.innerHTML=`
+          <section class="emi-section">
+
+        <div class="container">
+
+            <div class="emi-wrapper">
+
+                <div class="row g-0">
+
+                    <!-- LEFT -->
+                    <div class="col-lg-7">
+
+                        <div class="emi-left">
+
+                            <h2 class="emi-heading">
+                                EMI <span>Calculator</span>
+                            </h2>
+
+                            <p class="emi-subtitle">
+                                Calculate your monthly loan EMI quickly and easily.
+                            </p>
+
+
+                            <!-- Loan Amount -->
+                            <div class="form-group">
+
+                                <label class="form-label">
+                                    Loan Amount
+                                </label>
+
+                                <div class="input-box">
+
+                                    <span>₹</span>
+
+                                    <input type="number" id="loanAmount" value="1000000" min="50000" max="10000000">
+
+                                </div>
+
+                                <div class="range-wrapper">
+
+                                    <input type="range" id="loanRange" min="50000" max="10000000" step="50000"
+                                        value="1000000">
+
+                                    <div class="range-values">
+                                        <span>₹50K</span>
+                                        <span>₹1 Cr</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Interest -->
+                            <div class="form-group">
+
+                                <label class="form-label">
+                                    Interest Rate (% P.A.)
+                                </label>
+
+                                <div class="input-box">
+
+                                    <span>%</span>
+
+                                    <input type="number" id="interestRate" value="10.5" min="1" max="30" step="0.1">
+
+                                </div>
+
+                                <div class="range-wrapper">
+
+                                    <input type="range" id="interestRange" min="1" max="30" step="0.1" value="10.5">
+
+                                    <div class="range-values">
+                                        <span>1%</span>
+                                        <span>30%</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Tenure -->
+                            <div class="form-group">
+
+                                <label class="form-label">
+                                    Loan Tenure (Years)
+                                </label>
+
+                                <div class="input-box">
+
+                                    <span>Y</span>
+
+                                    <input type="number" id="tenure" value="10" min="1" max="30">
+
+                                </div>
+
+                                <div class="range-wrapper">
+
+                                    <input type="range" id="tenureRange" min="1" max="30" value="10">
+
+                                    <div class="range-values">
+                                        <span>1 Year</span>
+                                        <span>30 Years</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT -->
+                    <div class="col-lg-5">
+
+                        <div class="emi-result">
+
+                            <div class="result-label">
+                                Your Monthly EMI
+                            </div>
+
+                            <div class="emi-amount">
+                                ₹ <span id="emi">13,493</span>
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Principal Amount
+                                </span>
+
+                                <span id="principal">
+                                    ₹10,00,000
+                                </span>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Total Interest
+                                </span>
+
+                                <span id="interest">
+                                    ₹6,19,182
+                                </span>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Total Amount
+                                </span>
+
+                                <span id="total">
+                                    ₹16,19,182
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    `
+
+      const loanAmount = document.getElementById("loanAmount");
+        const loanRange = document.getElementById("loanRange");
+
+        const interestRate = document.getElementById("interestRate");
+        const interestRange = document.getElementById("interestRange");
+
+        const tenure = document.getElementById("tenure");
+        const tenureRange = document.getElementById("tenureRange");
+
+
+        function formatIndianNumber(number) {
+
+            return new Intl.NumberFormat("en-IN", {
+                maximumFractionDigits: 0
+            }).format(number);
 
         }
-    );
 
+
+        function calculateEMI() {
+
+            let principal = parseFloat(loanAmount.value) || 0;
+            let annualRate = parseFloat(interestRate.value) || 0;
+            let years = parseFloat(tenure.value) || 0;
+
+            let monthlyRate = annualRate / 12 / 100;
+            let months = years * 12;
+
+            let emi;
+
+            if (monthlyRate === 0) {
+
+                emi = principal / months;
+
+            } else {
+
+                emi =
+                    principal *
+                    monthlyRate *
+                    Math.pow(1 + monthlyRate, months) /
+                    (Math.pow(1 + monthlyRate, months) - 1);
+
+            }
+
+            let totalAmount = emi * months;
+            let totalInterest = totalAmount - principal;
+
+
+            document.getElementById("emi").innerText =
+                formatIndianNumber(emi);
+
+            document.getElementById("principal").innerText =
+                "₹" + formatIndianNumber(principal);
+
+            document.getElementById("interest").innerText =
+                "₹" + formatIndianNumber(totalInterest);
+
+            document.getElementById("total").innerText =
+                "₹" + formatIndianNumber(totalAmount);
+
+        }
+
+
+        /* Loan Amount */
+
+        loanRange.addEventListener("input", function () {
+
+            loanAmount.value = this.value;
+
+            calculateEMI();
+
+        });
+
+
+        loanAmount.addEventListener("input", function () {
+
+            loanRange.value = this.value;
+
+            calculateEMI();
+
+        });
+
+
+        /* Interest */
+
+        interestRange.addEventListener("input", function () {
+
+            interestRate.value = this.value;
+
+            calculateEMI();
+
+        });
+
+
+        interestRate.addEventListener("input", function () {
+
+            interestRange.value = this.value;
+
+            calculateEMI();
+
+        });
+
+
+        /* Tenure */
+
+        tenureRange.addEventListener("input", function () {
+
+            tenure.value = this.value;
+
+            calculateEMI();
+
+        });
+
+
+        tenure.addEventListener("input", function () {
+
+            tenureRange.value = this.value;
+
+            calculateEMI();
+
+        });
+
+
+        /* Initial Calculation */
+
+        calculateEMI();
 }
+
+

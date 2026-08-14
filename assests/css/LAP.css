@@ -1,0 +1,831 @@
+/* =================================
+           BANNER
+        ================================= */
+
+.lap-banner {
+    min-height: 430px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+.lap-banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(7, 35, 60, .95) 0%,
+            rgba(7, 35, 60, .78) 45%,
+            rgba(7, 35, 60, .20) 100%);
+}
+
+
+.lap-banner-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 680px;
+
+    color: #fff;
+}
+
+
+.lap-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, .75);
+}
+
+
+.lap-breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.lap-breadcrumb span {
+    color: #ed1c24;
+}
+
+
+.lap-banner h1 {
+    font-size: 50px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+
+.lap-banner h1 span {
+    color: #ed1c24;
+}
+
+
+.lap-banner h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    background: #ed1c24;
+
+    margin-top: 15px;
+
+    border-radius: 5px;
+}
+
+
+.lap-banner p {
+    max-width: 590px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, .9);
+
+    margin-bottom: 28px;
+}
+
+
+.lap-banner-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 24px;
+
+    background: #ed1c24;
+
+    color: #fff;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+
+.lap-banner-btn:hover {
+    background: #fff;
+
+    color: #23466d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+           NAVIGATION
+        ================================= */
+
+.lap-navigation {
+    background: #fff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, .08);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.lap-navigation-inner {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 13px 0;
+}
+
+
+.lap-nav {
+    padding: 10px 18px;
+
+    color: #23466d;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: .3s;
+}
+
+
+.lap-nav:hover,
+.lap-nav.active {
+    background: #23466d;
+
+    color: #fff;
+}
+
+
+.lap-apply {
+    padding: 11px 22px;
+
+    background: #ed1c24;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-left: 10px;
+
+    white-space: nowrap;
+
+    transition: .3s;
+}
+
+
+.lap-apply:hover {
+    background: #c81017;
+
+    color: #fff;
+}
+
+
+/* =================================
+           OVERVIEW
+        ================================= */
+
+.lap-overview {
+    padding: 75px 0;
+}
+
+
+.lap-section-title {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #23466d;
+
+    margin-bottom: 20px;
+}
+
+
+.lap-section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 3px;
+
+    background: #ed1c24;
+
+    margin-top: 11px;
+}
+
+
+.lap-text {
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    color: #444;
+
+    margin-bottom: 17px;
+}
+
+
+.lap-overview-img {
+    width: 100%;
+
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(25, 55, 85, .12);
+}
+
+
+/* =================================
+           PROPERTY TYPES
+        ================================= */
+
+.property-section {
+    padding: 70px 0;
+
+    background: #f7f9fc;
+}
+
+
+.lap-heading {
+    text-align: center;
+
+    margin-bottom: 42px;
+}
+
+
+.lap-heading h2 {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #23466d;
+
+    margin-bottom: 12px;
+}
+
+
+.lap-heading span {
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    background: #ed1c24;
+
+    margin: auto;
+}
+
+
+.property-card {
+    height: 100%;
+
+    background: #fff;
+
+    border: 1px solid #e7edf3;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    transition: .35s;
+
+    box-shadow:
+        0 5px 18px rgba(30, 60, 90, .05);
+}
+
+
+.property-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #ed1c24;
+
+    box-shadow:
+        0 15px 35px rgba(30, 60, 90, .12);
+}
+
+
+.property-card-img {
+    height: 190px;
+
+    overflow: hidden;
+}
+
+
+.property-card-img img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+
+.property-card:hover img {
+    transform: scale(1.07);
+}
+
+
+.property-card-body {
+    padding: 23px;
+}
+
+
+.property-card h3 {
+    font-size: 19px;
+
+    color: #064b96;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.property-card p {
+    color: #6c7785;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    margin: 0;
+}
+
+
+/* =================================
+           FEATURES
+        ================================= */
+
+.lap-features {
+    padding: 75px 0;
+}
+
+
+.feature-card {
+    height: 100%;
+
+    padding: 28px 18px;
+
+    background: #fff;
+
+    border: 1px solid #e6edf3;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #ed1c24;
+
+    box-shadow:
+        0 12px 30px rgba(35, 70, 109, .10);
+}
+
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: auto;
+
+    margin-bottom: 15px;
+
+    background: #eef4fa;
+
+    color: #ed1c24;
+
+    border-radius: 50%;
+
+    font-size: 23px;
+}
+
+
+.feature-line {
+    width: 30px;
+    height: 2px;
+
+    background: #ed1c24;
+
+    margin: 0 auto 15px;
+}
+
+
+.feature-card h3 {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: #23466d;
+
+    font-weight: 600;
+
+    margin: 0;
+}
+
+
+/* =================================
+           ELIGIBILITY
+        ================================= */
+
+.eligibility-section {
+    padding: 70px 0;
+
+    background: #f7f9fc;
+}
+
+
+.eligibility-box {
+    background: #23466d;
+
+    border-radius: 16px;
+
+    padding: 45px;
+
+    color: #fff;
+}
+
+
+.eligibility-box h2 {
+    font-size: 29px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+.eligibility-box p {
+    color: #dce7f0;
+
+    line-height: 1.8;
+}
+
+
+.eligibility-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+.eligibility-list li {
+    position: relative;
+
+    padding: 10px 0 10px 30px;
+
+    color: #e4edf5;
+
+    font-size: 15px;
+}
+
+
+.eligibility-list i {
+    position: absolute;
+
+    left: 0;
+
+    top: 13px;
+
+    color: #ed1c24;
+}
+
+
+/* =================================
+           EMI
+        ================================= */
+
+.lap-emi {
+    padding: 70px 0;
+}
+
+
+.emi-box {
+    background:
+        linear-gradient(135deg,
+            #f4f8fc,
+            #ffffff);
+
+    border: 1px solid #e2eaf1;
+
+    border-radius: 15px;
+
+    padding: 45px;
+
+    text-align: center;
+}
+
+
+.emi-box h2 {
+    color: #23466d;
+
+    font-size: 29px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.emi-box p {
+    color: #687789;
+
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+           FAQ
+        ================================= */
+
+.lap-faq {
+    padding: 70px 0;
+
+    background: #f7f9fc;
+}
+
+
+.accordion-item {
+    border: 1px solid #e3e9ef !important;
+
+    border-radius: 8px !important;
+
+    overflow: hidden;
+
+    margin-bottom: 12px;
+}
+
+
+.accordion-button {
+    color: #23466d;
+
+    font-weight: 600;
+
+    background: #fff;
+
+    box-shadow: none !important;
+}
+
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+
+    background: #23466d;
+}
+
+
+.accordion-body {
+    color: #596777;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =================================
+           CTA
+        ================================= */
+
+.lap-cta {
+    padding: 70px 0;
+}
+
+
+.cta-box {
+    padding: 45px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(110deg,
+            #ed1c24,
+            #b70f16);
+
+    color: #fff;
+}
+
+
+.cta-box h2 {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.cta-box p {
+    color: rgba(255, 255, 255, .9);
+
+    margin-bottom: 0;
+}
+
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #fff;
+
+    color: #23466d;
+
+    padding: 13px 24px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+
+.cta-button:hover {
+    background: #23466d;
+
+    color: #fff;
+}
+
+
+/* =================================
+           RESPONSIVE
+        ================================= */
+
+@media(max-width: 991px) {
+
+    .lap-banner {
+        min-height: 380px;
+    }
+
+    .lap-banner h1 {
+        font-size: 43px;
+    }
+
+    .lap-navigation-inner {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding: 12px 15px;
+    }
+
+    .lap-nav {
+        flex-shrink: 0;
+    }
+
+    .lap-apply {
+        flex-shrink: 0;
+    }
+
+}
+
+
+@media(max-width: 767px) {
+
+    .lap-banner {
+        min-height: 330px;
+
+        background-position: 65% center;
+    }
+
+    .lap-banner h1 {
+        font-size: 35px;
+    }
+
+    .lap-banner p {
+        font-size: 14px;
+    }
+
+    .lap-overview,
+    .property-section,
+    .lap-features,
+    .eligibility-section,
+    .lap-emi,
+    .lap-faq,
+    .lap-cta {
+        padding: 45px 0;
+    }
+
+    .lap-section-title,
+    .lap-heading h2 {
+        font-size: 25px;
+    }
+
+    .lap-overview-img {
+        height: 280px;
+    }
+
+    .eligibility-box,
+    .cta-box,
+    .emi-box {
+        padding: 28px 22px;
+    }
+
+    .cta-box h2,
+    .emi-box h2,
+    .eligibility-box h2 {
+        font-size: 24px;
+    }
+
+}
+
+
+@media(max-width: 480px) {
+
+    .lap-banner {
+        min-height: 300px;
+    }
+
+    .lap-banner h1 {
+        font-size: 30px;
+    }
+
+    .lap-breadcrumb {
+        font-size: 12px;
+    }
+
+    .lap-nav {
+        padding: 9px 13px;
+
+        font-size: 13px;
+    }
+
+}

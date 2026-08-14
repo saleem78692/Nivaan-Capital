@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EMI Calculator - Nivaan Capital</title>
+    <title>Nivaan Capital</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Google Fonts -->
@@ -23,11 +24,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="assests/css/invester.css">
 </head>
 
 <body>
 
- <!-- Navbar start  -->
+  <!-- Navbar start  -->
     <!-- ================= TOP HEADER ================= -->
     <header class="top-header">
 
@@ -619,166 +621,828 @@
 
     <!-- Navbar end  -->
 
+    <!-- Invester code start  -->
+    <!-- HERO -->
+    <section class="investor-hero">
 
-    <!-- ================= EMI CALCULATOR SECTION ================= -->
-    <section class="emi-calculator-section" id="emi-calculator">
+        <div class="investor-hero-overlay"></div>
+
         <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-tag">Calculate Your Monthly Outgoings</span>
-                <h2 class="section-title">Interactive EMI Calculator</h2>
-                <div class="title-bar-separator"></div>
-                <p class="section-subtitle">Use our visual tool to estimate your monthly installments, total interest,
-                    and see a year-wise amortization break-up.</p>
+
+            <div class="investor-hero-content">
+
+                <div class="investor-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Investor Relations</span>
+                </div>
+
+                <span class="hero-small-title">
+                    <i class="fa-solid fa-chart-line"></i>
+                    INVESTOR RELATIONS
+                </span>
+
+                <h1>
+                    Investor <span>Relations</span>
+                </h1>
+
+                <p>
+                    Discover our financial performance, corporate information,
+                    investor updates and commitment to transparent growth.
+                </p>
+
+                <a href="#investor-information" class="hero-investor-btn">
+                    Explore Investor Information
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
             </div>
 
-            <div class="calculator-card">
-                <!-- Loan Type Tabs -->
-                <div class="calculator-tabs">
-                    <button class="tab-btn active" data-loan-type="home"><i class="bi bi-house"></i> Home Loan</button>
-                    <button class="tab-btn" data-loan-type="personal"><i class="bi bi-person"></i> Personal
-                        Loan</button>
-                    <button class="tab-btn" data-loan-type="business"><i class="bi bi-briefcase"></i> Business
-                        Loan</button>
-                </div>
-
-                <div class="calculator-body">
-                    <!-- Left: Sliders and Inputs -->
-                    <div class="inputs-column">
-                        <!-- Loan Amount -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Amount</span>
-                                <div class="input-numeric-wrapper">
-                                    <span class="currency-prefix">₹</span>
-                                    <input type="number" id="loan-amount-input" class="numeric-input" min="100000"
-                                        max="50000000" step="50000" value="5000000">
-                                </div>
-                            </div>
-                            <input type="range" id="loan-amount-slider" class="range-slider" min="100000" max="50000000"
-                                step="50000" value="5000000">
-                            <div class="slider-bounds">
-                                <span>₹1 L</span>
-                                <span>₹5 Cr</span>
-                            </div>
-                        </div>
-
-                        <!-- Interest Rate -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Interest Rate</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="interest-rate-input" class="numeric-input" min="5" max="25"
-                                        step="0.05" value="8.5">
-                                    <span class="currency-suffix">%</span>
-                                </div>
-                            </div>
-                            <input type="range" id="interest-rate-slider" class="range-slider" min="5" max="25"
-                                step="0.05" value="8.5">
-                            <div class="slider-bounds">
-                                <span>5%</span>
-                                <span>25%</span>
-                            </div>
-                        </div>
-
-                        <!-- Loan Tenure -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Tenure</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="loan-tenure-input" class="numeric-input" min="1" max="30"
-                                        step="1" value="20">
-                                    <span class="currency-suffix">Yrs</span>
-                                </div>
-                            </div>
-                            <input type="range" id="loan-tenure-slider" class="range-slider" min="1" max="30" step="1"
-                                value="20">
-                            <div class="slider-bounds">
-                                <span>1 Yr</span>
-                                <span>30 Yrs</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Outputs and Charts -->
-                    <div class="outputs-column">
-                        <div class="results-summary">
-                            <div class="emi-result-box">
-                                <span class="emi-label">Monthly EMI Payment</span>
-                                <span class="emi-amount" id="monthly-emi-output">₹0</span>
-                            </div>
-
-                            <div class="breakdown-details mt-4">
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box principal-color"></span>
-                                    <span class="breakdown-label">Principal Amount</span>
-                                    <span class="breakdown-val" id="principal-amount-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box interest-color"></span>
-                                    <span class="breakdown-label">Total Interest Payable</span>
-                                    <span class="breakdown-val" id="total-interest-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item total-payable-item pt-2 border-top mt-2">
-                                    <span class="breakdown-label font-weight-bold">Total Amount Payable</span>
-                                    <span class="breakdown-val font-weight-bold" id="total-payable-output">₹0</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Chart Container -->
-                        <div class="chart-wrapper">
-                            <svg class="donut-chart" viewBox="0 0 100 100">
-                                <circle class="donut-bg" cx="50" cy="50" r="40" fill="transparent" stroke="#f1f3f5"
-                                    stroke-width="12"></circle>
-                                <circle class="donut-segment principal-segment" cx="50" cy="50" r="40"
-                                    fill="transparent" stroke="#10458c" stroke-width="12" stroke-dasharray="0 100"
-                                    stroke-dashoffset="0"></circle>
-                                <circle class="donut-segment interest-segment" cx="50" cy="50" r="40" fill="transparent"
-                                    stroke="#ef3438" stroke-width="12" stroke-dasharray="0 100" stroke-dashoffset="0">
-                                </circle>
-                                <g class="chart-text">
-                                    <text x="50" y="47" class="chart-pct-val" id="chart-interest-pct">0%</text>
-                                    <text x="50" y="60" class="chart-pct-label">Interest</text>
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Amortization Toggle -->
-                <div class="calculator-footer text-center pt-4 border-top">
-                    <button class="amortization-toggle-btn" id="toggle-schedule-btn">
-                        <span>Show Amortization Schedule</span> <i class="bi bi-chevron-down"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Amortization Panel -->
-            <div class="amortization-wrapper" id="amortization-panel">
-                <h3 class="schedule-title mb-4"><i class="bi bi-calendar-range"></i> Year-Wise Repayment Schedule</h3>
-                <div class="table-responsive">
-                    <table class="table amortization-table text-center">
-                        <thead>
-                            <tr>
-                                <th>Year</th>
-                                <th>Opening Balance</th>
-                                <th>Principal Paid</th>
-                                <th>Interest Paid</th>
-                                <th>Total Repaid</th>
-                                <th>Closing Balance</th>
-                            </tr>
-                        </thead>
-                        <tbody id="amortization-table-body">
-                            <!-- Populated dynamically via JS -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
+
     </section>
 
 
-     <footer class="nivaan-footer">
+    <!-- =====================================================
+     STICKY NAVIGATION
+===================================================== -->
+
+    <div class="investor-navigation">
+
+        <div class="container">
+
+            <div class="investor-navigation-inner">
+
+                <a href="#overview" class="investor-nav active">
+                    Overview
+                </a>
+
+                <a href="#financials" class="investor-nav">
+                    Financials
+                </a>
+
+                <a href="#reports" class="investor-nav">
+                    Reports
+                </a>
+
+                <a href="#governance" class="investor-nav">
+                    Governance
+                </a>
+
+                <a href="#faqs" class="investor-nav">
+                    FAQs
+                </a>
+
+                <a href="#contact" class="investor-apply">
+                    Investor Contact
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     OVERVIEW
+===================================================== -->
+
+    <section class="investor-overview" id="overview">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <span class="section-label">
+                        ABOUT INVESTOR RELATIONS
+                    </span>
+
+                    <h2 class="investor-section-title">
+                        Building Long-Term Value Through
+                        <span>Transparency</span>
+                    </h2>
+
+                    <p>
+                        Our Investor Relations section provides access to
+                        important corporate, financial and business information.
+                        We believe in maintaining transparent communication
+                        with our investors and stakeholders.
+                    </p>
+
+                    <p>
+                        Explore financial results, annual reports, corporate
+                        governance information, investor presentations and
+                        other important updates.
+                    </p>
+
+                    <a href="#investor-information" class="outline-investor-btn">
+                        Explore Information
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="investor-overview-image">
+
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+                            alt="Investor Relations">
+
+                        <div class="image-floating-card">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <div>
+                                <strong>Investor Relations</strong>
+                                <small>Transparency & Growth</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     FINANCIAL HIGHLIGHTS
+===================================================== -->
+
+    <section class="financial-section" id="financials">
+
+        <div class="container">
+
+            <div class="section-heading-center">
+
+                <span class="section-label">
+                    KEY HIGHLIGHTS
+                </span>
+
+                <h2>
+                    Financial <span>Highlights</span>
+                </h2>
+
+                <p>
+                    A snapshot of our business performance and growth.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-3">
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="financial-card">
+
+                        <div class="financial-icon">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+
+                        <span>
+                            Assets Under Management
+                        </span>
+
+                        <h3>
+                            ₹1,250 Cr+
+                        </h3>
+
+                        <small>
+                            Business Scale
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="financial-card">
+
+                        <div class="financial-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <span>
+                            Customers
+                        </span>
+
+                        <h3>
+                            50K+
+                        </h3>
+
+                        <small>
+                            Customers Served
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="financial-card">
+
+                        <div class="financial-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <span>
+                            Branch Network
+                        </span>
+
+                        <h3>
+                            100+
+                        </h3>
+
+                        <small>
+                            Across Locations
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="financial-card">
+
+                        <div class="financial-icon">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+
+                        <span>
+                            Growth
+                        </span>
+
+                        <h3>
+                            25%+
+                        </h3>
+
+                        <small>
+                            Annual Growth
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     INVESTOR INFORMATION
+===================================================== -->
+
+    <section class="investor-information" id="investor-information">
+
+        <div class="container">
+
+            <div class="section-heading-center">
+
+                <span class="section-label">
+                    INVESTOR RESOURCES
+                </span>
+
+                <h2>
+                    Investor <span>Information</span>
+                </h2>
+
+                <p>
+                    Access important documents and information from one place.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+
+                <!-- Annual Reports -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="resource-card">
+
+                        <div class="resource-top">
+
+                            <div class="resource-icon">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+
+                            <span>
+                                01
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Annual Reports
+                        </h3>
+
+                        <p>
+                            View annual reports and business performance
+                            information.
+                        </p>
+
+                        <a href="annual-reports.html">
+                            View Reports
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Financial Results -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="resource-card">
+
+                        <div class="resource-top">
+
+                            <div class="resource-icon">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </div>
+
+                            <span>
+                                02
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Financial Results
+                        </h3>
+
+                        <p>
+                            Access quarterly and annual financial results
+                            and performance updates.
+                        </p>
+
+                        <a href="financial-results.html">
+                            View Results
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Investor Presentation -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="resource-card">
+
+                        <div class="resource-top">
+
+                            <div class="resource-icon">
+                                <i class="fa-solid fa-display"></i>
+                            </div>
+
+                            <span>
+                                03
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Investor Presentations
+                        </h3>
+
+                        <p>
+                            Explore presentations covering our strategy,
+                            performance and business outlook.
+                        </p>
+
+                        <a href="investor-presentations.html">
+                            View Presentations
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Corporate Governance -->
+
+                <div class="col-lg-4 col-md-6" id="governance">
+
+                    <div class="resource-card">
+
+                        <div class="resource-top">
+
+                            <div class="resource-icon">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+
+                            <span>
+                                04
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Corporate Governance
+                        </h3>
+
+                        <p>
+                            Learn about our governance framework,
+                            policies and practices.
+                        </p>
+
+                        <a href="corporate-governance.html">
+                            Know More
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Shareholder Information -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="resource-card">
+
+                        <div class="resource-top">
+
+                            <div class="resource-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <span>
+                                05
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Shareholder Information
+                        </h3>
+
+                        <p>
+                            Important information and updates for
+                            shareholders and investors.
+                        </p>
+
+                        <a href="shareholder-information.html">
+                            View Information
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Investor Contact -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="resource-card">
+
+                        <div class="resource-top">
+
+                            <div class="resource-icon">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+
+                            <span>
+                                06
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Investor Contact
+                        </h3>
+
+                        <p>
+                            Connect with our team for investor-related
+                            queries and assistance.
+                        </p>
+
+                        <a href="#contact">
+                            Contact Us
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     REPORTS
+===================================================== -->
+
+    <section class="reports-section" id="reports">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-5">
+
+                    <span class="section-label">
+                        LATEST DOCUMENTS
+                    </span>
+
+                    <h2 class="investor-section-title">
+                        Reports & <span>Documents</span>
+                    </h2>
+
+                    <p>
+                        Access our latest reports, financial documents
+                        and important investor communications.
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-7">
+
+                    <div class="document-list">
+
+                        <a href="#" class="document-item">
+
+                            <div class="document-left">
+
+                                <div class="document-icon">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+
+                                <div>
+                                    <h4>
+                                        Annual Report 2026
+                                    </h4>
+
+                                    <span>
+                                        Annual Report
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <i class="fa-solid fa-download"></i>
+
+                        </a>
+
+
+                        <a href="#" class="document-item">
+
+                            <div class="document-left">
+
+                                <div class="document-icon">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+
+                                <div>
+                                    <h4>
+                                        Financial Results Q4
+                                    </h4>
+
+                                    <span>
+                                        Financial Results
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <i class="fa-solid fa-download"></i>
+
+                        </a>
+
+
+                        <a href="#" class="document-item">
+
+                            <div class="document-left">
+
+                                <div class="document-icon">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+
+                                <div>
+                                    <h4>
+                                        Investor Presentation
+                                    </h4>
+
+                                    <span>
+                                        Investor Presentation
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <i class="fa-solid fa-download"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     FAQ
+===================================================== -->
+
+    <section class="investor-faq" id="faqs">
+
+        <div class="container">
+
+            <div class="section-heading-center">
+
+                <span class="section-label">
+                    FAQ
+                </span>
+
+                <h2>
+                    Frequently Asked <span>Questions</span>
+                </h2>
+
+            </div>
+
+
+            <div class="accordion investor-accordion mt-4" id="investorFAQ">
+
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#investorFaqOne">
+
+                            Where can I find annual reports?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="investorFaqOne" class="accordion-collapse collapse show" data-bs-parent="#investorFAQ">
+
+                        <div class="accordion-body">
+
+                            Annual reports and other important investor
+                            documents can be accessed through the Reports
+                            & Documents section.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#investorFaqTwo">
+
+                            Where can I view financial results?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="investorFaqTwo" class="accordion-collapse collapse" data-bs-parent="#investorFAQ">
+
+                        <div class="accordion-body">
+
+                            Financial results and performance-related
+                            information can be accessed through the
+                            Financial Results section.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#investorFaqThree">
+
+                            How can I contact Investor Relations?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="investorFaqThree" class="accordion-collapse collapse" data-bs-parent="#investorFAQ">
+
+                        <div class="accordion-body">
+
+                            You can contact our Investor Relations team
+                            through the Investor Contact section.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     CONTACT CTA
+===================================================== -->
+
+    <section class="investor-contact" id="contact">
+
+        <div class="container">
+
+            <div class="investor-contact-box">
+
+                <div>
+
+                    <span>
+                        <i class="fa-solid fa-envelope"></i>
+                        INVESTOR RELATIONS
+                    </span>
+
+                    <h2>
+                        Have an Investor Query?
+                    </h2>
+
+                    <p>
+                        Our team is here to assist you with
+                        investor-related information and queries.
+                    </p>
+
+                </div>
+
+
+                <a href="contact.html" class="contact-investor-btn">
+
+                    Contact Investor Relations
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Invester code end -->
+
+    <!-- footer start  -->
+    <footer class="nivaan-footer">
 
 
         <div class="footer-main">
@@ -1161,8 +1825,10 @@
         </div>
 
     </footer>
+    <!-- footer end -->
 
     <script src="assests/js/script.js"></script>
+    <script src="assests/js/about.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

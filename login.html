@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EMI Calculator - Nivaan Capital</title>
+    <title>Nivaan Capital</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Google Fonts -->
@@ -23,6 +24,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="assests/css/Signup.css">
 </head>
 
 <body>
@@ -619,166 +621,208 @@
 
     <!-- Navbar end  -->
 
+    <!-- Login code start  -->
+    <section class="login-section">
 
-    <!-- ================= EMI CALCULATOR SECTION ================= -->
-    <section class="emi-calculator-section" id="emi-calculator">
         <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-tag">Calculate Your Monthly Outgoings</span>
-                <h2 class="section-title">Interactive EMI Calculator</h2>
-                <div class="title-bar-separator"></div>
-                <p class="section-subtitle">Use our visual tool to estimate your monthly installments, total interest,
-                    and see a year-wise amortization break-up.</p>
-            </div>
 
-            <div class="calculator-card">
-                <!-- Loan Type Tabs -->
-                <div class="calculator-tabs">
-                    <button class="tab-btn active" data-loan-type="home"><i class="bi bi-house"></i> Home Loan</button>
-                    <button class="tab-btn" data-loan-type="personal"><i class="bi bi-person"></i> Personal
-                        Loan</button>
-                    <button class="tab-btn" data-loan-type="business"><i class="bi bi-briefcase"></i> Business
-                        Loan</button>
-                </div>
+            <div class="row justify-content-center align-items-center min-vh-75">
 
-                <div class="calculator-body">
-                    <!-- Left: Sliders and Inputs -->
-                    <div class="inputs-column">
-                        <!-- Loan Amount -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Amount</span>
-                                <div class="input-numeric-wrapper">
-                                    <span class="currency-prefix">₹</span>
-                                    <input type="number" id="loan-amount-input" class="numeric-input" min="100000"
-                                        max="50000000" step="50000" value="5000000">
+                <div class="col-xl-9 col-lg-10 col-md-11">
+
+                    <div class="login-wrapper">
+
+                        <!-- Left Side -->
+                        <div class="login-left">
+
+                            <div class="login-brand">
+                                <div class="brand-icon">
+                                    <i class="fa-solid fa-building-columns"></i>
                                 </div>
+
+                                <span>Nivaan <b>Capital</b></span>
                             </div>
-                            <input type="range" id="loan-amount-slider" class="range-slider" min="100000" max="50000000"
-                                step="50000" value="5000000">
-                            <div class="slider-bounds">
-                                <span>₹1 L</span>
-                                <span>₹5 Cr</span>
+
+                            <div class="login-left-content">
+
+                                <span class="welcome-badge">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    Secure Login
+                                </span>
+
+                                <h1>
+                                    Welcome <br>
+                                    <span>Back!</span>
+                                </h1>
+
+                                <p>
+                                    Login to access your account and manage
+                                    your loans, applications and financial
+                                    services securely.
+                                </p>
+
+                                <div class="secure-info">
+
+                                    <div class="secure-item">
+                                        <i class="fa-solid fa-lock"></i>
+
+                                        <div>
+                                            <strong>Secure & Safe</strong>
+                                            <small>Your information is protected</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="secure-item">
+                                        <i class="fa-solid fa-bolt"></i>
+
+                                        <div>
+                                            <strong>Quick Access</strong>
+                                            <small>Manage your account easily</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
+
                         </div>
 
-                        <!-- Interest Rate -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Interest Rate</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="interest-rate-input" class="numeric-input" min="5" max="25"
-                                        step="0.05" value="8.5">
-                                    <span class="currency-suffix">%</span>
+
+                        <!-- Right Side -->
+                        <div class="login-right">
+
+                            <div class="login-heading">
+
+                                <span class="small-heading">
+                                    ACCOUNT LOGIN
+                                </span>
+
+                                <h2>
+                                    Login to your <span>Account</span>
+                                </h2>
+
+                                <p>
+                                    Enter your details to continue
+                                </p>
+
+                            </div>
+
+
+                            <form id="loginForm">
+
+                                <!-- Email / Mobile -->
+                                <div class="form-group">
+
+                                    <label for="loginInput">
+                                        Mobile Number / Email
+                                    </label>
+
+                                    <div class="input-box">
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                        <input type="text" id="loginInput" class="form-control"
+                                            placeholder="Enter mobile number or email" required>
+
+                                    </div>
+
                                 </div>
-                            </div>
-                            <input type="range" id="interest-rate-slider" class="range-slider" min="5" max="25"
-                                step="0.05" value="8.5">
-                            <div class="slider-bounds">
-                                <span>5%</span>
-                                <span>25%</span>
-                            </div>
+
+
+                                <!-- Password -->
+                                <div class="form-group">
+
+                                    <div class="label-row">
+
+                                        <label for="password">
+                                            Password
+                                        </label>
+
+                                        <a href="forgot-password.html">
+                                            Forgot Password?
+                                        </a>
+
+                                    </div>
+
+                                    <div class="input-box">
+
+                                        <i class="fa-solid fa-lock"></i>
+
+                                        <input type="password" id="password" class="form-control"
+                                            placeholder="Enter password" required>
+
+                                        <button type="button" class="password-toggle" onclick="togglePassword()">
+
+                                            <i class="fa-solid fa-eye" id="eyeIcon"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Remember -->
+                                <div class="remember-row">
+
+                                    <label class="remember">
+
+                                        <input type="checkbox">
+
+                                        <span>
+                                            Remember me
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <!-- Login Button -->
+                                <button type="submit" class="login-btn">
+
+                                    Login
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </button>
+
+
+                                <!-- Divider -->
+                                <div class="divider">
+                                    <span>OR</span>
+                                </div>
+
+
+                                <!-- Register -->
+                                <div class="register-text">
+
+                                    Don't have an account?
+
+                                    <a href="register.html">
+                                        Register Now
+                                    </a>
+
+                                </div>
+
+                            </form>
+
                         </div>
 
-                        <!-- Loan Tenure -->
-                        <div class="input-wrapper mb-4">
-                            <div class="input-label-row">
-                                <span class="input-label">Loan Tenure</span>
-                                <div class="input-numeric-wrapper">
-                                    <input type="number" id="loan-tenure-input" class="numeric-input" min="1" max="30"
-                                        step="1" value="20">
-                                    <span class="currency-suffix">Yrs</span>
-                                </div>
-                            </div>
-                            <input type="range" id="loan-tenure-slider" class="range-slider" min="1" max="30" step="1"
-                                value="20">
-                            <div class="slider-bounds">
-                                <span>1 Yr</span>
-                                <span>30 Yrs</span>
-                            </div>
-                        </div>
                     </div>
 
-                    <!-- Right: Outputs and Charts -->
-                    <div class="outputs-column">
-                        <div class="results-summary">
-                            <div class="emi-result-box">
-                                <span class="emi-label">Monthly EMI Payment</span>
-                                <span class="emi-amount" id="monthly-emi-output">₹0</span>
-                            </div>
-
-                            <div class="breakdown-details mt-4">
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box principal-color"></span>
-                                    <span class="breakdown-label">Principal Amount</span>
-                                    <span class="breakdown-val" id="principal-amount-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item">
-                                    <span class="breakdown-color-box interest-color"></span>
-                                    <span class="breakdown-label">Total Interest Payable</span>
-                                    <span class="breakdown-val" id="total-interest-output">₹0</span>
-                                </div>
-                                <div class="breakdown-item total-payable-item pt-2 border-top mt-2">
-                                    <span class="breakdown-label font-weight-bold">Total Amount Payable</span>
-                                    <span class="breakdown-val font-weight-bold" id="total-payable-output">₹0</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Chart Container -->
-                        <div class="chart-wrapper">
-                            <svg class="donut-chart" viewBox="0 0 100 100">
-                                <circle class="donut-bg" cx="50" cy="50" r="40" fill="transparent" stroke="#f1f3f5"
-                                    stroke-width="12"></circle>
-                                <circle class="donut-segment principal-segment" cx="50" cy="50" r="40"
-                                    fill="transparent" stroke="#10458c" stroke-width="12" stroke-dasharray="0 100"
-                                    stroke-dashoffset="0"></circle>
-                                <circle class="donut-segment interest-segment" cx="50" cy="50" r="40" fill="transparent"
-                                    stroke="#ef3438" stroke-width="12" stroke-dasharray="0 100" stroke-dashoffset="0">
-                                </circle>
-                                <g class="chart-text">
-                                    <text x="50" y="47" class="chart-pct-val" id="chart-interest-pct">0%</text>
-                                    <text x="50" y="60" class="chart-pct-label">Interest</text>
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Amortization Toggle -->
-                <div class="calculator-footer text-center pt-4 border-top">
-                    <button class="amortization-toggle-btn" id="toggle-schedule-btn">
-                        <span>Show Amortization Schedule</span> <i class="bi bi-chevron-down"></i>
-                    </button>
-                </div>
             </div>
 
-            <!-- Amortization Panel -->
-            <div class="amortization-wrapper" id="amortization-panel">
-                <h3 class="schedule-title mb-4"><i class="bi bi-calendar-range"></i> Year-Wise Repayment Schedule</h3>
-                <div class="table-responsive">
-                    <table class="table amortization-table text-center">
-                        <thead>
-                            <tr>
-                                <th>Year</th>
-                                <th>Opening Balance</th>
-                                <th>Principal Paid</th>
-                                <th>Interest Paid</th>
-                                <th>Total Repaid</th>
-                                <th>Closing Balance</th>
-                            </tr>
-                        </thead>
-                        <tbody id="amortization-table-body">
-                            <!-- Populated dynamically via JS -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
+
     </section>
 
+    <!-- Login code end -->
 
-     <footer class="nivaan-footer">
+    <!-- footer start  -->
+    <footer class="nivaan-footer">
 
 
         <div class="footer-main">
@@ -1161,8 +1205,10 @@
         </div>
 
     </footer>
+    <!-- footer end -->
 
     <script src="assests/js/script.js"></script>
+    <script src="assests/js/signup.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
