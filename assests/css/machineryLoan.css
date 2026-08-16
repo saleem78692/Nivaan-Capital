@@ -3,7 +3,7 @@
         ============================== */
 
 .machinery-banner {
-    min-height: 430px;
+    height: 430px;
     position: relative;
 
     display: flex;
@@ -571,7 +571,7 @@
 @media(max-width: 991px) {
 
     .machinery-banner {
-        min-height: 380px;
+        height: 350px;
     }
 
     .machinery-banner h1 {
@@ -598,17 +598,17 @@
 @media(max-width: 767px) {
 
     .machinery-banner {
-        min-height: 330px;
+        height: 250px;
 
         background-position: 65% center;
     }
 
     .machinery-banner h1 {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .machinery-banner p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .machinery-overview,
@@ -632,27 +632,11 @@
         font-size: 25px;
     }
 
-}
-
-
-@media(max-width: 480px) {
-
-    .machinery-banner {
-        min-height: 300px;
-    }
-
-    .machinery-banner h1 {
-        font-size: 30px;
-    }
-
-    .breadcrumb-box {
+    .banner-btn{
         font-size: 12px;
-    }
-
-    .loan-nav {
-        padding: 9px 14px;
-
-        font-size: 13px;
+        padding: 7px 10px;
     }
 
 }
+
+

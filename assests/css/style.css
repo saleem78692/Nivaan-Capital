@@ -911,9 +911,9 @@ body {
 
     border-radius: 11px;
 
-    background: var(--primary);
+    /* background: var(--primary); */
 
-    color: white;
+    color: var(--primary);
 
     font-size: 24px;
 
@@ -921,8 +921,7 @@ body {
 
     justify-content: center;
 
-    box-shadow:
-        0 8px 20px rgba(11, 67, 137, .2);
+    /* box-shadow:0 8px 20px rgba(11, 67, 137, .2); */
 
 }
 
@@ -1302,6 +1301,177 @@ body {
     text-decoration: none;
 
 }
+/* ================================
+   MOBILE TOP NAV
+================================ */
+
+.mobile-top-nav {
+    width: 100%;
+    padding: 1px;
+    background: #f4f8fc;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* ================================
+   NAV ITEM
+================================ */
+
+.mobile-top-nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+    min-height: 78px;
+    padding: 12px 15px;
+
+    text-decoration: none;
+    color: #18212f;
+
+    background: transparent;
+    /* border: 1px solid #e2eaf3; */
+    /* border-radius: 16px; */
+
+    /* box-shadow: 0 5px 18px rgba(25, 55, 90, 0.07); */
+
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(184, 181, 181);
+}
+
+
+/* Left border effect */
+
+.mobile-top-nav-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    bottom: 15px;
+
+    width: 4px;
+
+    background: #1769aa;
+    border-radius: 0 5px 5px 0;
+
+    transform: scaleY(0);
+    transition: 0.3s ease;
+}
+
+
+/* Hover */
+
+.mobile-top-nav-item:hover {
+    transform: translateX(6px);
+    border-color: #b9d4eb;
+    box-shadow: 0 10px 25px rgba(23, 105, 170, 0.12);
+    color: #1769aa;
+}
+
+.mobile-top-nav-item:hover::before {
+    transform: scaleY(1);
+}
+
+
+/* ================================
+   ICON
+================================ */
+
+.mobile-nav-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #e7f3ff,
+        #d2e8fa
+    );
+
+    color: #1769aa;
+
+    border-radius: 14px;
+
+    font-size: 21px;
+
+    transition: all 0.3s ease;
+}
+
+
+.mobile-top-nav-item:hover .mobile-nav-icon {
+    background: #1769aa;
+    color: #ffffff;
+    transform: rotate(-5deg) scale(1.05);
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.mobile-top-nav-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    flex: 1;
+}
+
+
+.mobile-top-nav-content strong {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+.mobile-top-nav-content span {
+    font-size: 12px;
+    color: #78889a;
+    line-height: 1.3;
+}
+
+
+/* ================================
+   RIGHT ARROW
+================================ */
+
+.mobile-arrow {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f1f6fa;
+    color: #65788c;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.mobile-top-nav-item:hover .mobile-arrow {
+    background: #1769aa;
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
 
 
 /* =========================================
@@ -1404,7 +1574,7 @@ html {
 =================================== */
 
 .emi-calculator-section {
-    padding: 80px 0;
+    padding: 15px 0;
     background-color: #fcfdfe;
     border-top: 1px solid rgba(16, 69, 140, 0.05);
 }

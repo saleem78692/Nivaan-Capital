@@ -3,7 +3,7 @@
         ================================= */
 
 .lap-banner {
-    min-height: 430px;
+    height: 430px;
 
     position: relative;
 
@@ -732,7 +732,7 @@
 @media(max-width: 991px) {
 
     .lap-banner {
-        min-height: 380px;
+        height: 350px;
     }
 
     .lap-banner h1 {
@@ -761,17 +761,17 @@
 @media(max-width: 767px) {
 
     .lap-banner {
-        min-height: 330px;
+        height: 260px;
 
         background-position: 65% center;
     }
 
     .lap-banner h1 {
-        font-size: 35px;
+        font-size: 28px;
     }
 
     .lap-banner p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .lap-overview,
@@ -804,28 +804,11 @@
     .eligibility-box h2 {
         font-size: 24px;
     }
-
-}
-
-
-@media(max-width: 480px) {
-
-    .lap-banner {
-        min-height: 300px;
-    }
-
-    .lap-banner h1 {
-        font-size: 30px;
-    }
-
-    .lap-breadcrumb {
+    .lap-banner-btn{
         font-size: 12px;
-    }
-
-    .lap-nav {
-        padding: 9px 13px;
-
-        font-size: 13px;
+        padding: 10px 14px;
     }
 
 }
+
+
