@@ -120,7 +120,7 @@
                             <!-- EMI -->
                             <li class="nav-item emi-item">
 
-                                <a href="#" class="emi-btn">
+                                <a href="PayVahicalEMI.html" class="emi-btn">
 
                                     <i class="bi bi-credit-card"></i>
 
@@ -134,10 +134,8 @@
                             <!-- Search -->
                             <li class="nav-item search-item">
 
-                                <a href="#" class="search-btn">
-
+                                <a href="#" class="search-btn" data-bs-toggle="modal" data-bs-target="#loanSearchModal">
                                     <i class="bi bi-search"></i>
-
                                 </a>
 
                             </li>
@@ -170,7 +168,7 @@
 
                 <!-- ================================
                  DESKTOP NAVIGATION
-            ================================= -->
+                ================================= -->
 
                 <nav class="main-navigation">
 
@@ -318,12 +316,20 @@
                  MOBILE MENU BUTTON
             ================================= -->
 
-                <button class="mobile-menu-toggle" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileOffcanvas" aria-controls="mobileOffcanvas" aria-label="Open Navigation">
+                <div class="d-flex gap-3 align-items-center">
 
-                    <i class="fa-solid fa-bars-staggered"></i>
+                    <a href="#" class="search-btn-main" data-bs-toggle="modal" data-bs-target="#loanSearchModal">
+                        <i class="bi bi-search"></i>
+                    </a>
 
-                </button>
+                    <button class="mobile-menu-toggle" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileOffcanvas" aria-controls="mobileOffcanvas" aria-label="Open Navigation">
+
+                        <i class="fa-solid fa-bars-staggered"></i>
+
+
+                    </button>
+                </div>
 
             </div>
 
@@ -1552,6 +1558,178 @@
 
     </footer>
     <!-- footer end -->
+
+    <!-- Search Modal start-->
+    <div class="modal fade" id="loanSearchModal" tabindex="-1" aria-labelledby="loanSearchModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content loan-search-modal">
+
+                <!-- Header -->
+                <div class="modal-header border-0">
+                    <div>
+                        <span class="search-modal-tag">
+                            <i class="bi bi-search"></i>
+                            Find Your Loan
+                        </span>
+
+                        <h4 class="modal-title mt-2" id="loanSearchModalLabel">
+                            What are you looking for?
+                        </h4>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body pt-0">
+
+                    <!-- Search Input -->
+                    <div class="loan-search-input">
+                        <i class="bi bi-search"></i>
+
+                        <input type="text" id="loanSearchInput"
+                            placeholder="Search loan, e.g. Home Loan, Personal Loan..." autocomplete="off">
+                    </div>
+
+
+                    <!-- Loan Cards -->
+                    <div class="loan-search-grid" id="loanSearchGrid">
+
+                        <!-- Vehicle Loan -->
+                        <a href="/vehicle-loan" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-car-front-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Vehicle Loan</h6>
+                                <span>Finance your vehicle</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+
+                        <!-- Personal Loan -->
+                        <a href="/personal-loan" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Personal Loan</h6>
+                                <span>Quick financial support</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+
+                        <!-- Home Loan -->
+                        <a href="/home-loan" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-house-door-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Home Loan</h6>
+                                <span>Make your dream home</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+
+                        <!-- Business Loan -->
+                        <a href="/business-loan" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-briefcase-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Business Loan</h6>
+                                <span>Grow your business</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+
+                        <!-- Machinery Loan -->
+                        <a href="/machinery-loan" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-gear-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Machinery Loan</h6>
+                                <span>Finance your machinery</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+
+                        <!-- Loan Against Property -->
+                        <a href="/loan-against-property" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-buildings-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Loan Against Property</h6>
+                                <span>Unlock property value</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+
+                        <!-- Commercial Vehicle Loan -->
+                        <a href="/commercial-vehicle-loan" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-truck-front-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Commercial Vehicle Loan</h6>
+                                <span>Finance commercial vehicles</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+
+                        <!-- Education Loan -->
+                        <a href="/education-loan" class="loan-search-card">
+                            <div class="loan-card-icon">
+                                <i class="bi bi-mortarboard-fill"></i>
+                            </div>
+
+                            <div>
+                                <h6>Education Loan</h6>
+                                <span>Invest in your education</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right loan-arrow"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- No Result -->
+                    <div class="loan-no-result" id="loanNoResult">
+                        <i class="bi bi-search"></i>
+                        <p>No loan found</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Search modal end -->
 
     <script src="assests/js/script.js"></script>
     <script src="assests/js/about.js"></script>
