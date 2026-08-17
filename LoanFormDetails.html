@@ -1,0 +1,2599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loan Application</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fa;
+            font-family: "Roboto", sans-serif;
+            color: #283342;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .loan-header {
+            background: linear-gradient(135deg,
+                    #123f78,
+                    #1d62a8);
+
+            color: #fff;
+
+            padding: 40px 0;
+        }
+
+        .loan-header h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0 0 7px;
+        }
+
+        .loan-header p {
+            margin: 0;
+            font-size: 14px;
+            opacity: .85;
+        }
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        .loan-wrapper {
+            padding: 40px 0 70px;
+        }
+
+
+        /* =========================================
+           MAIN CARD
+        ========================================= */
+
+        .loan-card {
+            background: #fff;
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 40px rgba(22, 51, 86, .09);
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           STEPPER
+        ========================================= */
+
+        .stepper {
+            display: flex;
+            align-items: center;
+
+            padding: 25px 30px;
+
+            border-bottom: 1px solid #edf0f4;
+
+            overflow-x: auto;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+
+            flex-shrink: 0;
+
+            color: #9aa4b2;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition: .3s;
+        }
+
+        .step-circle {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: #edf0f4;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #7c8796;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .step-item.active {
+            color: #164684;
+        }
+
+        .step-item.active .step-circle {
+            background: #164684;
+            color: #fff;
+        }
+
+        .step-item.completed {
+            color: #198754;
+        }
+
+        .step-item.completed .step-circle {
+            background: #198754;
+            color: #fff;
+        }
+
+        .step-line {
+            height: 2px;
+
+            width: 70px;
+
+            background: #e4e8ed;
+
+            margin: 0 12px;
+
+            flex-shrink: 0;
+
+            transition: .3s;
+        }
+
+        .step-line.completed {
+            background: #198754;
+        }
+
+
+        /* =========================================
+           FORM BODY
+        ========================================= */
+
+        .form-body {
+            padding: 35px;
+        }
+
+
+        /* =========================================
+           STEP CONTENT
+        ========================================= */
+
+        .form-step {
+            display: none;
+
+            animation: fadeStep .35s ease;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes fadeStep {
+
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================
+           SECTION HEADING
+        ========================================= */
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+
+            gap: 13px;
+
+            padding-bottom: 18px;
+
+            margin-bottom: 25px;
+
+            border-bottom: 1px solid #edf0f4;
+        }
+
+        .section-icon {
+            width: 45px;
+            height: 45px;
+
+            background: #eaf2fb;
+
+            color: #164684;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+
+            font-size: 21px;
+
+            font-weight: 600;
+
+            color: #173f72;
+        }
+
+        .section-heading p {
+            margin: 4px 0 0;
+
+            font-size: 12px;
+
+            color: #8c96a4;
+        }
+
+
+        /* =========================================
+           LABEL
+        ========================================= */
+
+        .form-label {
+            font-size: 13px;
+
+            font-weight: 500;
+
+            color: #3d4858;
+
+            margin-bottom: 7px;
+        }
+
+        .required {
+            color: #e21d2a;
+        }
+
+
+        /* =========================================
+           INPUT
+        ========================================= */
+
+        .form-control,
+        .form-select {
+            height: 48px;
+
+            border: 1px solid #dce2e9;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            color: #3d4858;
+
+            box-shadow: none;
+        }
+
+        .form-control::placeholder {
+            color: #a5aeba;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #2865a4;
+
+            box-shadow:
+                0 0 0 3px rgba(40, 101, 164, .08);
+        }
+
+
+        textarea.form-control {
+            height: 110px;
+
+            resize: vertical;
+
+            padding-top: 12px;
+        }
+
+
+        /* =========================================
+           ADDRESS BOX
+        ========================================= */
+
+        .address-box {
+            background: #fafbfd;
+
+            border: 1px solid #e6eaf0;
+
+            border-radius: 12px;
+
+            padding: 22px;
+
+            margin-bottom: 25px;
+        }
+
+        .address-title {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .address-title h4 {
+            margin: 0;
+
+            font-size: 16px;
+
+            color: #164684;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           EMPLOYMENT
+        ========================================= */
+
+        .employment-box {
+            border: 1px solid #e4e8ee;
+
+            border-radius: 12px;
+
+            padding: 22px;
+
+            background: #fff;
+        }
+
+
+        /* =========================================
+           LOAN BOX
+        ========================================= */
+
+        .loan-highlight {
+            background: #f2f7fc;
+
+            border: 1px solid #dce9f6;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-bottom: 25px;
+        }
+
+        .loan-highlight h4 {
+            margin: 0 0 5px;
+
+            color: #164684;
+
+            font-size: 17px;
+        }
+
+        .loan-highlight p {
+            margin: 0;
+
+            color: #788493;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           DOCUMENT
+        ========================================= */
+
+        .document-card {
+            border: 1px dashed #c9d2dd;
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            background: #fafbfd;
+
+            transition: .25s;
+        }
+
+        .document-card:hover {
+            border-color: #164684;
+
+            background: #f5f9fe;
+        }
+
+        .document-icon {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 9px;
+
+            background: #eaf2fb;
+
+            color: #164684;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+        .document-card h5 {
+            font-size: 14px;
+
+            margin-bottom: 3px;
+
+            color: #394554;
+        }
+
+        .document-card small {
+            display: block;
+
+            color: #929ba8;
+
+            font-size: 11px;
+
+            margin-bottom: 13px;
+        }
+
+        .document-card input {
+            font-size: 11px;
+        }
+
+
+        /* =========================================
+           CONSENT
+        ========================================= */
+
+        .consent-box {
+            padding: 18px;
+
+            background: #f3f8fd;
+
+            border: 1px solid #dce9f5;
+
+            border-radius: 10px;
+
+            margin-top: 25px;
+        }
+
+        .consent-box label {
+            color: #606c7b;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .form-buttons {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-top: 35px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #edf0f4;
+        }
+
+        .btn-back {
+            min-width: 140px;
+
+            height: 48px;
+
+            border: 1px solid #d7dde5;
+
+            background: #fff;
+
+            border-radius: 8px;
+
+            color: #586576;
+
+            font-size: 13px;
+
+            font-weight: 500;
+        }
+
+        .btn-back:hover {
+            background: #f7f8fa;
+        }
+
+        .btn-next {
+            min-width: 170px;
+
+            height: 48px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #c91018;
+
+            color: #fff;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: .25s;
+        }
+
+        .btn-next:hover {
+            background: #0d3567;
+
+            transform: translateY(-1px);
+        }
+
+        .btn-submit {
+            min-width: 210px;
+
+            height: 48px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #e51c26;
+
+            color: #fff;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .btn-submit:hover {
+            background: #c91018;
+        }
+
+
+        /* =========================================
+           RIGHT INFO
+        ========================================= */
+
+        .info-card {
+            background: linear-gradient(145deg,
+                    #164684,
+                    #0b315d);
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            color: #fff;
+
+            position: sticky;
+
+            top: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        .info-card>p {
+            font-size: 12px;
+
+            color: rgba(255, 255, 255, .7);
+
+            line-height: 1.6;
+        }
+
+        .info-list {
+            list-style: none;
+
+            padding: 0;
+
+            margin: 22px 0 0;
+        }
+
+        .info-list li {
+            display: flex;
+
+            gap: 10px;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+            color: rgba(255, 255, 255, .85);
+        }
+
+        .info-list i {
+            color: #7bc4ff;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media(max-width: 991px) {
+
+            .info-card {
+                position: static;
+
+                margin-top: 25px;
+            }
+
+        }
+
+
+        @media(max-width: 767px) {
+
+            .loan-header {
+                padding: 28px 0;
+            }
+
+            .loan-header h1 {
+                font-size: 25px;
+            }
+
+            .loan-header p {
+                font-size: 12px;
+            }
+
+            .loan-wrapper {
+                padding: 20px 0 40px;
+            }
+
+            .loan-card {
+                border-radius: 12px;
+            }
+
+            .stepper {
+                padding: 18px 15px;
+            }
+
+            .step-circle {
+                width: 32px;
+                height: 32px;
+
+                font-size: 12px;
+            }
+
+            .step-line {
+                width: 30px;
+
+                margin: 0 7px;
+            }
+
+            .step-item span {
+                display: none;
+            }
+
+            .form-body {
+                padding: 20px 15px;
+            }
+
+            .section-heading h2 {
+                font-size: 18px;
+            }
+
+            .section-heading p {
+                font-size: 11px;
+            }
+
+            .form-control,
+            .form-select {
+                height: 46px;
+            }
+
+            .address-box,
+            .employment-box {
+                padding: 15px;
+            }
+
+            .address-title {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            .form-buttons {
+                flex-direction: column-reverse;
+            }
+
+            .btn-back,
+            .btn-next,
+            .btn-submit {
+                width: 100%;
+            }
+
+        }
+
+
+        @media(max-width: 480px) {
+
+            .form-body {
+                padding: 17px 12px;
+            }
+
+            .section-icon {
+                width: 38px;
+                height: 38px;
+
+                font-size: 17px;
+            }
+
+            .section-heading h2 {
+                font-size: 16px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     HEADER
+===================================================== -->
+
+    <header class="loan-header">
+
+        <div class="container d-flex justify-content-between">
+
+
+            <div>
+                <h1>
+                   Nivaan Capital Loan Application
+                </h1>
+
+                <p>
+                    Complete your application step by step.
+                </p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+     MAIN
+===================================================== -->
+
+    <section class="loan-wrapper">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <!-- =========================================
+                 FORM
+            ========================================== -->
+
+                <div class="col-lg-9">
+
+                    <div class="loan-card">
+
+
+                        <!-- =====================================
+                         STEPPER
+                    ====================================== -->
+
+                        <div class="stepper">
+
+
+                            <!-- STEP 1 -->
+
+                            <div class="step-item active" data-step="1">
+
+                                <div class="step-circle">
+                                    1
+                                </div>
+
+                                <span>
+                                    Personal
+                                </span>
+
+                            </div>
+
+
+                            <div class="step-line" data-line="1">
+                            </div>
+
+
+                            <!-- STEP 2 -->
+
+                            <div class="step-item" data-step="2">
+
+                                <div class="step-circle">
+                                    2
+                                </div>
+
+                                <span>
+                                    Address
+                                </span>
+
+                            </div>
+
+
+                            <div class="step-line" data-line="2">
+                            </div>
+
+
+                            <!-- STEP 3 -->
+
+                            <div class="step-item" data-step="3">
+
+                                <div class="step-circle">
+                                    3
+                                </div>
+
+                                <span>
+                                    Employment
+                                </span>
+
+                            </div>
+
+
+                            <div class="step-line" data-line="3">
+                            </div>
+
+
+                            <!-- STEP 4 -->
+
+                            <div class="step-item" data-step="4">
+
+                                <div class="step-circle">
+                                    4
+                                </div>
+
+                                <span>
+                                    Loan
+                                </span>
+
+                            </div>
+
+
+                            <div class="step-line" data-line="4">
+                            </div>
+
+
+                            <!-- STEP 5 -->
+
+                            <div class="step-item" data-step="5">
+
+                                <div class="step-circle">
+                                    5
+                                </div>
+
+                                <span>
+                                    Documents
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                         FORM BODY
+                    ====================================== -->
+
+                        <div class="form-body">
+
+
+                            <!-- =====================================
+                             STEP 1 PERSONAL
+                        ====================================== -->
+
+                            <form action="" method="post">
+                                <div class="form-step active" data-content="1">
+
+
+                                    <div class="section-heading">
+
+                                        <div class="section-icon">
+
+                                            <i class="bi bi-person"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h2>
+                                                Personal Details
+                                            </h2>
+
+                                            <p>
+                                                Enter your basic personal information
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row g-3">
+
+
+                                        <!-- Title -->
+
+                                        <div class="col-md-2">
+
+                                            <label class="form-label">
+                                                Title
+                                            </label>
+
+                                            <select class="form-select" required>
+
+                                                <option disabled selected>
+                                                    Select
+                                                </option>
+
+                                                <option>
+                                                    Mr.
+                                                </option>
+
+                                                <option>
+                                                    Mrs.
+                                                </option>
+
+                                                <option>
+                                                    Ms.
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <!-- First -->
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                First Name
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="First name" required>
+
+                                        </div>
+
+
+                                        <!-- Middle -->
+
+                                        <div class="col-md-3">
+
+                                            <label class="form-label">
+                                                Middle Name
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="Middle name">
+
+                                        </div>
+
+
+                                        <!-- Last -->
+
+                                        <div class="col-md-3">
+
+                                            <label class="form-label">
+                                                Last Name
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="Last name" required>
+
+                                        </div>
+
+
+                                        <!-- DOB -->
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Date of Birth
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <input type="date" class="form-control" required>
+
+                                        </div>
+
+
+                                        <!-- Gender -->
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Gender
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <select class="form-select">
+
+                                                <option>
+                                                    Select Gender
+                                                </option>
+
+                                                <option>
+                                                    Male
+                                                </option>
+
+                                                <option>
+                                                    Female
+                                                </option>
+
+                                                <option>
+                                                    Other
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <!-- Marital -->
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Marital Status
+                                            </label>
+
+                                            <select class="form-select">
+
+                                                <option>
+                                                    Select Status
+                                                </option>
+
+                                                <option>
+                                                    Single
+                                                </option>
+
+                                                <option>
+                                                    Married
+                                                </option>
+
+                                                <option>
+                                                    Divorced
+                                                </option>
+
+                                                <option>
+                                                    Widowed
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <!-- Father -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                Father's / Spouse's Name
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="Enter name">
+
+                                        </div>
+
+
+                                        <!-- Mother -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                Mother's Name
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="Enter name">
+
+                                        </div>
+
+
+                                        <!-- PAN -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                PAN Number
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="ABCDE1234F"
+                                                maxlength="10">
+
+                                        </div>
+
+
+                                        <!-- Aadhaar -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                Aadhaar Number
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="XXXX XXXX XXXX"
+                                                maxlength="12">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-buttons">
+
+                                        <button type="button" class="btn-back" disabled>
+
+                                            <i class="bi bi-arrow-left"></i>
+
+                                            Back
+
+                                        </button>
+
+
+                                        <button type="button" class="btn-next next-btn">
+
+                                            Save & Next
+
+                                            <i class="bi bi-arrow-right ms-2"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                            </form>
+
+
+
+                            <!-- =====================================
+                             STEP 2 ADDRESS
+                        ====================================== -->
+
+                            <div class="form-step" data-content="2">
+
+
+                                <div class="section-heading">
+
+                                    <div class="section-icon">
+
+                                        <i class="bi bi-geo-alt"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h2>
+                                            Address Details
+                                        </h2>
+
+                                        <p>
+                                            Enter your current and permanent address
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- CURRENT -->
+
+                                <div class="address-box">
+
+                                    <div class="address-title">
+
+                                        <h4>
+                                            Current Address
+                                        </h4>
+
+                                    </div>
+
+
+                                    <div class="row g-3">
+
+
+                                        <div class="col-12">
+
+                                            <label class="form-label">
+                                                Address Line 1
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <input type="text" class="form-control"
+                                                placeholder="House / Flat / Building / Plot">
+
+                                        </div>
+
+
+                                        <div class="col-12">
+
+                                            <label class="form-label">
+                                                Address Line 2
+                                            </label>
+
+                                            <input type="text" class="form-control"
+                                                placeholder="Street / Area / Locality">
+
+                                        </div>
+
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                City
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="City">
+
+                                        </div>
+
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                State
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <select class="form-select">
+
+                                                <option>
+                                                    Select State
+                                                </option>
+
+                                                <option>
+                                                    Uttar Pradesh
+                                                </option>
+
+                                                <option>
+                                                    Delhi
+                                                </option>
+
+                                                <option>
+                                                    Maharashtra
+                                                </option>
+
+                                                <option>
+                                                    Rajasthan
+                                                </option>
+
+                                                <option>
+                                                    Karnataka
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Pincode
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="6 digit pincode"
+                                                maxlength="6">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- PERMANENT -->
+
+                                <div class="address-box">
+
+                                    <div class="address-title">
+
+                                        <h4>
+                                            Permanent Address
+                                        </h4>
+
+
+                                        <label class="form-check-label" style="font-size:12px;">
+
+                                            <input type="checkbox" class="form-check-input">
+
+                                            Same as current address
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="row g-3">
+
+
+                                        <div class="col-12">
+
+                                            <label class="form-label">
+                                                Address Line 1
+                                            </label>
+
+                                            <input type="text" class="form-control"
+                                                placeholder="House / Flat / Building / Plot">
+
+                                        </div>
+
+
+                                        <div class="col-12">
+
+                                            <label class="form-label">
+                                                Address Line 2
+                                            </label>
+
+                                            <input type="text" class="form-control"
+                                                placeholder="Street / Area / Locality">
+
+                                        </div>
+
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                City
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="City">
+
+                                        </div>
+
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                State
+                                            </label>
+
+                                            <select class="form-select">
+
+                                                <option>
+                                                    Select State
+                                                </option>
+
+                                                <option>
+                                                    Uttar Pradesh
+                                                </option>
+
+                                                <option>
+                                                    Delhi
+                                                </option>
+
+                                                <option>
+                                                    Maharashtra
+                                                </option>
+
+                                                <option>
+                                                    Rajasthan
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Pincode
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="Pincode" maxlength="6">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="form-buttons">
+
+                                    <button type="button" class="btn-back prev-btn">
+
+                                        <i class="bi bi-arrow-left me-2"></i>
+
+                                        Back
+
+                                    </button>
+
+
+                                    <button type="button" class="btn-next next-btn">
+
+                                        Save & Next
+
+                                        <i class="bi bi-arrow-right ms-2"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- =====================================
+                             STEP 3 EMPLOYMENT
+                        ====================================== -->
+
+                            <div class="form-step" data-content="3">
+
+
+                                <div class="section-heading">
+
+                                    <div class="section-icon">
+
+                                        <i class="bi bi-briefcase"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h2>
+                                            Employment Details
+                                        </h2>
+
+                                        <p>
+                                            Tell us about your employment and income
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="employment-box">
+
+                                    <div class="row g-3">
+
+
+                                        <!-- Employment -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                Employment Type
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <select class="form-select">
+
+                                                <option>
+                                                    Select Employment Type
+                                                </option>
+
+                                                <option>
+                                                    Salaried
+                                                </option>
+
+                                                <option>
+                                                    Self Employed
+                                                </option>
+
+                                                <option>
+                                                    Business Owner
+                                                </option>
+
+                                                <option>
+                                                    Professional
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <!-- Company -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                Company / Business Name
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="Company name">
+
+                                        </div>
+
+
+                                        <!-- Designation -->
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Designation
+                                            </label>
+
+                                            <input type="text" class="form-control" placeholder="Designation">
+
+                                        </div>
+
+
+                                        <!-- Experience -->
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Work Experience
+                                            </label>
+
+                                            <select class="form-select">
+
+                                                <option>
+                                                    Select Experience
+                                                </option>
+
+                                                <option>
+                                                    Less than 1 Year
+                                                </option>
+
+                                                <option>
+                                                    1 - 3 Years
+                                                </option>
+
+                                                <option>
+                                                    3 - 5 Years
+                                                </option>
+
+                                                <option>
+                                                    5 - 10 Years
+                                                </option>
+
+                                                <option>
+                                                    10+ Years
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <!-- Monthly Income -->
+
+                                        <div class="col-md-4">
+
+                                            <label class="form-label">
+                                                Monthly Income
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <div class="input-group">
+
+                                                <span class="input-group-text">
+                                                    ₹
+                                                </span>
+
+                                                <input type="number" class="form-control" placeholder="Income">
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- Other Income -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                Other Monthly Income
+                                            </label>
+
+                                            <div class="input-group">
+
+                                                <span class="input-group-text">
+                                                    ₹
+                                                </span>
+
+                                                <input type="number" class="form-control" placeholder="Other income">
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- EMI -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label">
+                                                Existing Monthly EMI
+                                            </label>
+
+                                            <div class="input-group">
+
+                                                <span class="input-group-text">
+                                                    ₹
+                                                </span>
+
+                                                <input type="number" class="form-control" placeholder="Existing EMI">
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- Office Address -->
+
+                                        <div class="col-12">
+
+                                            <label class="form-label">
+                                                Office / Business Address
+                                            </label>
+
+                                            <textarea class="form-control"
+                                                placeholder="Enter office / business address"></textarea>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-buttons">
+
+                                    <button type="button" class="btn-back prev-btn">
+
+                                        <i class="bi bi-arrow-left me-2"></i>
+
+                                        Back
+
+                                    </button>
+
+
+                                    <button type="button" class="btn-next next-btn">
+
+                                        Save & Next
+
+                                        <i class="bi bi-arrow-right ms-2"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- =====================================
+                             STEP 4 LOAN
+                        ====================================== -->
+
+                            <div class="form-step" data-content="4">
+
+
+                                <div class="section-heading">
+
+                                    <div class="section-icon">
+
+                                        <i class="bi bi-cash-stack"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h2>
+                                            Loan Details
+                                        </h2>
+
+                                        <p>
+                                            Tell us about your loan requirement
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="loan-highlight">
+
+                                    <h4>
+                                        Select Your Loan Requirement
+                                    </h4>
+
+                                    <p>
+                                        Enter the amount and purpose for which
+                                        you require the loan.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="row g-3">
+
+
+                                    <!-- Loan Type -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Loan Type
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <select class="form-select">
+
+                                            <option>
+                                                Select Loan Type
+                                            </option>
+
+                                            <option>
+                                                Home Loan
+                                            </option>
+
+                                            <option>
+                                                Personal Loan
+                                            </option>
+
+                                            <option>
+                                                Loan Against Property
+                                            </option>
+
+                                            <option>
+                                                Business Loan
+                                            </option>
+
+                                            <option>
+                                                Vehicle Loan
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Purpose -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Loan Purpose
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <select class="form-select">
+
+                                            <option>
+                                                Select Purpose
+                                            </option>
+
+                                            <option>
+                                                Purchase
+                                            </option>
+
+                                            <option>
+                                                Construction
+                                            </option>
+
+                                            <option>
+                                                Renovation
+                                            </option>
+
+                                            <option>
+                                                Business Requirement
+                                            </option>
+
+                                            <option>
+                                                Personal Requirement
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Amount -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Required Loan Amount
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <div class="input-group">
+
+                                            <span class="input-group-text">
+                                                ₹
+                                            </span>
+
+                                            <input type="number" class="form-control" placeholder="Enter amount">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Tenure -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Preferred Tenure
+                                        </label>
+
+                                        <select class="form-select">
+
+                                            <option>
+                                                Select Tenure
+                                            </option>
+
+                                            <option>
+                                                5 Years
+                                            </option>
+
+                                            <option>
+                                                10 Years
+                                            </option>
+
+                                            <option>
+                                                15 Years
+                                            </option>
+
+                                            <option>
+                                                20 Years
+                                            </option>
+
+                                            <option>
+                                                25 Years
+                                            </option>
+
+                                            <option>
+                                                30 Years
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Property -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Property Value
+                                        </label>
+
+                                        <div class="input-group">
+
+                                            <span class="input-group-text">
+                                                ₹
+                                            </span>
+
+                                            <input type="number" class="form-control" placeholder="Property value">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Property Type -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Property Type
+                                        </label>
+
+                                        <select class="form-select">
+
+                                            <option>
+                                                Select Property Type
+                                            </option>
+
+                                            <option>
+                                                Residential
+                                            </option>
+
+                                            <option>
+                                                Commercial
+                                            </option>
+
+                                            <option>
+                                                Flat / Apartment
+                                            </option>
+
+                                            <option>
+                                                Independent House
+                                            </option>
+
+                                            <option>
+                                                Plot
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Additional -->
+
+                                    <div class="col-12">
+
+                                        <label class="form-label">
+                                            Additional Requirement
+                                        </label>
+
+                                        <textarea class="form-control"
+                                            placeholder="Enter any additional information"></textarea>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-buttons">
+
+                                    <button type="button" class="btn-back prev-btn">
+
+                                        <i class="bi bi-arrow-left me-2"></i>
+
+                                        Back
+
+                                    </button>
+
+
+                                    <button type="button" class="btn-next next-btn">
+
+                                        Save & Next
+
+                                        <i class="bi bi-arrow-right ms-2"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- =====================================
+                             STEP 5 DOCUMENTS
+                        ====================================== -->
+
+                            <div class="form-step" data-content="5">
+
+
+                                <div class="section-heading">
+
+                                    <div class="section-icon">
+
+                                        <i class="bi bi-file-earmark-arrow-up"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h2>
+                                            Document Upload
+                                        </h2>
+
+                                        <p>
+                                            Upload the required documents
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row g-3">
+
+
+                                    <!-- PAN -->
+
+                                    <div class="col-md-6">
+
+                                        <div class="document-card">
+
+                                            <div class="document-icon">
+
+                                                <i class="bi bi-person-vcard"></i>
+
+                                            </div>
+
+                                            <h5>
+                                                PAN Card
+                                            </h5>
+
+                                            <small>
+                                                Upload PAN card
+                                            </small>
+
+                                            <input type="file" class="form-control">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Aadhaar -->
+
+                                    <div class="col-md-6">
+
+                                        <div class="document-card">
+
+                                            <div class="document-icon">
+
+                                                <i class="bi bi-card-text"></i>
+
+                                            </div>
+
+                                            <h5>
+                                                Aadhaar / Address Proof
+                                            </h5>
+
+                                            <small>
+                                                Upload identity/address proof
+                                            </small>
+
+                                            <input type="file" class="form-control">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Income -->
+
+                                    <div class="col-md-6">
+
+                                        <div class="document-card">
+
+                                            <div class="document-icon">
+
+                                                <i class="bi bi-receipt"></i>
+
+                                            </div>
+
+                                            <h5>
+                                                Income Proof
+                                            </h5>
+
+                                            <small>
+                                                Salary slip / ITR / other income proof
+                                            </small>
+
+                                            <input type="file" class="form-control">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Bank Statement -->
+
+                                    <div class="col-md-6">
+
+                                        <div class="document-card">
+
+                                            <div class="document-icon">
+
+                                                <i class="bi bi-bank"></i>
+
+                                            </div>
+
+                                            <h5>
+                                                Bank Statement
+                                            </h5>
+
+                                            <small>
+                                                Upload recent bank statement
+                                            </small>
+
+                                            <input type="file" class="form-control">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Property -->
+
+                                    <div class="col-12">
+
+                                        <div class="document-card">
+
+                                            <div class="document-icon">
+
+                                                <i class="bi bi-house"></i>
+
+                                            </div>
+
+                                            <h5>
+                                                Property Documents
+                                            </h5>
+
+                                            <small>
+                                                Upload property documents if applicable
+                                            </small>
+
+                                            <input type="file" class="form-control">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- CONSENT -->
+
+                                <div class="consent-box">
+
+                                    <div class="form-check">
+
+                                        <input class="form-check-input" type="checkbox" id="consent">
+
+                                        <label class="form-check-label" for="consent">
+
+                                            I confirm that the information provided
+                                            by me is true and correct. I authorize
+                                            the lender and its representatives to
+                                            contact me regarding my loan application.
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- BUTTON -->
+
+                                <div class="form-buttons">
+
+                                    <button type="button" class="btn-back prev-btn">
+
+                                        <i class="bi bi-arrow-left me-2"></i>
+
+                                        Back
+
+                                    </button>
+
+
+                                    <button type="button" class="btn-submit" id="submitLoan">
+
+                                        Submit Application
+
+                                        <i class="bi bi-check-circle ms-2"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                 RIGHT INFO
+            ========================================== -->
+
+                <div class="col-lg-3">
+
+                    <div class="info-card">
+
+                        <h3>
+                            Simple & Secure
+                        </h3>
+
+                        <p>
+                            Complete your loan application
+                            step by step. Your information
+                            remains secure.
+                        </p>
+
+
+                        <ul class="info-list">
+
+                            <li>
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                <span>
+                                    Simple application process
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="bi bi-shield-check"></i>
+
+                                <span>
+                                    Secure information
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="bi bi-file-earmark-check"></i>
+
+                                <span>
+                                    Easy document upload
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="bi bi-headset"></i>
+
+                                <span>
+                                    Customer support
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="bi bi-clock"></i>
+
+                                <span>
+                                    Quick application process
+                                </span>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                let currentStep = 1;
+
+                const totalSteps = 5;
+
+
+                const steps =
+                    document.querySelectorAll(
+                        ".step-item"
+                    );
+
+                const lines =
+                    document.querySelectorAll(
+                        ".step-line"
+                    );
+
+                const contents =
+                    document.querySelectorAll(
+                        ".form-step"
+                    );
+
+
+                const nextButtons =
+                    document.querySelectorAll(
+                        ".next-btn"
+                    );
+
+                const prevButtons =
+                    document.querySelectorAll(
+                        ".prev-btn"
+                    );
+
+
+                /* =========================================
+                   SHOW STEP
+                ========================================= */
+
+                function showStep(step) {
+
+                    currentStep = step;
+
+
+                    /* Form Content */
+
+                    contents.forEach(
+                        function (content) {
+
+                            const contentStep =
+                                parseInt(
+                                    content.dataset.content
+                                );
+
+                            content.classList.toggle(
+                                "active",
+                                contentStep === step
+                            );
+
+                        }
+                    );
+
+
+                    /* Stepper */
+
+                    steps.forEach(
+                        function (item) {
+
+                            const stepNumber =
+                                parseInt(
+                                    item.dataset.step
+                                );
+
+
+                            item.classList.remove(
+                                "active",
+                                "completed"
+                            );
+
+
+                            if (
+                                stepNumber === step
+                            ) {
+
+                                item.classList.add(
+                                    "active"
+                                );
+
+                            }
+
+
+                            if (
+                                stepNumber < step
+                            ) {
+
+                                item.classList.add(
+                                    "completed"
+                                );
+
+                                item.querySelector(
+                                    ".step-circle"
+                                ).innerHTML =
+                                    '<i class="bi bi-check"></i>';
+
+                            }
+                            else {
+
+                                item.querySelector(
+                                    ".step-circle"
+                                ).innerText =
+                                    stepNumber;
+
+                            }
+
+                        }
+                    );
+
+
+                    /* Lines */
+
+                    lines.forEach(
+                        function (line) {
+
+                            const lineNumber =
+                                parseInt(
+                                    line.dataset.line
+                                );
+
+                            line.classList.toggle(
+                                "completed",
+                                lineNumber < step
+                            );
+
+                        }
+                    );
+
+
+                    /* Scroll top */
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+
+
+                /* =========================================
+                   NEXT BUTTON
+                ========================================= */
+
+                nextButtons.forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+                                if (
+                                    currentStep <
+                                    totalSteps
+                                ) {
+
+                                    /*
+                                     * Yahan aap backend/API
+                                     * me current step ka data
+                                     * save kar sakte hain.
+                                     */
+
+                                    showStep(
+                                        currentStep + 1
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* =========================================
+                   BACK BUTTON
+                ========================================= */
+
+                prevButtons.forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+                                if (
+                                    currentStep > 1
+                                ) {
+
+                                    showStep(
+                                        currentStep - 1
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* =========================================
+                   FINAL SUBMIT
+                ========================================= */
+
+                document
+                    .getElementById("submitLoan")
+                    .addEventListener(
+                        "click",
+                        function () {
+
+
+                            const consent =
+                                document.getElementById(
+                                    "consent"
+                                );
+
+
+                            if (
+                                !consent.checked
+                            ) {
+
+                                alert(
+                                    "Please accept the declaration before submitting."
+                                );
+
+                                return;
+
+                            }
+
+
+                            alert(
+                                "Loan application submitted successfully!"
+                            );
+
+
+                            /*
+                             * Yahan AJAX / Fetch API se
+                             * backend ko complete form
+                             * data send kar sakte hain.
+                             */
+
+                        }
+                    );
+
+
+                /* Initial Step */
+
+                showStep(1);
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
