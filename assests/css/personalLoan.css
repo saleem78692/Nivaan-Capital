@@ -4,7 +4,7 @@
 
 .banner-1 {
     position: relative;
-    height: 520px;
+    height: 430px;
 
     display: flex;
     align-items: center;
@@ -63,7 +63,7 @@
 
 .banner-overlay-1 {
     position: absolute;
-
+    height: 460px;
     inset: 0;
 
     background:
@@ -289,7 +289,7 @@
 
 .redirect-wrapper-1 {
 
-    position: absolute;
+    /* position: absolute; */
 
     z-index: 5;
 

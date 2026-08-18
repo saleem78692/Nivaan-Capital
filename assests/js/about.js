@@ -115,10 +115,10 @@ function vision() {
                     <div class="overview-content">
 
                         <p>
-                            Cholamandalam Investment and Finance Company
-                            Limited (Chola), incorporated in 1978 as the
+                            Nivaan capital Investment and Finance Company
+                            Limited (Nivaan capital), incorporated in 1978 as the
                             financial services arm of the Murugappa Group.
-                            Chola commenced business as an equipment
+                            Nivaan capital commenced business as an equipment
                             financing company and has today emerged as a
                             comprehensive financial services provider
                             offering vehicle finance, home loans, loan
@@ -131,15 +131,15 @@ function vision() {
 
 
                         <p>
-                            Chola operates from 1761 branches across India
+                            Nivaan capital operates from 1761 branches across India
                             with assets under management above INR
                             2,27,000+ Crore.
                         </p>
 
 
                         <p>
-                            The vision of Chola is to enable customers enter
-                            a better life. Chola has a growing clientele of
+                            The vision of Nivaan capital is to enable customers enter
+                            a better life. Nivaan capital has a growing clientele of
                             over 44.7 lakh+ happy customers across the
                             nation. Ever since its inception and all through
                             its growth, the company has kept a clear sight
@@ -205,17 +205,17 @@ function Heritage() {
                 <p>
                     The Group has 9 listed companies:
                     Carborundum Universal Limited, CG Power &
-                    Industrial Solutions Limited, Cholamandalam
-                    Financial Holdings Limited, Cholamandalam
+                    Industrial Solutions Limited, Nivaan capital
+                    Financial Holdings Limited, Nivaan capital
                     Investment & Finance Company Limited, Coromandel
                     International Limited, EID Parry (India) Limited,
                     Shanthi Gears Limited, Tube Investments of India
                     Limited and Wendt India Limited. Other major
-                    companies include Cholamandalam MS General
+                    companies include Nivaan capital MS General
                     Insurance Company Limited and Parry Agro
                     Industries Limited. Brands such as Ajax, Hercules,
-                    BSA, Montra, Montra Electric, Mach City, Chola,
-                    Chola MS, CG Power, Shanthi Gears, CUMI, Gromor,
+                    BSA, Montra, Montra Electric, Mach City, Nivaan capital,
+                    Nivaan capital MS, CG Power, Shanthi Gears, CUMI, Gromor,
                     Paramfos, Parry's are part of the Group's
                     illustrious stable.
                 </p>
@@ -775,16 +775,16 @@ function subsidiaries() {
                         </div>
 
                         <h3>
-                            Cholamandalam Leasing Limited
+                            Nivaan capital Leasing Limited
                         </h3>
 
                         <span class="subsidiary-subtitle">
-                            Formerly known as Cholamandalam Home Finance Limited
+                            Formerly known as Nivaan capital Home Finance Limited
                         </span>
 
                         <p>
-                            Cholamandalam Leasing Limited (formerly known as
-                            Cholamandalam Home Finance Limited) is a corporate
+                            Nivaan capital Leasing Limited (formerly known as
+                            Nivaan capital Home Finance Limited) is a corporate
                             agent with composite licence from Insurance
                             Regulatory and Development Authority of India for
                             distributing insurance products.
@@ -853,7 +853,7 @@ function subsidiaries() {
                         </div>
 
                         <h3>
-                            Cholamandalam Securities Limited
+                            Nivaan capital Securities Limited
                         </h3>
 
                         <span class="subsidiary-subtitle">
@@ -861,18 +861,18 @@ function subsidiaries() {
                         </span>
 
                         <p>
-                            Chola Securities is a wealth management company
+                            Nivaan capital Securities is a wealth management company
                             offering investment solutions to individual
                             clients and stock broking and equity advisory
                             services to institutional investors, including
                             many of the largest mutual funds in India.
-                            Chola Securities is a member of Bombay Stock
+                            Nivaan capital Securities is a member of Bombay Stock
                             Exchange Limited and National Stock Exchange
                             of India Limited.
                         </p>
 
                         <a href="#" class="subsidiary-btn">
-                            Visit Chola Securities
+                            Visit Nivaan capital Securities
                             <i class="bi bi-arrow-up-right"></i>
                         </a>
 
@@ -909,7 +909,7 @@ function presence() {
             </h2>
 
             <p>
-                Cholamandalam is a pan-India company operating from over
+                Nivaan capital is a pan-India company operating from over
                 1761 branches across India. This helps us get closer to you
                 and help you enter a better life.
             </p>
@@ -1066,7 +1066,7 @@ function presence() {
                         <div class="map-glow"></div>
 
                         <img src="assests/images/india-map.webp"
-                            alt="Cholamandalam Presence Across India">
+                            alt="Nivaan capital Presence Across India">
 
                     </div>
 
@@ -1380,7 +1380,7 @@ function awards() {
 
             <h1>
 
-                Chola <span>Awards</span>
+                Nivaan capital <span>Awards</span>
 
             </h1>
 
@@ -1442,12 +1442,12 @@ function awards() {
     2026: {
       category: "Business Excellence",
 
-      title: "Chola Award 2026",
+      title: "Nivaan capital Award 2026",
 
       image: "./assests/images/award-2026.jpg",
 
       description:
-        "Cholamandalam has been recognized for its outstanding contribution, excellence and commitment towards delivering innovative and customer-centric financial solutions.",
+        "Nivaan capital has been recognized for its outstanding contribution, excellence and commitment towards delivering innovative and customer-centric financial solutions.",
     },
 
     /* =========================
@@ -1457,12 +1457,12 @@ function awards() {
     2025: {
       category: "Business Excellence",
 
-      title: "Chola Award 2025",
+      title: "Nivaan capital Award 2025",
 
       image: "./assests/images/award-2025.jpg",
 
       description:
-        "Cholamandalam received recognition for its continued excellence, innovation and contribution towards the financial services industry.",
+        "Nivaan capital received recognition for its continued excellence, innovation and contribution towards the financial services industry.",
     },
 
     /* =========================
@@ -1477,7 +1477,7 @@ function awards() {
       image: "./assests/images/award-2024.jpg",
 
       description:
-        "At the India Credit Risk Management Summit & Awards 2024, Chola was awarded the prestigious Liquidity Risk Management of the Year award for its predictive approach to managing liquidity risk.",
+        "At the India Credit Risk Management Summit & Awards 2024, Nivaan capital was awarded the prestigious Liquidity Risk Management of the Year award for its predictive approach to managing liquidity risk.",
     },
 
     /* =========================
@@ -1492,7 +1492,7 @@ function awards() {
       image: "./assests/images/award-2023.jpg",
 
       description:
-        "Chola CII Ops team was awarded the Platinum Award in the 6th CII Conference on Indian Industry's Technology, Automation, Technology & Solutions Providers.",
+        "Nivaan capital CII Ops team was awarded the Platinum Award in the 6th CII Conference on Indian Industry's Technology, Automation, Technology & Solutions Providers.",
     },
 
     /* =========================
@@ -1507,7 +1507,7 @@ function awards() {
       image: "./assests/images/award-2022.jpg",
 
       description:
-        "Cholamandalam was recognized for its excellence in digital transformation, technology innovation and customer-focused digital solutions.",
+        "Nivaan capital was recognized for its excellence in digital transformation, technology innovation and customer-focused digital solutions.",
     },
 
     /* =========================
@@ -1537,7 +1537,7 @@ function awards() {
       image: "./assests/images/award-2020.jpg",
 
       description:
-        "Cholamandalam received recognition for its contribution to the financial services sector and its commitment to sustainable business growth.",
+        "Nivaan capital received recognition for its contribution to the financial services sector and its commitment to sustainable business growth.",
     },
   };
 
@@ -1783,13 +1783,13 @@ function overviewpersonalLoan() {
                 <!-- Intro -->
                 <p class="intro-text">
                     If you are looking for an unsecured business or personal loan,
-                    you have come to the right place. Chola Consumer and Small
+                    you have come to the right place. Nivaan capital Consumer and Small
                     Enterprise Loans (CSEL) presents you a wide range of loan
                     products without asking for a collateral security for your loan.
                 </p>
 
                 <p class="intro-text">
-                    Chola's business and personal loans support budding entrepreneurs
+                    Nivaan capital's business and personal loans support budding entrepreneurs
                     and aspiring professionals to achieve their goals.
                 </p>
 

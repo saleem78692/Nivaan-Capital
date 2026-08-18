@@ -3,7 +3,7 @@
 ========================= */
 
 .contact-hero {
-    min-height: 390px;
+    height: 390px;
     position: relative;
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@
 ========================= */
 
 .contact-section {
-    padding: 80px 0;
+    padding: 23px 0;
     background: #f6f8fc;
 }
 
@@ -241,7 +241,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    min-height: 52px;
+    height: 52px;
     padding: 0 15px;
     border: 1px solid #dfe5ec;
     border-radius: 12px;
@@ -316,7 +316,7 @@
 ========================= */
 
 .quick-contact {
-    padding: 0 0 80px;
+    padding: 0 0 20px;
     background: #f6f8fc;
 }
 
@@ -395,9 +395,12 @@
 ========================= */
 
 @media (max-width: 991px) {
-
+    .contact-mobile{
+        display: flex;
+        flex-direction: column-reverse;
+    }
     .contact-hero {
-        min-height: 330px;
+        height: 280px;
     }
 
     .contact-info-box,
@@ -410,19 +413,22 @@
 @media (max-width: 576px) {
 
     .contact-hero {
-        min-height: 300px;
+        height: 230px;
     }
 
     .contact-hero h1 {
-        font-size: 42px;
+        font-size: 35px;
     }
 
     .contact-hero p {
-        font-size: 15px;
+        font-size: 13px;
+    }
+    .contact-tag{
+        padding: 5px 5px;
     }
 
     .contact-section {
-        padding: 50px 0;
+        padding: 10px 0;
     }
 
     .contact-info-box,

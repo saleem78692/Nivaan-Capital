@@ -2089,7 +2089,7 @@ html {
 
 #mainBanner .carousel-item {
     position: relative;
-    height: 550px;
+    height: 450px;
     overflow: hidden;
 }
 
@@ -2138,7 +2138,7 @@ html {
 }
 
 #mainBanner .banner-content h2 {
-    font-size: 52px;
+    font-size: 45px;
     line-height: 1.15;
     font-weight: 800;
     margin-bottom: 20px;
@@ -2146,7 +2146,7 @@ html {
 }
 
 #mainBanner .banner-content p {
-    font-size: 21px;
+    font-size: 25px;
     line-height: 1.6;
     font-weight: 400;
     margin-bottom: 30px;

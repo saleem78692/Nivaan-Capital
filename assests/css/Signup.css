@@ -757,7 +757,7 @@ body {
 @media (max-width: 576px) {
 
     .register-section {
-        padding: 15px;
+        padding: 15px 0;
     }
 
     .register-wrapper {
@@ -1445,7 +1445,7 @@ body {
 @media (max-width: 767px) {
 
     .login-section {
-        padding: 15px;
+        padding: 15px 0;
     }
 
     .login-wrapper {
