@@ -2146,7 +2146,7 @@ html {
 }
 
 #mainBanner .banner-content p {
-    font-size: 25px;
+    font-size: 21px;
     line-height: 1.6;
     font-weight: 400;
     margin-bottom: 30px;
@@ -2472,7 +2472,7 @@ html {
 @media (max-width: 575px) {
 
     #mainBanner .carousel-item {
-        height: 300px;
+        height: 200px;
     }
 
     #mainBanner .banner-content {
@@ -2480,43 +2480,22 @@ html {
     }
 
     #mainBanner .banner-content h2 {
-        font-size: 29px;
+        font-size: 14px;
         line-height: 1.2;
     }
 
     #mainBanner .banner-content p {
-        font-size: 15px;
+        font-size: 10px;
         line-height: 1.5;
     }
 
     #mainBanner .banner-btn {
-        padding: 8px 16px;
-        font-size: 12px;
+        padding: 5px 10px;
+        font-size: 11px;
     }
 
     #mainBanner .carousel-indicators {
         bottom: 15px;
-    }
-
-}
-
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-    #mainBanner .carousel-item {
-        height: 200px;
-    }
-
-    #mainBanner .banner-content h2 {
-        font-size: 20px;
-    }
-
-    #mainBanner .banner-content p {
-        font-size: 13px;
     }
 
 }
