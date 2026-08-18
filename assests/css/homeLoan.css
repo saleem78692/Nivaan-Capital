@@ -385,11 +385,11 @@
     transform: translateX(-50%);
 
     padding: 0 0px;
+
 }
 
 
 .home-filter {
-
     display: flex;
 
     align-items: center;
@@ -592,10 +592,6 @@
     }
 
 
-    .home-filter-wrapper {
-
-        padding: 0 15px;
-    }
 
 
     .home-filter {
@@ -697,10 +693,6 @@
     }
 
 
-    .home-filter-wrapper {
-
-        padding: 0 8px;
-    }
 
 
     .home-filter {
@@ -713,7 +705,6 @@
 
         padding: 7px;
 
-        border-radius: 8px 8px 0 0;
     }
 
 

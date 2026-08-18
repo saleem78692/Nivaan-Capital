@@ -259,9 +259,9 @@
 
 .loan-navigation {
 
-    position: sticky;
+    /* position: sticky;
 
-    top: 80px;
+    top: 80px; */
 
     z-index: 1000;
 
