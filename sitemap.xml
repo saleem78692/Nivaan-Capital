@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- About Us -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/about</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Home Loan -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/homeloan</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Personal Loan -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/personalloan</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Business Loan -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/businessloan</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Vehicle Loan -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/vahicalloan</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Machinery Loan -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/machineryloan</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Loan Against Property -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/loanagainestproperty</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Commercial Vehicle Loan -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/commercialvahicalloan</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Education Loan -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/personalloan</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- EMI Calculator -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/emi-calculator</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Pay EMI -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/payvahicalemi</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Investor Relations -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/loanloginform</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- News -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/register</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Contact Us -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/contact</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/about</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Terms & Conditions -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/invester</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Disclaimer -->
+    <url>
+        <loc>https://nivaan-capital.netlify.app/disclaimer</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
