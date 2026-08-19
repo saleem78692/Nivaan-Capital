@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="gmJ1bZLfJilSFGm0OjKALfC3U6VBdn4nRiy-lOPAuv4" />
-    <title>Loan Application</title>
+
+    <meta name="google-site-verification" content="gmJ1bZLfJilSFGm0OjKALfC3U6VBdn4nRiy-lOPAuv4">
+
+    <title>Nivaan Capital - Loan Application</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +25,7 @@
         * {
             box-sizing: border-box;
         }
+
 
         body {
             margin: 0;
@@ -42,15 +45,16 @@
                     #1d62a8);
 
             color: #fff;
-
             padding: 40px 0;
         }
+
 
         .loan-header h1 {
             font-size: 32px;
             font-weight: 600;
             margin: 0 0 7px;
         }
+
 
         .loan-header p {
             margin: 0;
@@ -98,6 +102,7 @@
             overflow-x: auto;
         }
 
+
         .step-item {
             display: flex;
             align-items: center;
@@ -111,6 +116,7 @@
 
             transition: .3s;
         }
+
 
         .step-circle {
             width: 38px;
@@ -132,23 +138,28 @@
             transition: .3s;
         }
 
+
         .step-item.active {
             color: #164684;
         }
+
 
         .step-item.active .step-circle {
             background: #164684;
             color: #fff;
         }
 
+
         .step-item.completed {
             color: #198754;
         }
+
 
         .step-item.completed .step-circle {
             background: #198754;
             color: #fff;
         }
+
 
         .step-line {
             height: 2px;
@@ -163,6 +174,7 @@
 
             transition: .3s;
         }
+
 
         .step-line.completed {
             background: #198754;
@@ -188,9 +200,11 @@
             animation: fadeStep .35s ease;
         }
 
+
         .form-step.active {
             display: block;
         }
+
 
         @keyframes fadeStep {
 
@@ -224,6 +238,7 @@
             border-bottom: 1px solid #edf0f4;
         }
 
+
         .section-icon {
             width: 45px;
             height: 45px;
@@ -239,7 +254,10 @@
             justify-content: center;
 
             font-size: 20px;
+
+            flex-shrink: 0;
         }
+
 
         .section-heading h2 {
             margin: 0;
@@ -250,6 +268,7 @@
 
             color: #173f72;
         }
+
 
         .section-heading p {
             margin: 4px 0 0;
@@ -273,6 +292,7 @@
 
             margin-bottom: 7px;
         }
+
 
         .required {
             color: #e21d2a;
@@ -298,9 +318,11 @@
             box-shadow: none;
         }
 
+
         .form-control::placeholder {
             color: #a5aeba;
         }
+
 
         .form-control:focus,
         .form-select:focus {
@@ -321,6 +343,30 @@
 
 
         /* =========================================
+           VALIDATION
+        ========================================= */
+
+        .form-control.is-invalid,
+        .form-select.is-invalid {
+            border-color: #dc3545;
+            background-image: none;
+        }
+
+
+        .form-control.is-valid,
+        .form-select.is-valid {
+            border-color: #198754;
+            background-image: none;
+        }
+
+
+        .invalid-feedback {
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+
+        /* =========================================
            ADDRESS BOX
         ========================================= */
 
@@ -336,6 +382,7 @@
             margin-bottom: 25px;
         }
 
+
         .address-title {
             display: flex;
 
@@ -345,6 +392,7 @@
 
             margin-bottom: 20px;
         }
+
 
         .address-title h4 {
             margin: 0;
@@ -388,6 +436,7 @@
             margin-bottom: 25px;
         }
 
+
         .loan-highlight h4 {
             margin: 0 0 5px;
 
@@ -395,6 +444,7 @@
 
             font-size: 17px;
         }
+
 
         .loan-highlight p {
             margin: 0;
@@ -421,11 +471,13 @@
             transition: .25s;
         }
 
+
         .document-card:hover {
             border-color: #164684;
 
             background: #f5f9fe;
         }
+
 
         .document-icon {
             width: 42px;
@@ -446,6 +498,7 @@
             margin-bottom: 10px;
         }
 
+
         .document-card h5 {
             font-size: 14px;
 
@@ -453,6 +506,7 @@
 
             color: #394554;
         }
+
 
         .document-card small {
             display: block;
@@ -463,6 +517,7 @@
 
             margin-bottom: 13px;
         }
+
 
         .document-card input {
             font-size: 11px;
@@ -484,6 +539,7 @@
 
             margin-top: 25px;
         }
+
 
         .consent-box label {
             color: #606c7b;
@@ -512,6 +568,7 @@
             border-top: 1px solid #edf0f4;
         }
 
+
         .btn-back {
             min-width: 140px;
 
@@ -528,11 +585,21 @@
             font-size: 13px;
 
             font-weight: 500;
+
+            transition: .25s;
         }
 
-        .btn-back:hover {
+
+        .btn-back:hover:not(:disabled) {
             background: #f7f8fa;
         }
+
+
+        .btn-back:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
 
         .btn-next {
             min-width: 170px;
@@ -554,11 +621,13 @@
             transition: .25s;
         }
 
+
         .btn-next:hover {
             background: #0d3567;
 
             transform: translateY(-1px);
         }
+
 
         .btn-submit {
             min-width: 210px;
@@ -576,7 +645,10 @@
             font-size: 14px;
 
             font-weight: 600;
+
+            transition: .25s;
         }
+
 
         .btn-submit:hover {
             background: #c91018;
@@ -603,11 +675,13 @@
             top: 20px;
         }
 
+
         .info-card h3 {
             font-size: 20px;
 
             margin-bottom: 7px;
         }
+
 
         .info-card>p {
             font-size: 12px;
@@ -617,6 +691,7 @@
             line-height: 1.6;
         }
 
+
         .info-list {
             list-style: none;
 
@@ -624,6 +699,7 @@
 
             margin: 22px 0 0;
         }
+
 
         .info-list li {
             display: flex;
@@ -640,6 +716,7 @@
 
             color: rgba(255, 255, 255, .85);
         }
+
 
         .info-list i {
             color: #7bc4ff;
@@ -669,25 +746,31 @@
                 padding: 28px 0;
             }
 
+
             .loan-header h1 {
                 font-size: 25px;
             }
+
 
             .loan-header p {
                 font-size: 12px;
             }
 
+
             .loan-wrapper {
                 padding: 20px 0 40px;
             }
+
 
             .loan-card {
                 border-radius: 12px;
             }
 
+
             .stepper {
                 padding: 18px 15px;
             }
+
 
             .step-circle {
                 width: 32px;
@@ -696,37 +779,45 @@
                 font-size: 12px;
             }
 
+
             .step-line {
                 width: 30px;
 
                 margin: 0 7px;
             }
 
+
             .step-item span {
                 display: none;
             }
+
 
             .form-body {
                 padding: 20px 15px;
             }
 
+
             .section-heading h2 {
                 font-size: 18px;
             }
 
+
             .section-heading p {
                 font-size: 11px;
             }
+
 
             .form-control,
             .form-select {
                 height: 46px;
             }
 
+
             .address-box,
             .employment-box {
                 padding: 15px;
             }
+
 
             .address-title {
                 align-items: flex-start;
@@ -736,9 +827,11 @@
                 gap: 10px;
             }
 
+
             .form-buttons {
                 flex-direction: column-reverse;
             }
+
 
             .btn-back,
             .btn-next,
@@ -755,12 +848,14 @@
                 padding: 17px 12px;
             }
 
+
             .section-icon {
                 width: 38px;
                 height: 38px;
 
                 font-size: 17px;
             }
+
 
             .section-heading h2 {
                 font-size: 16px;
@@ -781,18 +876,15 @@
 
     <header class="loan-header">
 
-        <div class="container d-flex justify-content-between">
+        <div class="container">
 
+            <h1>
+                Nivaan Capital Loan Application
+            </h1>
 
-            <div>
-                <h1>
-                   Nivaan Capital Loan Application
-                </h1>
-
-                <p>
-                    Complete your application step by step.
-                </p>
-            </div>
+            <p>
+                Complete your application step by step.
+            </p>
 
         </div>
 
@@ -928,279 +1020,293 @@
                         <div class="form-body">
 
 
-                            <!-- =====================================
-                             STEP 1 PERSONAL
-                        ====================================== -->
+                            <!-- =================================================
+                             STEP 1 - PERSONAL
+                        ================================================== -->
 
-                            <form action="" method="post">
-                                <div class="form-step active" data-content="1">
+                            <div class="form-step active" data-content="1">
 
 
-                                    <div class="section-heading">
+                                <div class="section-heading">
 
-                                        <div class="section-icon">
+                                    <div class="section-icon">
 
-                                            <i class="bi bi-person"></i>
-
-                                        </div>
-
-                                        <div>
-
-                                            <h2>
-                                                Personal Details
-                                            </h2>
-
-                                            <p>
-                                                Enter your basic personal information
-                                            </p>
-
-                                        </div>
+                                        <i class="bi bi-person"></i>
 
                                     </div>
 
-
-                                    <div class="row g-3">
-
-
-                                        <!-- Title -->
-
-                                        <div class="col-md-2">
-
-                                            <label class="form-label">
-                                                Title
-                                            </label>
-
-                                            <select class="form-select" required>
-
-                                                <option disabled selected>
-                                                    Select
-                                                </option>
-
-                                                <option>
-                                                    Mr.
-                                                </option>
-
-                                                <option>
-                                                    Mrs.
-                                                </option>
-
-                                                <option>
-                                                    Ms.
-                                                </option>
-
-                                            </select>
-
-                                        </div>
-
-
-                                        <!-- First -->
-
-                                        <div class="col-md-4">
-
-                                            <label class="form-label">
-                                                First Name
-                                                <span class="required">*</span>
-                                            </label>
-
-                                            <input type="text" class="form-control" placeholder="First name" required>
-
-                                        </div>
-
-
-                                        <!-- Middle -->
-
-                                        <div class="col-md-3">
-
-                                            <label class="form-label">
-                                                Middle Name
-                                            </label>
-
-                                            <input type="text" class="form-control" placeholder="Middle name">
-
-                                        </div>
-
-
-                                        <!-- Last -->
-
-                                        <div class="col-md-3">
-
-                                            <label class="form-label">
-                                                Last Name
-                                                <span class="required">*</span>
-                                            </label>
-
-                                            <input type="text" class="form-control" placeholder="Last name" required>
-
-                                        </div>
-
-
-                                        <!-- DOB -->
-
-                                        <div class="col-md-4">
-
-                                            <label class="form-label">
-                                                Date of Birth
-                                                <span class="required">*</span>
-                                            </label>
-
-                                            <input type="date" class="form-control" required>
-
-                                        </div>
-
-
-                                        <!-- Gender -->
-
-                                        <div class="col-md-4">
-
-                                            <label class="form-label">
-                                                Gender
-                                                <span class="required">*</span>
-                                            </label>
-
-                                            <select class="form-select">
-
-                                                <option>
-                                                    Select Gender
-                                                </option>
-
-                                                <option>
-                                                    Male
-                                                </option>
-
-                                                <option>
-                                                    Female
-                                                </option>
-
-                                                <option>
-                                                    Other
-                                                </option>
-
-                                            </select>
-
-                                        </div>
-
-
-                                        <!-- Marital -->
-
-                                        <div class="col-md-4">
-
-                                            <label class="form-label">
-                                                Marital Status
-                                            </label>
-
-                                            <select class="form-select">
-
-                                                <option>
-                                                    Select Status
-                                                </option>
-
-                                                <option>
-                                                    Single
-                                                </option>
-
-                                                <option>
-                                                    Married
-                                                </option>
-
-                                                <option>
-                                                    Divorced
-                                                </option>
-
-                                                <option>
-                                                    Widowed
-                                                </option>
-
-                                            </select>
-
-                                        </div>
-
-
-                                        <!-- Father -->
-
-                                        <div class="col-md-6">
-
-                                            <label class="form-label">
-                                                Father's / Spouse's Name
-                                            </label>
-
-                                            <input type="text" class="form-control" placeholder="Enter name">
-
-                                        </div>
-
-
-                                        <!-- Mother -->
-
-                                        <div class="col-md-6">
-
-                                            <label class="form-label">
-                                                Mother's Name
-                                            </label>
-
-                                            <input type="text" class="form-control" placeholder="Enter name">
-
-                                        </div>
-
-
-                                        <!-- PAN -->
-
-                                        <div class="col-md-6">
-
-                                            <label class="form-label">
-                                                PAN Number
-                                                <span class="required">*</span>
-                                            </label>
-
-                                            <input type="text" class="form-control" placeholder="ABCDE1234F"
-                                                maxlength="10">
-
-                                        </div>
-
-
-                                        <!-- Aadhaar -->
-
-                                        <div class="col-md-6">
-
-                                            <label class="form-label">
-                                                Aadhaar Number
-                                            </label>
-
-                                            <input type="text" class="form-control" placeholder="XXXX XXXX XXXX"
-                                                maxlength="12">
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="form-buttons">
-
-                                        <button type="button" class="btn-back" disabled>
-
-                                            <i class="bi bi-arrow-left"></i>
-
-                                            Back
-
-                                        </button>
-
-
-                                        <button type="button" class="btn-next next-btn">
-
-                                            Save & Next
-
-                                            <i class="bi bi-arrow-right ms-2"></i>
-
-                                        </button>
+                                    <div>
+
+                                        <h2>
+                                            Personal Details
+                                        </h2>
+
+                                        <p>
+                                            Enter your basic personal information
+                                        </p>
 
                                     </div>
 
                                 </div>
-                            </form>
+
+
+                                <div class="row g-3">
+
+
+                                    <!-- Title -->
+
+                                    <div class="col-md-2">
+
+                                        <label class="form-label">
+                                            Title
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <select class="form-select" required>
+
+                                            <option value="" disabled selected>
+                                                Select
+                                            </option>
+
+                                            <option value="Mr.">
+                                                Mr.
+                                            </option>
+
+                                            <option value="Mrs.">
+                                                Mrs.
+                                            </option>
+
+                                            <option value="Ms.">
+                                                Ms.
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- First Name -->
+
+                                    <div class="col-md-4">
+
+                                        <label class="form-label">
+                                            First Name
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <input type="text" class="form-control" placeholder="First name" required>
+
+                                    </div>
+
+
+                                    <!-- Middle Name -->
+
+                                    <div class="col-md-3">
+
+                                        <label class="form-label">
+                                            Middle Name
+                                        </label>
+
+                                        <input type="text" class="form-control" placeholder="Middle name">
+
+                                    </div>
+
+
+                                    <!-- Last Name -->
+
+                                    <div class="col-md-3">
+
+                                        <label class="form-label">
+                                            Last Name
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <input type="text" class="form-control" placeholder="Last name" required>
+
+                                    </div>
+
+
+                                    <!-- DOB -->
+
+                                    <div class="col-md-4">
+
+                                        <label class="form-label">
+                                            Date of Birth
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <input type="date" class="form-control" required>
+
+                                    </div>
+
+
+                                    <!-- Gender -->
+
+                                    <div class="col-md-4">
+
+                                        <label class="form-label">
+                                            Gender
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <select class="form-select" required>
+
+                                            <option value="" disabled selected>
+                                                Select Gender
+                                            </option>
+
+                                            <option value="Male">
+                                                Male
+                                            </option>
+
+                                            <option value="Female">
+                                                Female
+                                            </option>
+
+                                            <option value="Other">
+                                                Other
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Marital -->
+
+                                    <div class="col-md-4">
+
+                                        <label class="form-label">
+                                            Marital Status
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <select class="form-select" required>
+
+                                            <option value="" disabled selected>
+                                                Select Status
+                                            </option>
+
+                                            <option value="Single">
+                                                Single
+                                            </option>
+
+                                            <option value="Married">
+                                                Married
+                                            </option>
+
+                                            <option value="Divorced">
+                                                Divorced
+                                            </option>
+
+                                            <option value="Widowed">
+                                                Widowed
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Father -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Father's / Spouse's Name
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <input type="text" class="form-control" placeholder="Enter name" required>
+
+                                    </div>
+
+
+                                    <!-- Mother -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Mother's Name
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <input type="text" class="form-control" placeholder="Enter name" required>
+
+                                    </div>
+
+
+                                    <!-- PAN -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            PAN Number
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <input type="text" class="form-control pan-input" placeholder="ABCDE1234F"
+                                            maxlength="10" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
+                                            style="text-transform:uppercase" required>
+
+                                        <div class="invalid-feedback">
+                                            Enter valid PAN number.
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Aadhaar -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Aadhaar Number
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <input type="text" class="form-control aadhaar-input"
+                                            placeholder="XXXX XXXX XXXX" maxlength="12" pattern="[0-9]{12}"
+                                            inputmode="numeric" required>
+
+                                        <div class="invalid-feedback">
+                                            Enter valid 12 digit Aadhaar number.
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="form-buttons">
+
+                                    <button type="button" class="btn-back" disabled>
+
+                                        <i class="bi bi-arrow-left"></i>
+
+                                        Back
+
+                                    </button>
+
+
+                                    <button type="button" class="btn-next next-btn">
+
+                                        Save & Next
+
+                                        <i class="bi bi-arrow-right ms-2"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
 
 
 
-                            <!-- =====================================
-                             STEP 2 ADDRESS
-                        ====================================== -->
+                            <!-- =================================================
+                             STEP 2 - ADDRESS
+                        ================================================== -->
 
                             <div class="form-step" data-content="2">
 
@@ -1228,7 +1334,7 @@
                                 </div>
 
 
-                                <!-- CURRENT -->
+                                <!-- CURRENT ADDRESS -->
 
                                 <div class="address-box">
 
@@ -1252,7 +1358,7 @@
                                             </label>
 
                                             <input type="text" class="form-control"
-                                                placeholder="House / Flat / Building / Plot">
+                                                placeholder="House / Flat / Building / Plot" required>
 
                                         </div>
 
@@ -1276,7 +1382,7 @@
                                                 <span class="required">*</span>
                                             </label>
 
-                                            <input type="text" class="form-control" placeholder="City">
+                                            <input type="text" class="form-control" placeholder="City" required>
 
                                         </div>
 
@@ -1288,29 +1394,29 @@
                                                 <span class="required">*</span>
                                             </label>
 
-                                            <select class="form-select">
+                                            <select class="form-select" required>
 
-                                                <option>
+                                                <option value="" disabled selected>
                                                     Select State
                                                 </option>
 
-                                                <option>
+                                                <option value="Uttar Pradesh">
                                                     Uttar Pradesh
                                                 </option>
 
-                                                <option>
+                                                <option value="Delhi">
                                                     Delhi
                                                 </option>
 
-                                                <option>
+                                                <option value="Maharashtra">
                                                     Maharashtra
                                                 </option>
 
-                                                <option>
+                                                <option value="Rajasthan">
                                                     Rajasthan
                                                 </option>
 
-                                                <option>
+                                                <option value="Karnataka">
                                                     Karnataka
                                                 </option>
 
@@ -1323,13 +1429,13 @@
 
                                             <label class="form-label">
                                                 Pincode
-                                                <span class="required">*</span>
                                             </label>
 
                                             <input type="text" class="form-control" placeholder="6 digit pincode"
-                                                maxlength="6">
+                                                maxlength="6" pattern="[0-9]{6}" inputmode="numeric" required>
 
                                         </div>
+
 
                                     </div>
 
@@ -1337,7 +1443,7 @@
 
 
 
-                                <!-- PERMANENT -->
+                                <!-- PERMANENT ADDRESS -->
 
                                 <div class="address-box">
 
@@ -1350,7 +1456,7 @@
 
                                         <label class="form-check-label" style="font-size:12px;">
 
-                                            <input type="checkbox" class="form-check-input">
+                                            <input type="checkbox" class="form-check-input same-address">
 
                                             Same as current address
 
@@ -1366,10 +1472,11 @@
 
                                             <label class="form-label">
                                                 Address Line 1
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <input type="text" class="form-control"
-                                                placeholder="House / Flat / Building / Plot">
+                                            <input type="text" class="form-control permanent-address"
+                                                placeholder="House / Flat / Building / Plot" required>
 
                                         </div>
 
@@ -1380,7 +1487,7 @@
                                                 Address Line 2
                                             </label>
 
-                                            <input type="text" class="form-control"
+                                            <input type="text" class="form-control permanent-address"
                                                 placeholder="Street / Area / Locality">
 
                                         </div>
@@ -1390,9 +1497,11 @@
 
                                             <label class="form-label">
                                                 City
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <input type="text" class="form-control" placeholder="City">
+                                            <input type="text" class="form-control permanent-address" placeholder="City"
+                                                required>
 
                                         </div>
 
@@ -1401,28 +1510,33 @@
 
                                             <label class="form-label">
                                                 State
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <select class="form-select">
+                                            <select class="form-select permanent-address" required>
 
-                                                <option>
+                                                <option value="" disabled selected>
                                                     Select State
                                                 </option>
 
-                                                <option>
+                                                <option value="Uttar Pradesh">
                                                     Uttar Pradesh
                                                 </option>
 
-                                                <option>
+                                                <option value="Delhi">
                                                     Delhi
                                                 </option>
 
-                                                <option>
+                                                <option value="Maharashtra">
                                                     Maharashtra
                                                 </option>
 
-                                                <option>
+                                                <option value="Rajasthan">
                                                     Rajasthan
+                                                </option>
+
+                                                <option value="Karnataka">
+                                                    Karnataka
                                                 </option>
 
                                             </select>
@@ -1434,11 +1548,15 @@
 
                                             <label class="form-label">
                                                 Pincode
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <input type="text" class="form-control" placeholder="Pincode" maxlength="6">
+                                            <input type="text" class="form-control permanent-address"
+                                                placeholder="Pincode" maxlength="6" pattern="[0-9]{6}"
+                                                inputmode="numeric" required>
 
                                         </div>
+
 
                                     </div>
 
@@ -1471,9 +1589,9 @@
 
 
 
-                            <!-- =====================================
-                             STEP 3 EMPLOYMENT
-                        ====================================== -->
+                            <!-- =================================================
+                             STEP 3 - EMPLOYMENT
+                        ================================================== -->
 
                             <div class="form-step" data-content="3">
 
@@ -1515,25 +1633,25 @@
                                                 <span class="required">*</span>
                                             </label>
 
-                                            <select class="form-select">
+                                            <select class="form-select" required>
 
-                                                <option>
+                                                <option value="" disabled selected>
                                                     Select Employment Type
                                                 </option>
 
-                                                <option>
+                                                <option value="Salaried">
                                                     Salaried
                                                 </option>
 
-                                                <option>
+                                                <option value="Self Employed">
                                                     Self Employed
                                                 </option>
 
-                                                <option>
+                                                <option value="Business Owner">
                                                     Business Owner
                                                 </option>
 
-                                                <option>
+                                                <option value="Professional">
                                                     Professional
                                                 </option>
 
@@ -1548,9 +1666,10 @@
 
                                             <label class="form-label">
                                                 Company / Business Name
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <input type="text" class="form-control" placeholder="Company name">
+                                            <input type="text" class="form-control" placeholder="Company name" required>
 
                                         </div>
 
@@ -1561,9 +1680,10 @@
 
                                             <label class="form-label">
                                                 Designation
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <input type="text" class="form-control" placeholder="Designation">
+                                            <input type="text" class="form-control" placeholder="Designation" required>
 
                                         </div>
 
@@ -1574,31 +1694,32 @@
 
                                             <label class="form-label">
                                                 Work Experience
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <select class="form-select">
+                                            <select class="form-select" required>
 
-                                                <option>
+                                                <option value="" disabled selected>
                                                     Select Experience
                                                 </option>
 
-                                                <option>
+                                                <option value="Less than 1 Year">
                                                     Less than 1 Year
                                                 </option>
 
-                                                <option>
+                                                <option value="1 - 3 Years">
                                                     1 - 3 Years
                                                 </option>
 
-                                                <option>
+                                                <option value="3 - 5 Years">
                                                     3 - 5 Years
                                                 </option>
 
-                                                <option>
+                                                <option value="5 - 10 Years">
                                                     5 - 10 Years
                                                 </option>
 
-                                                <option>
+                                                <option value="10+ Years">
                                                     10+ Years
                                                 </option>
 
@@ -1622,7 +1743,8 @@
                                                     ₹
                                                 </span>
 
-                                                <input type="number" class="form-control" placeholder="Income">
+                                                <input type="number" class="form-control" placeholder="Income" min="1"
+                                                    required>
 
                                             </div>
 
@@ -1643,7 +1765,8 @@
                                                     ₹
                                                 </span>
 
-                                                <input type="number" class="form-control" placeholder="Other income">
+                                                <input type="number" class="form-control" placeholder="Other income"
+                                                    min="0">
 
                                             </div>
 
@@ -1664,7 +1787,8 @@
                                                     ₹
                                                 </span>
 
-                                                <input type="number" class="form-control" placeholder="Existing EMI">
+                                                <input type="number" class="form-control" placeholder="Existing EMI"
+                                                    min="0">
 
                                             </div>
 
@@ -1677,12 +1801,14 @@
 
                                             <label class="form-label">
                                                 Office / Business Address
+                                                <span class="required">*</span>
                                             </label>
 
-                                            <textarea class="form-control"
-                                                placeholder="Enter office / business address"></textarea>
+                                            <textarea class="form-control" placeholder="Enter office / business address"
+                                                required></textarea>
 
                                         </div>
+
 
                                     </div>
 
@@ -1714,9 +1840,9 @@
 
 
 
-                            <!-- =====================================
-                             STEP 4 LOAN
-                        ====================================== -->
+                            <!-- =================================================
+                             STEP 4 - LOAN
+                        ================================================== -->
 
                             <div class="form-step" data-content="4">
 
@@ -1770,29 +1896,29 @@
                                             <span class="required">*</span>
                                         </label>
 
-                                        <select class="form-select">
+                                        <select class="form-select" required>
 
-                                            <option>
+                                            <option value="" disabled selected>
                                                 Select Loan Type
                                             </option>
 
-                                            <option>
+                                            <option value="Home Loan">
                                                 Home Loan
                                             </option>
 
-                                            <option>
+                                            <option value="Personal Loan">
                                                 Personal Loan
                                             </option>
 
-                                            <option>
+                                            <option value="Loan Against Property">
                                                 Loan Against Property
                                             </option>
 
-                                            <option>
+                                            <option value="Business Loan">
                                                 Business Loan
                                             </option>
 
-                                            <option>
+                                            <option value="Vehicle Loan">
                                                 Vehicle Loan
                                             </option>
 
@@ -1810,29 +1936,29 @@
                                             <span class="required">*</span>
                                         </label>
 
-                                        <select class="form-select">
+                                        <select class="form-select" required>
 
-                                            <option>
+                                            <option value="" disabled selected>
                                                 Select Purpose
                                             </option>
 
-                                            <option>
+                                            <option value="Purchase">
                                                 Purchase
                                             </option>
 
-                                            <option>
+                                            <option value="Construction">
                                                 Construction
                                             </option>
 
-                                            <option>
+                                            <option value="Renovation">
                                                 Renovation
                                             </option>
 
-                                            <option>
+                                            <option value="Business Requirement">
                                                 Business Requirement
                                             </option>
 
-                                            <option>
+                                            <option value="Personal Requirement">
                                                 Personal Requirement
                                             </option>
 
@@ -1856,7 +1982,8 @@
                                                 ₹
                                             </span>
 
-                                            <input type="number" class="form-control" placeholder="Enter amount">
+                                            <input type="number" class="form-control" placeholder="Enter amount" min="1"
+                                                required>
 
                                         </div>
 
@@ -1869,35 +1996,36 @@
 
                                         <label class="form-label">
                                             Preferred Tenure
+                                            <span class="required">*</span>
                                         </label>
 
-                                        <select class="form-select">
+                                        <select class="form-select" required>
 
-                                            <option>
+                                            <option value="" disabled selected>
                                                 Select Tenure
                                             </option>
 
-                                            <option>
+                                            <option value="5 Years">
                                                 5 Years
                                             </option>
 
-                                            <option>
+                                            <option value="10 Years">
                                                 10 Years
                                             </option>
 
-                                            <option>
+                                            <option value="15 Years">
                                                 15 Years
                                             </option>
 
-                                            <option>
+                                            <option value="20 Years">
                                                 20 Years
                                             </option>
 
-                                            <option>
+                                            <option value="25 Years">
                                                 25 Years
                                             </option>
 
-                                            <option>
+                                            <option value="30 Years">
                                                 30 Years
                                             </option>
 
@@ -1906,7 +2034,7 @@
                                     </div>
 
 
-                                    <!-- Property -->
+                                    <!-- Property Value -->
 
                                     <div class="col-md-6">
 
@@ -1920,7 +2048,8 @@
                                                 ₹
                                             </span>
 
-                                            <input type="number" class="form-control" placeholder="Property value">
+                                            <input type="number" class="form-control" placeholder="Property value"
+                                                min="0">
 
                                         </div>
 
@@ -1937,27 +2066,27 @@
 
                                         <select class="form-select">
 
-                                            <option>
+                                            <option value="">
                                                 Select Property Type
                                             </option>
 
-                                            <option>
+                                            <option value="Residential">
                                                 Residential
                                             </option>
 
-                                            <option>
+                                            <option value="Commercial">
                                                 Commercial
                                             </option>
 
-                                            <option>
+                                            <option value="Flat / Apartment">
                                                 Flat / Apartment
                                             </option>
 
-                                            <option>
+                                            <option value="Independent House">
                                                 Independent House
                                             </option>
 
-                                            <option>
+                                            <option value="Plot">
                                                 Plot
                                             </option>
 
@@ -1978,6 +2107,7 @@
                                             placeholder="Enter any additional information"></textarea>
 
                                     </div>
+
 
                                 </div>
 
@@ -2007,9 +2137,9 @@
 
 
 
-                            <!-- =====================================
-                             STEP 5 DOCUMENTS
-                        ====================================== -->
+                            <!-- =================================================
+                             STEP 5 - DOCUMENTS
+                        ================================================== -->
 
                             <div class="form-step" data-content="5">
 
@@ -2060,7 +2190,12 @@
                                                 Upload PAN card
                                             </small>
 
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control document-input"
+                                                accept=".jpg,.jpeg,.png,.pdf" required>
+
+                                            <div class="invalid-feedback">
+                                                Please upload PAN Card.
+                                            </div>
 
                                         </div>
 
@@ -2087,7 +2222,12 @@
                                                 Upload identity/address proof
                                             </small>
 
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control document-input"
+                                                accept=".jpg,.jpeg,.png,.pdf" required>
+
+                                            <div class="invalid-feedback">
+                                                Please upload Aadhaar / Address Proof.
+                                            </div>
 
                                         </div>
 
@@ -2114,7 +2254,12 @@
                                                 Salary slip / ITR / other income proof
                                             </small>
 
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control document-input"
+                                                accept=".jpg,.jpeg,.png,.pdf" required>
+
+                                            <div class="invalid-feedback">
+                                                Please upload Income Proof.
+                                            </div>
 
                                         </div>
 
@@ -2141,7 +2286,12 @@
                                                 Upload recent bank statement
                                             </small>
 
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control document-input"
+                                                accept=".jpg,.jpeg,.png,.pdf" required>
+
+                                            <div class="invalid-feedback">
+                                                Please upload Bank Statement.
+                                            </div>
 
                                         </div>
 
@@ -2168,11 +2318,12 @@
                                                 Upload property documents if applicable
                                             </small>
 
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control" accept=".jpg,.jpeg,.png,.pdf">
 
                                         </div>
 
                                     </div>
+
 
                                 </div>
 
@@ -2183,7 +2334,7 @@
 
                                     <div class="form-check">
 
-                                        <input class="form-check-input" type="checkbox" id="consent">
+                                        <input class="form-check-input" type="checkbox" id="consent" required>
 
                                         <label class="form-check-label" for="consent">
 
@@ -2199,7 +2350,7 @@
                                 </div>
 
 
-                                <!-- BUTTON -->
+                                <!-- BUTTONS -->
 
                                 <div class="form-buttons">
 
@@ -2223,6 +2374,7 @@
                                 </div>
 
                             </div>
+
 
                         </div>
 
@@ -2313,6 +2465,7 @@
 
                 </div>
 
+
             </div>
 
         </div>
@@ -2327,269 +2480,754 @@
 
     <script>
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
+        document.addEventListener("DOMContentLoaded", function () {
 
 
-                let currentStep = 1;
+            let currentStep = 1;
 
-                const totalSteps = 5;
+            const totalSteps = 5;
 
 
-                const steps =
-                    document.querySelectorAll(
-                        ".step-item"
+            const steps =
+                document.querySelectorAll(".step-item");
+
+
+            const lines =
+                document.querySelectorAll(".step-line");
+
+
+            const contents =
+                document.querySelectorAll(".form-step");
+
+
+            const nextButtons =
+                document.querySelectorAll(".next-btn");
+
+
+            const prevButtons =
+                document.querySelectorAll(".prev-btn");
+
+
+
+            /* =========================================
+               SHOW STEP
+            ========================================= */
+
+            function showStep(step) {
+
+                currentStep = step;
+
+
+                /* -----------------------------------------
+                   SHOW CURRENT FORM
+                ----------------------------------------- */
+
+                contents.forEach(function (content) {
+
+                    const contentStep =
+                        parseInt(content.dataset.content);
+
+
+                    content.classList.toggle(
+                        "active",
+                        contentStep === step
                     );
 
-                const lines =
-                    document.querySelectorAll(
-                        ".step-line"
-                    );
-
-                const contents =
-                    document.querySelectorAll(
-                        ".form-step"
-                    );
+                });
 
 
-                const nextButtons =
-                    document.querySelectorAll(
-                        ".next-btn"
-                    );
 
-                const prevButtons =
-                    document.querySelectorAll(
-                        ".prev-btn"
-                    );
+                /* -----------------------------------------
+                   UPDATE STEPPER
+                ----------------------------------------- */
 
+                steps.forEach(function (item) {
 
-                /* =========================================
-                   SHOW STEP
-                ========================================= */
-
-                function showStep(step) {
-
-                    currentStep = step;
+                    const stepNumber =
+                        parseInt(item.dataset.step);
 
 
-                    /* Form Content */
-
-                    contents.forEach(
-                        function (content) {
-
-                            const contentStep =
-                                parseInt(
-                                    content.dataset.content
-                                );
-
-                            content.classList.toggle(
-                                "active",
-                                contentStep === step
-                            );
-
-                        }
-                    );
-
-
-                    /* Stepper */
-
-                    steps.forEach(
-                        function (item) {
-
-                            const stepNumber =
-                                parseInt(
-                                    item.dataset.step
-                                );
-
-
-                            item.classList.remove(
-                                "active",
-                                "completed"
-                            );
-
-
-                            if (
-                                stepNumber === step
-                            ) {
-
-                                item.classList.add(
-                                    "active"
-                                );
-
-                            }
-
-
-                            if (
-                                stepNumber < step
-                            ) {
-
-                                item.classList.add(
-                                    "completed"
-                                );
-
-                                item.querySelector(
-                                    ".step-circle"
-                                ).innerHTML =
-                                    '<i class="bi bi-check"></i>';
-
-                            }
-                            else {
-
-                                item.querySelector(
-                                    ".step-circle"
-                                ).innerText =
-                                    stepNumber;
-
-                            }
-
-                        }
+                    item.classList.remove(
+                        "active",
+                        "completed"
                     );
 
 
-                    /* Lines */
+                    if (stepNumber === step) {
 
-                    lines.forEach(
-                        function (line) {
+                        item.classList.add("active");
 
-                            const lineNumber =
-                                parseInt(
-                                    line.dataset.line
-                                );
+                    }
 
-                            line.classList.toggle(
-                                "completed",
-                                lineNumber < step
-                            );
 
-                        }
+                    if (stepNumber < step) {
+
+                        item.classList.add("completed");
+
+
+                        item.querySelector(
+                            ".step-circle"
+                        ).innerHTML =
+                            '<i class="bi bi-check"></i>';
+
+                    }
+                    else {
+
+                        item.querySelector(
+                            ".step-circle"
+                        ).innerText =
+                            stepNumber;
+
+                    }
+
+                });
+
+
+
+                /* -----------------------------------------
+                   UPDATE LINES
+                ----------------------------------------- */
+
+                lines.forEach(function (line) {
+
+                    const lineNumber =
+                        parseInt(line.dataset.line);
+
+
+                    line.classList.toggle(
+                        "completed",
+                        lineNumber < step
+                    );
+
+                });
+
+
+
+                /* -----------------------------------------
+                   SCROLL TOP
+                ----------------------------------------- */
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+
+
+
+            /* =========================================
+               VALIDATE CURRENT STEP
+            ========================================= */
+
+            function validateCurrentStep() {
+
+
+                const currentForm =
+                    document.querySelector(
+                        `.form-step[data-content="${currentStep}"]`
                     );
 
 
-                    /* Scroll top */
+                if (!currentForm) {
 
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
+                    return true;
 
                 }
 
 
-                /* =========================================
-                   NEXT BUTTON
-                ========================================= */
+                const fields =
+                    currentForm.querySelectorAll(
+                        "input[required], select[required], textarea[required]"
+                    );
 
-                nextButtons.forEach(
-                    function (button) {
 
-                        button.addEventListener(
-                            "click",
-                            function () {
+                let isValid = true;
 
-                                if (
-                                    currentStep <
-                                    totalSteps
-                                ) {
+                let firstInvalidField = null;
 
-                                    /*
-                                     * Yahan aap backend/API
-                                     * me current step ka data
-                                     * save kar sakte hain.
-                                     */
 
-                                    showStep(
-                                        currentStep + 1
-                                    );
 
-                                }
+                fields.forEach(function (field) {
 
-                            }
+
+                    /*
+                     * Trim text values
+                     */
+
+                    if (
+                        field.type !== "file" &&
+                        field.type !== "checkbox" &&
+                        typeof field.value === "string"
+                    ) {
+
+                        field.value =
+                            field.value.trim();
+
+                    }
+
+
+
+                    /*
+                     * CHECK VALIDITY
+                     */
+
+                    if (!field.checkValidity()) {
+
+
+                        field.classList.add(
+                            "is-invalid"
+                        );
+
+
+                        field.classList.remove(
+                            "is-valid"
+                        );
+
+
+                        isValid = false;
+
+
+                        if (!firstInvalidField) {
+
+                            firstInvalidField =
+                                field;
+
+                        }
+
+                    }
+                    else {
+
+
+                        field.classList.remove(
+                            "is-invalid"
+                        );
+
+
+                        field.classList.add(
+                            "is-valid"
                         );
 
                     }
-                );
+
+                });
 
 
-                /* =========================================
-                   BACK BUTTON
-                ========================================= */
 
-                prevButtons.forEach(
-                    function (button) {
+                /* -----------------------------------------
+                   SHOW FIRST ERROR
+                ----------------------------------------- */
 
-                        button.addEventListener(
-                            "click",
-                            function () {
+                if (!isValid) {
 
-                                if (
-                                    currentStep > 1
-                                ) {
 
-                                    showStep(
-                                        currentStep - 1
-                                    );
+                    if (firstInvalidField) {
 
-                                }
+                        firstInvalidField.focus();
 
-                            }
-                        );
+
+                        firstInvalidField.reportValidity();
 
                     }
-                );
 
 
-                /* =========================================
-                   FINAL SUBMIT
-                ========================================= */
+                    return false;
 
-                document
-                    .getElementById("submitLoan")
-                    .addEventListener(
-                        "click",
-                        function () {
+                }
 
 
-                            const consent =
-                                document.getElementById(
-                                    "consent"
-                                );
+                return true;
+
+            }
 
 
-                            if (
-                                !consent.checked
-                            ) {
 
-                                alert(
-                                    "Please accept the declaration before submitting."
-                                );
+            /* =========================================
+               INPUT VALIDATION
+            ========================================= */
 
-                                return;
-
-                            }
+            document.addEventListener(
+                "input",
+                function (event) {
 
 
-                            alert(
-                                "Loan application submitted successfully!"
+                    const field =
+                        event.target;
+
+
+                    if (
+                        field.matches(
+                            "input, select, textarea"
+                        )
+                    ) {
+
+
+                        if (field.checkValidity()) {
+
+
+                            field.classList.remove(
+                                "is-invalid"
                             );
 
 
-                            /*
-                             * Yahan AJAX / Fetch API se
-                             * backend ko complete form
-                             * data send kar sakte hain.
-                             */
+                            if (
+                                field.value !== ""
+                            ) {
+
+                                field.classList.add(
+                                    "is-valid"
+                                );
+
+                            }
+
+                        }
+                        else {
+
+
+                            field.classList.remove(
+                                "is-valid"
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+
+
+            /* =========================================
+               SELECT VALIDATION
+            ========================================= */
+
+            document.addEventListener(
+                "change",
+                function (event) {
+
+
+                    const field =
+                        event.target;
+
+
+                    if (
+                        field.matches(
+                            "input, select, textarea"
+                        )
+                    ) {
+
+
+                        if (field.checkValidity()) {
+
+
+                            field.classList.remove(
+                                "is-invalid"
+                            );
+
+
+                            field.classList.add(
+                                "is-valid"
+                            );
+
+                        }
+                        else {
+
+
+                            field.classList.add(
+                                "is-invalid"
+                            );
+
+
+                            field.classList.remove(
+                                "is-valid"
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+
+
+            /* =========================================
+               PAN AUTO UPPERCASE
+            ========================================= */
+
+            const panInput =
+                document.querySelector(
+                    ".pan-input"
+                );
+
+
+            if (panInput) {
+
+
+                panInput.addEventListener(
+                    "input",
+                    function () {
+
+                        this.value =
+                            this.value
+                                .toUpperCase()
+                                .replace(
+                                    /[^A-Z0-9]/g,
+                                    ""
+                                )
+                                .slice(0, 10);
+
+                    }
+                );
+
+            }
+
+
+
+            /* =========================================
+               AADHAAR ONLY NUMBERS
+            ========================================= */
+
+            const aadhaarInput =
+                document.querySelector(
+                    ".aadhaar-input"
+                );
+
+
+            if (aadhaarInput) {
+
+
+                aadhaarInput.addEventListener(
+                    "input",
+                    function () {
+
+                        this.value =
+                            this.value
+                                .replace(
+                                    /\D/g,
+                                    ""
+                                )
+                                .slice(0, 12);
+
+                    }
+                );
+
+            }
+
+
+
+            /* =========================================
+               PINCODE ONLY NUMBERS
+            ========================================= */
+
+            document
+                .querySelectorAll(
+                    'input[pattern="[0-9]{6}"]'
+                )
+                .forEach(function (input) {
+
+
+                    input.addEventListener(
+                        "input",
+                        function () {
+
+                            this.value =
+                                this.value
+                                    .replace(
+                                        /\D/g,
+                                        ""
+                                    )
+                                    .slice(0, 6);
 
                         }
                     );
 
+                });
 
-                /* Initial Step */
 
-                showStep(1);
+
+            /* =========================================
+               SAME AS CURRENT ADDRESS
+            ========================================= */
+
+            const sameAddress =
+                document.querySelector(
+                    ".same-address"
+                );
+
+
+            if (sameAddress) {
+
+
+                sameAddress.addEventListener(
+                    "change",
+                    function () {
+
+
+                        const currentBox =
+                            document.querySelector(
+                                ".address-box"
+                            );
+
+
+                        const permanentBox =
+                            this.closest(
+                                ".address-box"
+                            );
+
+
+                        const currentFields =
+                            currentBox.querySelectorAll(
+                                "input, select"
+                            );
+
+
+                        const permanentFields =
+                            permanentBox.querySelectorAll(
+                                ".permanent-address"
+                            );
+
+
+                        if (this.checked) {
+
+
+                            permanentFields.forEach(
+                                function (field, index) {
+
+
+                                    if (currentFields[index]) {
+
+                                        field.value =
+                                            currentFields[index].value;
+
+                                        field.dispatchEvent(
+                                            new Event(
+                                                "change",
+                                                {
+                                                    bubbles: true
+                                                }
+                                            )
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+                        }
+
+                    }
+                );
 
             }
-        );
+
+
+
+            /* =========================================
+               NEXT BUTTON
+            ========================================= */
+
+            nextButtons.forEach(function (button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+
+                        /*
+                         * IMPORTANT:
+                         * Current step validate hoga
+                         */
+
+                        const valid =
+                            validateCurrentStep();
+
+
+                        /*
+                         * Agar invalid hai
+                         * to next nahi jayega
+                         */
+
+                        if (!valid) {
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * Valid hone par next step
+                         */
+
+                        if (
+                            currentStep <
+                            totalSteps
+                        ) {
+
+
+                            showStep(
+                                currentStep + 1
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+
+            /* =========================================
+               BACK BUTTON
+            ========================================= */
+
+            prevButtons.forEach(function (button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+
+                        if (
+                            currentStep > 1
+                        ) {
+
+
+                            showStep(
+                                currentStep - 1
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+
+            /* =========================================
+               FINAL SUBMIT
+            ========================================= */
+
+            const submitButton =
+                document.getElementById(
+                    "submitLoan"
+                );
+
+
+            submitButton.addEventListener(
+                "click",
+                function () {
+
+
+                    /*
+                     * Step 5 validation
+                     */
+
+                    const valid =
+                        validateCurrentStep();
+
+
+                    if (!valid) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Consent
+                     */
+
+                    const consent =
+                        document.getElementById(
+                            "consent"
+                        );
+
+
+                    if (!consent.checked) {
+
+
+                        consent.classList.add(
+                            "is-invalid"
+                        );
+
+
+                        alert(
+                            "Please accept the declaration before submitting."
+                        );
+
+
+                        consent.focus();
+
+
+                        return;
+
+                    }
+
+
+                    consent.classList.remove(
+                        "is-invalid"
+                    );
+
+
+                    /*
+                     * SUCCESS
+                     */
+
+                    alert(
+                        "Loan application submitted successfully!"
+                    );
+
+
+                    /*
+                     * Yahan aap API / AJAX / Fetch
+                     * se backend ko data send kar sakte hain.
+                     */
+
+                }
+            );
+
+
+
+            /* =========================================
+               CONSENT CHANGE
+            ========================================= */
+
+            const consent =
+                document.getElementById(
+                    "consent"
+                );
+
+
+            consent.addEventListener(
+                "change",
+                function () {
+
+                    if (this.checked) {
+
+                        this.classList.remove(
+                            "is-invalid"
+                        );
+
+                    }
+
+                }
+            );
+
+
+
+            /* =========================================
+               INITIAL STEP
+            ========================================= */
+
+            showStep(1);
+
+        });
 
     </script>
 
